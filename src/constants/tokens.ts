@@ -21,6 +21,22 @@ export const USDC_FUJI = new Token(
   'USD//C'
 )
 
+export const USDC = new Token(
+  SupportedChainId.AVALANCHE,
+  '0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E',
+  6,
+  'USDC',
+  'USD//C'
+)
+
+export const USDT = new Token(
+  SupportedChainId.AVALANCHE,
+  '0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7',
+  6,
+  'USDT',
+  'Tether USD'
+)
+
 
 
 export const UNI: { [chainId: number]: Token } = {
@@ -100,5 +116,6 @@ export function nativeOnChain(chainId: number): NativeCurrency | Token {
 export const TOKEN_SHORTHANDS: { [shorthand: string]: { [chainId in SupportedChainId]?: string } } = {
   USDC: {
     [SupportedChainId.AVALANCHE_FUJI]: USDC_FUJI.address,
+    [SupportedChainId.AVALANCHE]: USDC.address,
   },
 }

@@ -21,7 +21,9 @@ import ChainSelectorRow from './ChainSelectorRow'
 import { NavDropdown } from './NavDropdown'
 
 const NETWORK_SELECTOR_CHAINS = [
+  SupportedChainId.AVALANCHE,
   SupportedChainId.AVALANCHE_FUJI
+
 ]
 
 interface ChainSelectorProps {

@@ -1,5 +1,5 @@
 
-export const JOE_LIST = 'https://raw.githubusercontent.com/traderjoe-xyz/joe-tokenlists/main/mc.tokenlist.json'
+export const JOE_LIST = 'https://raw.githubusercontent.com/sussyswap/interface/main/src/constants/tokenLists/avax.tokenlist.json'
 
 export const UNSUPPORTED_LIST_URLS: string[] = []
 

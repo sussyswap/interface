@@ -57,7 +57,8 @@ const BodyWrapper = styled.div`
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
-  padding: ${({ theme }) => theme.navHeight}px 0px 5rem 0px;
+  padding: ${({ theme }) =>//@ts-ignore
+  theme.navHeight}px 0px 5rem 0px;
   align-items: center;
   flex: 1;
 `
@@ -72,19 +73,25 @@ const MobileBottomBar = styled.div`
   width: 100vw;
   justify-content: space-between;
   padding: 4px 8px;
-  height: ${({ theme }) => theme.mobileBottomBarHeight}px;
-  background: ${({ theme }) => theme.backgroundSurface};
-  border-top: 1px solid ${({ theme }) => theme.backgroundOutline};
+  height: ${({ theme }) => //@ts-ignore
+  theme.mobileBottomBarHeight}px;
+  background: ${({ theme }) => //@ts-ignore
+  theme.backgroundSurface};
+  border-top: 1px solid ${({ theme }) => //@ts-ignore
+  theme.backgroundOutline};
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
+  @media screen and (min-width: ${({ theme }) =>//@ts-ignore
+  theme.breakpoint.md}px) {
     display: none;
   }
 `
 
 const HeaderWrapper = styled.div<{ transparent?: boolean }>`
   ${flexRowNoWrap};
-  background-color: ${({ theme, transparent }) => !transparent && theme.backgroundSurface};
-  border-bottom: ${({ theme, transparent }) => !transparent && `1px solid ${theme.backgroundOutline}`};
+  background-color: ${({ theme, transparent }) => !transparent && //@ts-ignore
+  theme.backgroundSurface};
+  border-bottom: ${({ theme, transparent }) => !transparent && `1px solid ${//@ts-ignore
+    theme.backgroundOutline}`};
   width: 100%;
   justify-content: space-between;
   position: fixed;
@@ -224,15 +231,15 @@ export default function App() {
                     <Route path=":chainName" />
                   </Route>
                   <Route path="tokens/:chainName/:tokenAddress" element={<TokenDetails />} />
-                  <Route
+                  {/* <Route
                     path="vote/*"
                     element={
                       <Suspense fallback={<LazyLoadSpinner />}>
                         <Vote />
                       </Suspense>
                     }
-                  />
-                  <Route path="create-proposal" element={<Navigate to="/vote/create-proposal" replace />} />
+                  /> */}
+                  {/* <Route path="create-proposal" element={<Navigate to="/vote/create-proposal" replace />} /> */}
                   {micrositeEnabled && <Route path="wallet" element={<Wallet />} />}
                   <Route path="send" element={<RedirectPathToSwapOnly />} />
                   <Route path="swap" element={<Swap />} />
@@ -267,10 +274,10 @@ export default function App() {
 
                   <Route path="remove/v2/:currencyIdA/:currencyIdB" element={<RemoveLiquidity />} />
                   <Route path="remove/:tokenId" element={<RemoveLiquidityV3 />} />
-
+{/* 
                   <Route path="migrate/v2" element={<MigrateV2 />} />
-                  <Route path="migrate/v2/:address" element={<MigrateV2Pair />} />
-
+                  <Route path="migrate/v2/:address" element={<MigrateV2Pair />} /> */}
+{/* 
                   <Route
                     path="/nfts"
                     element={
@@ -278,39 +285,39 @@ export default function App() {
                         <NftExplore />
                       </Suspense>
                     }
-                  />
-                  <Route
+                  /> */}
+                  {/* <Route
                     path="/nfts/asset/:contractAddress/:tokenId"
                     element={
                       <Suspense fallback={null}>
                         <Asset />
                       </Suspense>
                     }
-                  />
-                  <Route
+                  /> */}
+                  {/* <Route
                     path="/nfts/profile"
                     element={
                       <Suspense fallback={null}>
                         <Profile />
                       </Suspense>
                     }
-                  />
-                  <Route
+                  /> */}
+                  {/* <Route
                     path="/nfts/collection/:contractAddress"
                     element={
                       <Suspense fallback={null}>
                         <Collection />
                       </Suspense>
                     }
-                  />
-                  <Route
+                  /> */}
+                  {/* <Route
                     path="/nfts/collection/:contractAddress/activity"
                     element={
                       <Suspense fallback={null}>
                         <Collection />
                       </Suspense>
                     }
-                  />
+                  /> */}
 
                   <Route path="*" element={<Navigate to="/not-found" replace />} />
                   <Route path="/not-found" element={<NotFound />} />

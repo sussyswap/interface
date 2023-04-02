@@ -35,12 +35,14 @@ const UploadLink = styled.a`
   position: absolute;
   right: 32px;
   top: 32px;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
   cursor: pointer;
 
   ${OpacityHoverState}
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.sm}px`}) {
     right: 12px;
     top: 28px;
   }

@@ -28,25 +28,31 @@ const PageWrapper = styled(AutoColumn)`
   max-width: 870px;
   width: 100%;
 
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToMedium`
+  ${({ theme }) => //@ts-ignore
+      theme.deprecated_mediaWidth.deprecated_upToMedium`
     max-width: 800px;
   `};
 
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) => //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToSmall`
     max-width: 500px;
   `};
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.md}px`}) {
     padding-top: 48px;
   }
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.sm}px`}) {
     padding-top: 20px;
   }
 `
 const TitleRow = styled(RowBetween)`
-  color: ${({ theme }) => theme.textSecondary};
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
+  ${({ theme }) => //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToSmall`
     flex-wrap: wrap;
     gap: 12px;
     width: 100%;
@@ -57,7 +63,8 @@ const ButtonRow = styled(RowFixed)`
     margin-left: 8px;
   }
 
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) => //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToSmall`
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
@@ -66,7 +73,8 @@ const ButtonRow = styled(RowFixed)`
 `
 const PoolMenu = styled(Menu)`
   margin-left: 0;
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) => //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToSmall`
     flex: 1 1 auto;
     width: 49%;
     right: 0px;
@@ -88,7 +96,8 @@ const MoreOptionsButton = styled(ButtonGray)`
   flex: 1 1 auto;
   padding: 6px 8px;
   width: 100%;
-  background-color: ${({ theme }) => theme.backgroundSurface};
+  background-color: ${({ theme }) => //@ts-ignore
+  theme.backgroundSurface};
   margin-right: 8px;
 `
 
@@ -126,15 +135,18 @@ const ResponsiveButtonPrimary = styled(ButtonPrimary)`
   font-size: 16px;
   padding: 6px 8px;
   width: fit-content;
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) =>//@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToSmall`
     flex: 1 1 auto;
     width: 100%;
   `};
 `
 
 const MainContentWrapper = styled.main`
-  background-color: ${({ theme }) => theme.backgroundSurface};
-  border: 1px solid ${({ theme }) => theme.backgroundOutline};
+  background-color: ${({ theme }) => //@ts-ignore
+  theme.backgroundSurface};
+  border: 1px solid ${({ theme }) =>//@ts-ignore
+  theme.backgroundOutline};
   padding: 0;
   border-radius: 16px;
   display: flex;
@@ -178,7 +190,8 @@ function WrongNetworkCard() {
 
             <MainContentWrapper>
               <ErrorContainer>
-                <ThemedText.DeprecatedBody color={theme.textTertiary} textAlign="center">
+                <ThemedText.DeprecatedBody color={//@ts-ignore
+      theme.textTertiary} textAlign="center">
                   <NetworkIcon strokeWidth={1.2} />
                   <div data-testid="pools-unsupported-err">
                     <Trans>Your connected network is unsupported.</Trans>
@@ -297,7 +310,8 @@ export default function Pool() {
                 />
               ) : (
                 <ErrorContainer>
-                  <ThemedText.DeprecatedBody color={theme.textTertiary} textAlign="center">
+                  <ThemedText.DeprecatedBody color={//@ts-ignore
+      theme.textTertiary} textAlign="center">
                     <InboxIcon strokeWidth={1} style={{ marginTop: '2em' }} />
                     <div>
                       <Trans>Your active V3 liquidity positions will appear here.</Trans>

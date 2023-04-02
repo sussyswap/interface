@@ -22,9 +22,11 @@ export function usePriceImpact(trade?: InterfaceTrade<Currency, Currency, TradeT
     const priceImpactWarning = marketPriceImpact ? getPriceImpactWarning(marketPriceImpact) : undefined
     const warningColor =
       priceImpactWarning === 'error'
-        ? theme.accentCritical
+        ? //@ts-ignore
+        theme.accentCritical
         : priceImpactWarning === 'warning'
-        ? theme.accentWarning
+        ? //@ts-ignore
+        theme.accentWarning
         : undefined
 
     return marketPriceImpact && priceImpactWarning && warningColor
@@ -36,7 +38,8 @@ export function usePriceImpact(trade?: InterfaceTrade<Currency, Currency, TradeT
           displayPercentage: () => toHumanReadablePercent(marketPriceImpact),
         }
       : undefined
-  }, [theme.accentCritical, theme.accentWarning, trade])
+  }, //@ts-ignore
+  [theme.accentCritical, theme.accentWarning, trade])
 }
 
 function toHumanReadablePercent(priceImpact: Percent): string {

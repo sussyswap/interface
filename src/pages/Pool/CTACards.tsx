@@ -13,7 +13,8 @@ const CTASection = styled.section`
   gap: 8px;
   opacity: 0.8;
 
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) =>//@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToSmall`
     grid-template-columns: auto;
     grid-template-rows: auto;
   `};
@@ -24,15 +25,18 @@ const CTA = styled(ExternalLink)`
   border-radius: 20px;
   position: relative;
   overflow: hidden;
-  border: 1px solid ${({ theme }) => theme.deprecated_bg3};
+  border: 1px solid ${({ theme }) => //@ts-ignore
+  theme.deprecated_bg3};
 
   * {
-    color: ${({ theme }) => theme.textPrimary};
+    color: ${({ theme }) => //@ts-ignore
+    theme.textPrimary};
     text-decoration: none !important;
   }
 
   :hover {
-    border: 1px solid ${({ theme }) => theme.deprecated_bg4};
+    border: 1px solid ${({ theme }) =>//@ts-ignore
+    theme.deprecated_bg4};
 
     text-decoration: none;
     * {
@@ -47,7 +51,8 @@ const HeaderText = styled(ThemedText.DeprecatedLabel)`
 
   font-weight: 400;
   font-size: 16px;
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToMedium`
+  ${({ theme }) => //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToMedium`
     font-size: 16px;
   `};
 `
@@ -57,7 +62,8 @@ const ResponsiveColumn = styled(AutoColumn)`
   width: 100%;
   gap: 8px;
 
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToMedium`
+  ${({ theme }) =>//@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToMedium`
     gap: 8px;
   `};
   justify-content: space-between;

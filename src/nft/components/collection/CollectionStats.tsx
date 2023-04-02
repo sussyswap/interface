@@ -18,7 +18,9 @@ import { DiscordIcon, EllipsisIcon, ExternalIcon, InstagramIcon, TwitterIcon, Ve
 import * as styles from './CollectionStats.css'
 
 const PercentChange = styled.div<{ isNegative: boolean }>`
-  color: ${({ theme, isNegative }) => (isNegative ? theme.accentFailure : theme.accentSuccess)};
+  color: ${({ theme, isNegative }) => (isNegative ? 
+      //@ts-ignore
+      theme.accentFailure : theme.accentSuccess)};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -245,22 +247,29 @@ const CollectionDescriptionText = styled.div<{ readMore: boolean }>`
         `}
 
   a[href] {
-    color: ${({ theme }) => theme.textSecondary};
+    color: ${({ theme }) => 
+      //@ts-ignore
+      theme.textSecondary};
     text-decoration: none;
 
     :hover {
-      opacity: ${({ theme }) => theme.opacity.hover};
+      opacity: ${({ theme }) => 
+      //@ts-ignore
+      theme.opacity.hover};
     }
 
     :focus {
-      opacity: ${({ theme }) => theme.opacity.click};
+      opacity: ${({ theme }) =>
+      //@ts-ignore
+      theme.opacity.click};
     }
   }
 `
 
 const ReadMore = styled.span`
   vertical-align: top;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
   cursor: pointer;
   margin-left: 4px;
 `

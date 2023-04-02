@@ -808,7 +808,8 @@ export default function AddLiquidity() {
                                 fontSize={14}
                                 style={{ fontWeight: 500 }}
                                 textAlign="left"
-                                color={theme.accentAction}
+                                color={//@ts-ignore
+                                  theme.accentAction}
                               >
                                 <Trans>
                                   This pool must be initialized before you can add liquidity. To initialize, select a
@@ -826,7 +827,8 @@ export default function AddLiquidity() {
                             />
                           </OutlineCard>
                           <RowBetween
-                            style={{ backgroundColor: theme.deprecated_bg1, padding: '12px', borderRadius: '12px' }}
+                            style={{ backgroundColor: //@ts-ignore
+                            theme.deprecated_bg1, padding: '12px', borderRadius: '12px' }}
                           >
                             <ThemedText.DeprecatedMain>
                               <Trans>Current {baseCurrency?.symbol} Price:</Trans>
@@ -887,7 +889,8 @@ export default function AddLiquidity() {
                       {outOfRange ? (
                         <YellowCard padding="8px 12px" $borderRadius="12px">
                           <RowBetween>
-                            <AlertTriangle stroke={theme.deprecated_yellow3} size="16px" />
+                            <AlertTriangle stroke={//@ts-ignore
+      theme.deprecated_yellow3} size="16px" />
                             <ThemedText.DeprecatedYellow ml="12px" fontSize="12px">
                               <Trans>
                                 Your position will not earn fees or be used in trades until the market price moves into
@@ -901,7 +904,8 @@ export default function AddLiquidity() {
                       {invalidRange ? (
                         <YellowCard padding="8px 12px" $borderRadius="12px">
                           <RowBetween>
-                            <AlertTriangle stroke={theme.deprecated_yellow3} size="16px" />
+                            <AlertTriangle stroke={//@ts-ignore
+      theme.deprecated_yellow3} size="16px" />
                             <ThemedText.DeprecatedYellow ml="12px" fontSize="12px">
                               <Trans>Invalid range selected. The min price must be lower than the max price.</Trans>
                             </ThemedText.DeprecatedYellow>

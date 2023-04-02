@@ -21,8 +21,10 @@ const TableHeader = styled.div`
   padding-top: 24px;
   padding-bottom: 24px;
   z-index: 3;
-  background-color: ${({ theme }) => theme.backgroundBackdrop};
-  color: ${({ theme }) => theme.textSecondary};
+  background-color: ${({ theme }) => //@ts-ignore
+  theme.backgroundBackdrop};
+  color: ${({ theme }) =>//@ts-ignore
+  theme.textSecondary};
   font-size: 14px;
   font-weight: normal;
   line-height: 20px;
@@ -81,7 +83,8 @@ const DropdownPromptContainer = styled(Column)`
 
 const DropdownPrompt = styled(Row)`
   gap: 4px;
-  background-color: ${({ theme }) => theme.backgroundInteractive};
+  background-color: ${({ theme }) =>//@ts-ignore
+  theme.backgroundInteractive};
   cursor: pointer;
   font-weight: 600;
   font-size: 12px;
@@ -90,20 +93,24 @@ const DropdownPrompt = styled(Row)`
   padding: 2px 6px;
   width: min-content;
   white-space: nowrap;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textPrimary};
 
   &:hover {
-    opacity: ${({ theme }) => theme.opacity.hover};
+    opacity: ${({ theme }) => //@ts-ignore
+    theme.opacity.hover};
   }
 `
 
 const DropdownChevron = styled(ChevronDown)<{ isOpen: boolean }>`
   height: 16px;
   width: 16px;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
   transform: ${({ isOpen }) => isOpen && 'rotate(180deg)'};
   transition: ${({
     theme: {
+      //@ts-ignore
       transition: { duration, timing },
     },
   }) => `transform ${duration.fast} ${timing.ease}`};
@@ -140,7 +147,8 @@ const RowDivider = styled.hr`
   border-width: 0.5px;
   border-style: solid;
   margin: 0;
-  border-color: ${({ theme }) => theme.backgroundInteractive};
+  border-color: ${({ theme }) => //@ts-ignore
+  theme.backgroundInteractive};
 `
 
 export const NFTListingsGrid = ({ selectedMarkets }: { selectedMarkets: ListingMarket[] }) => {

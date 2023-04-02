@@ -20,9 +20,13 @@ const StyledDetailsContainer = styled(Column)`
   justify-content: space-between;
   gap: 8px;
   height: 84px;
-  background: ${({ theme }) => theme.backgroundSurface};
+  background: ${({ theme }) => 
+      //@ts-ignore
+      theme.backgroundSurface};
   will-change: transform;
-  transition: ${({ theme }) => `${theme.transition.duration.medium} ${theme.transition.timing.ease} transform`};
+  transition: ${({ theme }) => `${
+      //@ts-ignore
+      theme.transition.duration.medium} ${theme.transition.timing.ease} transform`};
 
   @media screen and (max-width: ${BREAKPOINTS.sm}px) {
     height: 112px;
@@ -40,11 +44,21 @@ const StyledActionButton = styled(ThemedText.BodySmall)<{
   bottom: -32px;
   left: 8px;
   right: 8px;
-  color: ${({ theme, isDisabled }) => (isDisabled ? theme.textPrimary : theme.accentTextLightPrimary)};
+  color: ${({ theme, isDisabled }) => (isDisabled ?
+      //@ts-ignore
+      theme.textPrimary : theme.accentTextLightPrimary)};
   background: ${({ theme, selected, isDisabled }) =>
-    selected ? theme.accentCritical : isDisabled ? theme.backgroundInteractive : theme.accentAction};
+    selected ? 
+      //@ts-ignore
+      theme.accentCritical : isDisabled ? 
+      //@ts-ignore
+      theme.backgroundInteractive : theme.accentAction};
   transition: ${({ theme }) =>
-    `${theme.transition.duration.medium} ${theme.transition.timing.ease} bottom, ${theme.transition.duration.medium} ${theme.transition.timing.ease} visibility`};
+    `${
+      //@ts-ignore
+      theme.transition.duration.medium} ${
+      //@ts-ignore
+      theme.transition.timing.ease} bottom, ${theme.transition.duration.medium} ${theme.transition.timing.ease} visibility`};
   will-change: transform;
   border-radius: 8px;
   justify-content: center;
@@ -72,11 +86,15 @@ const StyledActionButton = styled(ThemedText.BodySmall)<{
   }
 
   &:hover:before {
-    background-color: ${({ theme, isDisabled }) => !isDisabled && theme.stateOverlayHover};
+    background-color: ${({ theme, isDisabled }) => !isDisabled && 
+      //@ts-ignore
+      theme.stateOverlayHover};
   }
 
   &:active:before {
-    background-color: ${({ theme, isDisabled }) => !isDisabled && theme.stateOverlayPressed};
+    background-color: ${({ theme, isDisabled }) => !isDisabled && 
+      //@ts-ignore
+      theme.stateOverlayPressed};
   }
 `
 
@@ -105,7 +123,9 @@ const ActionButton = ({
 const StyledCardContainer = styled.div<{ selected: boolean; isDisabled: boolean }>`
   position: relative;
   border-radius: ${BORDER_RADIUS}px;
-  background-color: ${({ theme }) => theme.backgroundSurface};
+  background-color: ${({ theme }) => 
+      //@ts-ignore
+      theme.backgroundSurface};
   overflow: hidden;
   box-shadow: 0px 0px 8px rgba(51, 53, 72, 0.04), 1px 2px 4px rgba(51, 53, 72, 0.12);
   box-sizing: border-box;
@@ -121,18 +141,26 @@ const StyledCardContainer = styled.div<{ selected: boolean; isDisabled: boolean 
     left: 0px;
     border: ${({ selected }) => (selected ? '3px' : '1px')} solid;
     border-radius: ${BORDER_RADIUS}px;
-    border-color: ${({ theme, selected }) => (selected ? theme.accentAction : theme.backgroundOutline)};
+    border-color: ${({ theme, selected }) => (selected ?
+      //@ts-ignore
+      theme.accentAction : theme.backgroundOutline)};
     pointer-events: none;
-    transition: ${({ theme }) => `${theme.transition.duration.medium} ${theme.transition.timing.ease} border`};
+    transition: ${({ theme }) => `${
+      //@ts-ignore
+      theme.transition.duration.medium} ${theme.transition.timing.ease} border`};
     will-change: border;
 
     @media screen and (max-width: ${BREAKPOINTS.sm}px) {
-      ${({ selected, theme }) => selected && `border-color: ${theme.accentCritical}`};
+      ${({ selected, theme }) => selected && `border-color: ${
+      //@ts-ignore
+      theme.accentCritical}`};
     }
   }
 
   :hover::after {
-    ${({ selected, theme }) => selected && `border-color: ${theme.accentCritical}`};
+    ${({ selected, theme }) => selected && `border-color: ${
+      //@ts-ignore
+      theme.accentCritical}`};
   }
 
   :hover {

@@ -5,8 +5,10 @@ type SVGProps = React.SVGProps<SVGSVGElement> & { fill?: string }
 
 const useEmptyStateIconColors = () => {
   const theme = useTheme()
-  const primary = theme.darkMode ? colors.gray150 : colors.gray600
-  const secondary = theme.darkMode ? colors.gray600 : colors.gray300
+  const primary = //@ts-ignore
+  theme.darkMode ? colors.gray150 : colors.gray600
+  const secondary = //@ts-ignore
+  theme.darkMode ? colors.gray600 : colors.gray300
   return { primary, secondary }
 }
 

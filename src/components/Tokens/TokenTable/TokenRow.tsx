@@ -59,17 +59,23 @@ const StyledTokenRow = styled.div<{
   padding-right: 12px;
   transition: ${({
     theme: {
-      transition: { duration, timing },
+      
+    //@ts-ignore
+    transition: { duration, timing },
     },
   }) => css`background-color ${duration.medium} ${timing.ease}`};
   width: 100%;
-  transition-duration: ${({ theme }) => theme.transition.duration.fast};
+  transition-duration: ${({ theme }) => 
+    //@ts-ignore
+    theme.transition.duration.fast};
 
   &:hover {
     ${({ loading, theme }) =>
       !loading &&
       css`
-        background-color: ${theme.hoverDefault};
+        background-color: ${
+    //@ts-ignore
+    theme.hoverDefault};
       `}
     ${({ last }) =>
       last &&
@@ -93,7 +99,9 @@ const StyledTokenRow = styled.div<{
   @media only screen and (max-width: ${SMALL_MEDIA_BREAKPOINT}) {
     grid-template-columns: 2fr 3fr;
     min-width: unset;
-    border-bottom: 0.5px solid ${({ theme }) => theme.backgroundModule};
+    border-bottom: 0.5px solid ${({ theme }) =>
+    //@ts-ignore
+    theme.backgroundModule};
 
     :last-of-type {
       border-bottom: none;
@@ -104,7 +112,9 @@ const StyledTokenRow = styled.div<{
 const ClickableContent = styled.div`
   display: flex;
   text-decoration: none;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) =>
+    //@ts-ignore
+    theme.textPrimary};
   align-items: center;
   cursor: pointer;
 `
@@ -114,9 +124,13 @@ const ClickableName = styled(ClickableContent)`
 `
 const StyledHeaderRow = styled(StyledTokenRow)`
   border-bottom: 1px solid;
-  border-color: ${({ theme }) => theme.backgroundOutline};
+  border-color: ${({ theme }) =>
+    //@ts-ignore
+    theme.backgroundOutline};
   border-radius: 8px 8px 0px 0px;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textSecondary};
   font-size: 14px;
   height: 48px;
   line-height: 16px;
@@ -134,7 +148,9 @@ const StyledHeaderRow = styled(StyledTokenRow)`
 `
 
 const ListNumberCell = styled(Cell)<{ header: boolean }>`
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) =>
+    //@ts-ignore
+    theme.textSecondary};
   min-width: 32px;
   font-size: 14px;
 
@@ -148,7 +164,9 @@ const DataCell = styled(Cell)<{ sortable: boolean }>`
   user-select: ${({ sortable }) => (sortable ? 'none' : 'unset')};
   transition: ${({
     theme: {
-      transition: { duration, timing },
+      
+    //@ts-ignore
+    transition: { duration, timing },
     },
   }) => css`background-color ${duration.medium} ${timing.ease}`};
 `
@@ -179,7 +197,9 @@ const PercentChangeInfoCell = styled(Cell)`
   @media only screen and (max-width: ${SMALL_MEDIA_BREAKPOINT}) {
     display: flex;
     justify-content: flex-end;
-    color: ${({ theme }) => theme.textSecondary};
+    color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textSecondary};
     font-size: 12px;
     line-height: 16px;
   }
@@ -245,7 +265,9 @@ const TokenName = styled.div`
   max-width: 100%;
 `
 const TokenSymbol = styled(Cell)`
-  color: ${({ theme }) => theme.textTertiary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textTertiary};
   text-transform: uppercase;
 
   @media only screen and (max-width: ${SMALL_MEDIA_BREAKPOINT}) {
@@ -316,9 +338,13 @@ function HeaderCell({
       {sortMethod === category && (
         <>
           {sortAscending ? (
-            <ArrowUp size={20} strokeWidth={1.8} color={theme.accentActive} />
+            <ArrowUp size={20} strokeWidth={1.8} color={
+    //@ts-ignore
+    theme.accentActive} />
           ) : (
-            <ArrowDown size={20} strokeWidth={1.8} color={theme.accentActive} />
+            <ArrowDown size={20} strokeWidth={1.8} color={
+    //@ts-ignore
+    theme.accentActive} />
           )}
         </>
       )}

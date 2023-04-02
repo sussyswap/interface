@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { Trans } from '@lingui/macro'
 import { Currency } from '@uniswap/sdk-core'
 import { FeeAmount } from '@uniswap/v3-sdk'

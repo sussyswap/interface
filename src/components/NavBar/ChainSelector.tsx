@@ -21,12 +21,7 @@ import ChainSelectorRow from './ChainSelectorRow'
 import { NavDropdown } from './NavDropdown'
 
 const NETWORK_SELECTOR_CHAINS = [
-  SupportedChainId.MAINNET,
-  SupportedChainId.POLYGON,
-  SupportedChainId.OPTIMISM,
-  SupportedChainId.ARBITRUM_ONE,
-  SupportedChainId.CELO,
-  SupportedChainId.BNB,
+  SupportedChainId.AVALANCHE_FUJI
 ]
 
 interface ChainSelectorProps {
@@ -76,7 +71,6 @@ export const ChainSelector = ({ leftAlign }: ChainSelectorProps) => {
       <Column paddingX="8">
         {NETWORK_SELECTOR_CHAINS.map((chainId: SupportedChainId) => (
           <ChainSelectorRow
-            disabled={isUniWallet && chainId === SupportedChainId.CELO}
             onSelectChain={onSelectChain}
             targetChain={chainId}
             key={chainId}
@@ -90,6 +84,7 @@ export const ChainSelector = ({ leftAlign }: ChainSelectorProps) => {
   const chevronProps = {
     height: 20,
     width: 20,
+    //@ts-ignore
     color: theme.textSecondary,
   }
 
@@ -104,6 +99,7 @@ export const ChainSelector = ({ leftAlign }: ChainSelectorProps) => {
           onClick={() => setIsOpen(!isOpen)}
         >
           {!isSupported ? (
+    //@ts-ignore
             <AlertTriangle size={20} color={theme.textSecondary} />
           ) : (
             <img src={info.logoUrl} alt={info.label} className={styles.Image} data-testid="chain-selector-logo" />

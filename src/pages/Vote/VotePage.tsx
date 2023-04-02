@@ -59,17 +59,20 @@ const PageWrapper = styled(AutoColumn)`
   padding-top: 68px;
   width: 100%;
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+      theme.breakpoint.md}px`}) {
     padding: 48px 8px 0px;
   }
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.sm}px`}) {
     padding-top: 20px;
   }
 `
 
 const ProposalInfo = styled(AutoColumn)`
-  background: ${({ theme }) => theme.backgroundSurface};
+  background: ${({ theme }) => //@ts-ignore
+  theme.backgroundSurface};
   border-radius: 12px;
   padding: 1.5rem;
   position: relative;
@@ -82,10 +85,12 @@ const ArrowWrapper = styled(StyledInternalLink)`
   align-items: center;
   gap: 8px;
   height: 24px;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textPrimary};
 
   a {
-    color: ${({ theme }) => theme.textPrimary};
+    color: ${({ theme }) => //@ts-ignore
+    theme.textPrimary};
     text-decoration: none;
   }
   :hover {
@@ -102,7 +107,8 @@ const CardWrapper = styled.div`
 const StyledDataCard = styled(DataCard)`
   width: 100%;
   background: none;
-  background-color: ${({ theme }) => theme.deprecated_bg1};
+  background-color: ${({ theme }) => //@ts-ignore
+  theme.deprecated_bg1};
   height: fit-content;
   z-index: 2;
 `
@@ -112,14 +118,16 @@ const ProgressWrapper = styled.div`
   margin-top: 1rem;
   height: 4px;
   border-radius: 4px;
-  background-color: ${({ theme }) => theme.deprecated_bg3};
+  background-color: ${({ theme }) => //@ts-ignore
+  theme.deprecated_bg3};
   position: relative;
 `
 
 const Progress = styled.div<{ status: 'for' | 'against'; percentageString?: string }>`
   height: 4px;
   border-radius: 4px;
-  background-color: ${({ theme, status }) => (status === 'for' ? theme.accentSuccess : theme.accentFailure)};
+  background-color: ${({ theme, status }) => (status === 'for' ? //@ts-ignore
+  theme.accentSuccess : theme.accentFailure)};
   width: ${({ percentageString }) => percentageString ?? '0%'};
 `
 
@@ -129,7 +137,8 @@ const MarkDownWrapper = styled.div`
 `
 
 const WrapSmall = styled(RowBetween)`
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) =>//@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToSmall`
     align-items: flex-start;
     flex-direction: column;
   `};

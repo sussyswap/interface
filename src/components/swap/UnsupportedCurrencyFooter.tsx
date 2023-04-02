@@ -25,8 +25,12 @@ const DetailsFooter = styled.div<{ show: boolean }>`
   max-width: 400px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  color: ${({ theme }) => theme.textSecondary};
-  background-color: ${({ theme }) => theme.deprecated_advancedBG};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.textSecondary};
+  background-color: ${({ theme }) => 
+  //@ts-ignore
+  theme.deprecated_advancedBG};
   z-index: ${Z_INDEX.deprecated_zero};
 
   transform: ${({ show }) => (show ? 'translateY(0%)' : 'translateY(-100%)')};
@@ -41,7 +45,9 @@ const StyledButtonEmpty = styled(ButtonEmpty)`
 const AddressText = styled(ThemedText.DeprecatedBlue)`
   font-size: 12px;
 
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) => 
+  //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToSmall`
     font-size: 10px;
 `}
 `

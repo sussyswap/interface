@@ -113,8 +113,12 @@ const BNBLogo = styled.img`
 `
 const BNBComingSoonBadge = styled(Badge)`
   align-items: center;
-  background-color: ${({ theme }) => theme.backgroundModule};
-  color: ${({ theme }) => theme.textSecondary};
+  background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundModule};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textSecondary};
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -360,20 +364,20 @@ export const SearchBarDropdown = ({
     searchHistory,
   ])
 
-  const showBNBComingSoonBadge = chainId === SupportedChainId.BNB && !isLoading
+  //const showBNBComingSoonBadge = chainId === SupportedChainId.BNB && !isLoading
 
   return (
     <Box className={styles.searchBarDropdownNft}>
       <Box opacity={isLoading ? '0.3' : '1'} transition="125">
         {resultsState}
-        {showBNBComingSoonBadge && (
+        {/* {showBNBComingSoonBadge && (
           <BNBComingSoonBadge>
             <BNBLogo src={BnbLogoURI} />
             <ThemedText.BodySmall color="textSecondary" fontSize="14px" fontWeight="400" lineHeight="20px">
               <Trans>Coming soon: search and explore tokens on BNB Chain</Trans>
             </ThemedText.BodySmall>
           </BNBComingSoonBadge>
-        )}
+        )} */}
       </Box>
     </Box>
   )

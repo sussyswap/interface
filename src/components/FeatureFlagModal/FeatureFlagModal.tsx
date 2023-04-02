@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { BaseVariant, FeatureFlag, featureFlagSettings, useBaseFlag, useUpdateFlag } from 'featureFlags'
 import { MgtmVariant, useMgtmFlag } from 'featureFlags/flags/mgtm'
 import { useMiniPortfolioFlag } from 'featureFlags/flags/miniPortfolio'

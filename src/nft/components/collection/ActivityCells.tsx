@@ -1,6 +1,6 @@
 import { sendAnalyticsEvent, useTrace } from '@uniswap/analytics'
 import { InterfacePageName, NFTEventName } from '@uniswap/analytics-events'
-import { ChainId } from '@uniswap/smart-order-router'
+import { ChainId } from '@sussyswap/smart-order-router'
 import { MouseoverTooltip } from 'components/Tooltip'
 import { useNftGraphqlEnabled } from 'featureFlags/flags/nftlGraphql'
 import { NftActivityType, OrderStatus } from 'graphql/data/__generated__/types-and-hooks'
@@ -38,23 +38,35 @@ import { ExplorerDataType, getExplorerLink } from 'utils/getExplorerLink'
 import * as styles from './Activity.css'
 
 const AddressLink = styled(ExternalLink)`
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => 
+      //@ts-ignore
+      theme.textPrimary};
   text-decoration: none;
   font-weight: 400;
   line-height: 20px;
   a {
-    color: ${({ theme }) => theme.textPrimary};
+    color: ${({ theme }) => 
+      //@ts-ignore
+      theme.textPrimary};
     text-decoration: none;
   }
   a:hover {
-    color: ${({ theme }) => theme.textPrimary};
+    color: ${({ theme }) =>
+      //@ts-ignore
+      theme.textPrimary};
     text-decoration: none;
-    opacity: ${({ theme }) => theme.opacity.hover};
+    opacity: ${({ theme }) => 
+      //@ts-ignore
+      theme.opacity.hover};
   }
   a:focus {
-    color: ${({ theme }) => theme.textPrimary};
+    color: ${({ theme }) => 
+      //@ts-ignore
+      theme.textPrimary};
     text-decoration: none;
-    opacity: ${({ theme }) => theme.opacity.click};
+    opacity: ${({ theme }) => 
+      //@ts-ignore
+      theme.opacity.click};
   }
 `
 
@@ -154,7 +166,7 @@ export const AddressCell = ({ address, desktopLBreakpoint, chainId }: AddressCel
       className={styles.addressCell}
     >
       <AddressLink
-        href={getExplorerLink(chainId ?? ChainId.MAINNET, address ?? '', ExplorerDataType.ADDRESS)}
+        href={getExplorerLink(chainId ?? ChainId.AVAX, address ?? '', ExplorerDataType.ADDRESS)}
         style={{ textDecoration: 'none' }}
       >
         <Box onClick={(e) => e.stopPropagation()}>{address ? shortenAddress(address, 2, 4) : '-'}</Box>

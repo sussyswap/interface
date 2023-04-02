@@ -16,11 +16,14 @@ const CarouselCardBorder = styled.div`
   cursor: pointer;
   border: 1px solid transparent;
   transition-property: border-color;
-  transition-duration: ${({ theme }) => theme.transition.duration.fast};
-  transition-timing-function: ${({ theme }) => theme.transition.timing.inOut};
+  transition-duration: ${({ theme }) => //@ts-ignore
+  theme.transition.duration.fast};
+  transition-timing-function: ${({ theme }) => //@ts-ignore
+  theme.transition.timing.inOut};
 
   :hover {
-    border: 1px solid ${({ theme }) => theme.backgroundOutline};
+    border: 1px solid ${({ theme }) => //@ts-ignore
+    theme.backgroundOutline};
   }
 
   ::after {
@@ -33,10 +36,13 @@ const CarouselCardBorder = styled.div`
     bottom: 0;
     border-radius: 21px;
     z-index: -1;
-    box-shadow: ${({ theme }) => theme.deepShadow};
+    box-shadow: ${({ theme }) => //@ts-ignore
+    theme.deepShadow};
     transition-property: opacity;
-    transition-duration: ${({ theme }) => theme.transition.duration.fast};
-    transition-timing-function: ${({ theme }) => theme.transition.timing.inOut};
+    transition-duration: ${({ theme }) => //@ts-ignore
+    theme.transition.duration.fast};
+    transition-timing-function: ${({ theme }) =>//@ts-ignore
+    theme.transition.timing.inOut};
   }
 
   :hover::after {
@@ -57,9 +63,12 @@ const LoadingCardHeaderContainer = styled.div`
   animation-fill-mode: both;
   background: linear-gradient(
     to left,
-    ${({ theme }) => theme.backgroundInteractive} 25%,
-    ${({ theme }) => theme.backgroundOutline} 50%,
-    ${({ theme }) => theme.backgroundInteractive} 75%
+    ${({ theme }) => //@ts-ignore
+    theme.backgroundInteractive} 25%,
+    ${({ theme }) => //@ts-ignore
+    theme.backgroundOutline} 50%,
+    ${({ theme }) => //@ts-ignore
+    theme.backgroundInteractive} 75%
   );
   will-change: background-position;
   background-size: 400%;
@@ -114,8 +123,10 @@ const HeaderOverlay = styled.div`
 const CollectionImage = styled.img`
   width: 86px;
   height: 86px;
-  background: ${({ theme }) => theme.accentTextLightPrimary};
-  border: 2px solid ${({ theme }) => theme.accentTextLightPrimary};
+  background: ${({ theme }) => //@ts-ignore
+  theme.accentTextLightPrimary};
+  border: 2px solid ${({ theme }) => //@ts-ignore
+  theme.accentTextLightPrimary};
   border-radius: 100px;
 `
 
@@ -127,9 +138,12 @@ const LoadingCollectionImage = styled.div`
   animation-fill-mode: both;
   background: linear-gradient(
     to left,
-    ${({ theme }) => theme.backgroundInteractive} 25%,
-    ${({ theme }) => theme.backgroundOutline} 50%,
-    ${({ theme }) => theme.backgroundInteractive} 75%
+    ${({ theme }) =>//@ts-ignore
+    theme.backgroundInteractive} 25%,
+    ${({ theme }) => //@ts-ignore
+    theme.backgroundOutline} 50%,
+    ${({ theme }) => //@ts-ignore
+    theme.backgroundInteractive} 75%
   );
   will-change: background-position;
   background-size: 400%;
@@ -163,8 +177,10 @@ const MarketplaceIcon = styled.img`
 const CarouselCardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.backgroundSurface};
-  border: 1px solid ${({ theme }) => theme.backgroundOutline};
+  background-color: ${({ theme }) =>//@ts-ignore
+  theme.backgroundSurface};
+  border: 1px solid ${({ theme }) => //@ts-ignore
+  theme.backgroundOutline};
   border-radius: 20px;
   overflow: hidden;
   height: 100%;
@@ -177,7 +193,9 @@ const CarouselCardContainer = styled.div`
     justify-self: right;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.xs}px) or ((min-width: ${({ theme }) =>
+  @media (max-width: ${({ theme }) => //@ts-ignore
+  theme.breakpoint.xs}px) or ((min-width: ${({ theme }) =>
+      //@ts-ignore
       theme.breakpoint.sm}px) and (max-width: 880px)) {
     ${FirstColumnTextWrapper} {
       display: none;

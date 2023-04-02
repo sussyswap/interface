@@ -27,9 +27,14 @@ import { NavIcon } from './NavIcon'
 import * as styles from './SearchBar.css'
 import { SearchBarDropdown } from './SearchBarDropdown'
 
+    //@ts-ignore
 const KeyShortCut = styled.div`
-  background-color: ${({ theme }) => theme.hoverState};
-  color: ${({ theme }) => theme.textSecondary};
+  background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.hoverState};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textSecondary};
   padding: 0px 8px;
   width: 20px;
   height: 20px;

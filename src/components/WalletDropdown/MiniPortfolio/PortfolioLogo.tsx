@@ -11,7 +11,9 @@ import React from 'react'
 import { Loader } from 'react-feather'
 import styled from 'styled-components/macro'
 const UnknownContract = styled(UnknownStatus)`
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textSecondary};
 `
 
 const DoubleLogoContainer = styled.div`
@@ -71,7 +73,9 @@ const ChainLogoSquareBackground = styled.div`
   height: 18px;
   width: 18px;
   border-radius: 4px;
-  background-color: ${({ theme }) => theme.backgroundSurface};
+  background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundSurface};
   position: absolute;
   top: 60%;
   left: 60%;
@@ -81,7 +85,9 @@ const SquareBackgroundForNonSquareLogo = styled.div`
   height: 16px;
   width: 16px;
   border-radius: 2px;
-  background-color: ${({ theme }) => theme.textPrimary};
+  background-color: ${({ theme }) =>
+    //@ts-ignore
+    theme.textPrimary};
   position: absolute;
   top: 68%;
   left: 68%;
@@ -91,7 +97,7 @@ const SquareBackgroundForNonSquareLogo = styled.div`
  * Renders an image by prioritizing a list of sources, and then eventually a fallback triangle alert
  */
 export function PortfolioLogo({
-  chainId = SupportedChainId.MAINNET,
+  chainId = SupportedChainId.AVALANCHE,
   accountAddress,
   currencies,
   images,
@@ -147,7 +153,7 @@ export function PortfolioLogo({
   }
 
   const L2Logo =
-    chainId === SupportedChainId.MAINNET ? null : (
+    chainId === SupportedChainId.AVALANCHE ? null : (
       <div>
         {chainLogo && <ChainLogoSquareBackground />}
         {!squareLogoUrl && logoUrl && <SquareBackgroundForNonSquareLogo />}

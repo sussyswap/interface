@@ -19,7 +19,9 @@ import { ChainConnectivityWarning } from './ChainConnectivityWarning'
 const StyledPolling = styled.div`
   align-items: center;
   bottom: 0;
-  color: ${({ theme }) => theme.textTertiary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textTertiary};
   display: none;
   padding: 1rem;
   position: fixed;
@@ -34,7 +36,9 @@ const StyledPolling = styled.div`
     text-decoration: none;
   }
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
+  @media screen and (min-width: ${({ theme }) => 
+    //@ts-ignore
+    theme.breakpoint.md}px) {
     display: flex;
   }
 `
@@ -43,7 +47,9 @@ const StyledPollingBlockNumber = styled(ThemedText.DeprecatedSmall)<{
   hovering: boolean
   warning: boolean
 }>`
-  color: ${({ theme, warning }) => (warning ? theme.deprecated_yellow3 : theme.accentSuccess)};
+  color: ${({ theme, warning }) => (warning ? 
+    //@ts-ignore
+    theme.deprecated_yellow3 : theme.accentSuccess)};
   transition: opacity 0.25s ease;
   opacity: ${({ breathe, hovering }) => (hovering ? 0.7 : breathe ? 1 : 0.5)};
   :hover {
@@ -65,7 +71,9 @@ const StyledPollingDot = styled.div<{ warning: boolean }>`
   min-width: 8px;
   border-radius: 50%;
   position: relative;
-  background-color: ${({ theme, warning }) => (warning ? theme.deprecated_yellow3 : theme.accentSuccess)};
+  background-color: ${({ theme, warning }) => (warning ? 
+    //@ts-ignore
+    theme.deprecated_yellow3 : theme.accentSuccess)};
   transition: 250ms ease background-color;
 `
 
@@ -85,7 +93,9 @@ const Spinner = styled.div<{ warning: boolean }>`
   border-top: 1px solid transparent;
   border-right: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  border-left: 2px solid ${({ theme, warning }) => (warning ? theme.deprecated_yellow3 : theme.accentSuccess)};
+  border-left: 2px solid ${({ theme, warning }) => (warning ? 
+    //@ts-ignore
+    theme.deprecated_yellow3 : theme.accentSuccess)};
   background: transparent;
   width: 14px;
   height: 14px;

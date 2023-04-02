@@ -23,7 +23,8 @@ const PriceTextInputWrapper = styled(Column)`
 
 const InputWrapper = styled(Row)<{ borderColor: string }>`
   height: 48px;
-  color: ${({ theme }) => theme.textTertiary};
+  color: ${({ theme }) => //@ts-ignore
+      theme.textTertiary};
   padding: 12px;
   border: 2px solid;
   border-radius: 8px;
@@ -33,7 +34,8 @@ const InputWrapper = styled(Row)<{ borderColor: string }>`
 `
 
 const CurrencyWrapper = styled.div<{ listPrice: number | undefined }>`
-  color: ${({ listPrice, theme }) => (listPrice ? theme.textPrimary : theme.textSecondary)};
+  color: ${({ listPrice, theme }) => (listPrice ? //@ts-ignore
+  theme.textPrimary : theme.textSecondary)};
 `
 
 const GlobalPriceIcon = styled.div`
@@ -42,7 +44,8 @@ const GlobalPriceIcon = styled.div`
   position: absolute;
   bottom: 32px;
   right: -10px;
-  background-color: ${({ theme }) => theme.backgroundSurface};
+  background-color: ${({ theme }) =>//@ts-ignore
+  theme.backgroundSurface};
   border-radius: 50%;
   height: 28px;
   width: 28px;
@@ -71,7 +74,8 @@ const WarningMessage = styled(Row)<{ $color: string }>`
 
 const WarningAction = styled.div`
   cursor: pointer;
-  color: ${({ theme }) => theme.accentAction};
+  color: ${({ theme }) => //@ts-ignore
+  theme.accentAction};
 `
 
 const getWarningMessage = (warning: WarningType) => {
@@ -117,10 +121,13 @@ export const PriceTextInput = ({
     (warningType === WarningType.BELOW_FLOOR && percentBelowFloor >= 20)
       ? colors.red400
       : warningType === WarningType.BELOW_FLOOR
-      ? theme.accentWarning
+      ? //@ts-ignore
+      theme.accentWarning
       : isGlobalPrice || !!listPrice
-      ? theme.accentAction
-      : theme.textSecondary
+      ? //@ts-ignore
+      theme.accentAction
+      : //@ts-ignore
+      theme.textSecondary
 
   const setPrice = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!listPrice && event.target.value.includes('.') && parseFloat(event.target.value) === 0) {

@@ -12,7 +12,8 @@ import { ReactNode } from 'react'
 import styled from 'styled-components/macro'
 
 const TR = styled.tr`
-  border-bottom: ${({ theme }) => `1px solid ${theme.backgroundOutline}`};
+  border-bottom: ${({ theme }) => `1px solid ${//@ts-ignore
+    theme.backgroundOutline}`};
   width: 100%;
 
   &:last-child {
@@ -21,7 +22,8 @@ const TR = styled.tr`
 `
 
 const TH = styled.th`
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
@@ -73,7 +75,8 @@ const PriceContainer = styled.div`
 `
 
 const Link = styled.a`
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textPrimary};
   text-decoration: none;
 
   ${OpacityHoverState}

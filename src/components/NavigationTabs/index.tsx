@@ -24,7 +24,9 @@ const Tabs = styled.div`
 const StyledHistoryLink = styled(HistoryLink)<{ flex: string | undefined }>`
   flex: ${({ flex }) => flex ?? 'none'};
 
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToMedium`
+  ${({ theme }) => 
+    //@ts-ignore
+    theme.deprecated_mediaWidth.deprecated_upToMedium`
     flex: none;
     margin-right: 10px;
   `};
@@ -36,7 +38,9 @@ const ActiveText = styled.div`
 `
 
 const StyledArrowLeft = styled(ArrowLeft)`
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textPrimary};
 `
 
 export function FindPoolTabs({ origin }: { origin: string }) {
@@ -92,7 +96,9 @@ export function AddRemoveTabs({
           }}
           flex={children ? '1' : undefined}
         >
-          <StyledArrowLeft stroke={theme.textSecondary} />
+          <StyledArrowLeft stroke={
+    //@ts-ignore
+    theme.textSecondary} />
         </StyledHistoryLink>
         <ThemedText.DeprecatedMediumHeader
           fontWeight={500}

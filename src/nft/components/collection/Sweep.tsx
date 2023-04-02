@@ -17,9 +17,11 @@ const SweepContainer = styled.div`
   margin-top: 12px;
   padding: 16px;
   border-radius: 12px;
-  background-color: ${({ theme }) => theme.backgroundSurface};
+  background-color: ${({ theme }) => //@ts-ignore
+  theme.backgroundSurface};
   justify-content: space-between;
-  background: linear-gradient(${({ theme }) => theme.backgroundSurface}, ${({ theme }) => theme.backgroundSurface})
+  background: linear-gradient(${({ theme }) => //@ts-ignore
+  theme.backgroundSurface}, ${({ theme }) => theme.backgroundSurface})
       padding-box,
     linear-gradient(to right, #4673fa, #9646fa) border-box;
   border: 2px solid transparent;
@@ -27,7 +29,8 @@ const SweepContainer = styled.div`
 
 const StyledSlider = styled(Slider)`
   cursor: pointer;
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.md}px`}) {
     display: none;
   }
 `
@@ -45,13 +48,15 @@ const SweepRightmostContainer = styled.div`
   align-items: center;
   gap: 8px;
   min-width: 160px;
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.md}px`}) {
     display: none;
   }
 `
 
 const SweepHeaderContainer = styled.div`
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.md}px`}) {
     display: none;
   }
 `
@@ -65,8 +70,10 @@ const SweepSubContainer = styled.div`
 
 const InputContainer = styled.input`
   width: 96px;
-  color: ${({ theme }) => theme.textPrimary};
-  border: 1px solid ${({ theme }) => theme.backgroundOutline};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textPrimary};
+  border: 1px solid ${({ theme }) => //@ts-ignore
+  theme.backgroundOutline};
   background: none;
   border-radius: 8px;
   padding: 6px 8px;
@@ -74,20 +81,23 @@ const InputContainer = styled.input`
   font-weight: 400px;
   line-height: 20px;
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.md}px`}) {
     width: 100%;
   }
 
   :hover,
   :focus {
     outline: none;
-    border: 1px solid ${({ theme }) => theme.accentAction};
+    border: 1px solid ${({ theme }) => //@ts-ignore
+    theme.accentAction};
   }
 `
 
 const ToggleContainer = styled.div`
   display: flex;
-  border: 1px solid ${({ theme }) => theme.backgroundOutline};
+  border: 1px solid ${({ theme }) => //@ts-ignore
+  theme.backgroundOutline};
   background: none;
   border-radius: 12px;
   padding: 4px;
@@ -95,10 +105,12 @@ const ToggleContainer = styled.div`
 `
 
 const ToggleSwitch = styled.div<{ active: boolean }>`
-  color: ${({ theme, active }) => (active ? theme.textPrimary : theme.textSecondary)};
+  color: ${({ theme, active }) => (active ? //@ts-ignore
+  theme.textPrimary : theme.textSecondary)};
   padding: 4px 8px;
   border-radius: 8px;
-  background-color: ${({ theme, active }) => (active ? theme.backgroundInteractive : `none`)};
+  background-color: ${({ theme, active }) => (active ? //@ts-ignore
+  theme.backgroundInteractive : `none`)};
   font-size: 14px;
   font-weight: 600;
   line-height: 16px;
@@ -117,7 +129,8 @@ const NftHolder = styled.div<{ index: number; src: string | undefined }>`
   width: 26px;
   height: 26px;
   border-radius: 4px;
-  background: ${({ theme, src }) => (src ? `url(${src})` : theme.textTertiary)};
+  background: ${({ theme, src }) => (src ? `url(${src})` : //@ts-ignore
+  theme.textTertiary)};
   background-size: 26px;
   opacity: ${({ src, index }) => (src ? 1.0 : index === 0 ? 0.9 : index === 1 ? 0.6 : 0.3)};
   transform: ${({ index }) =>
@@ -390,12 +403,14 @@ export const Sweep = ({ contractAddress, minPrice, maxPrice }: SweepProps) => {
               borderRadius: '4px',
               border: 'none',
               opacity: '1',
-              boxShadow: `${theme.shallowShadow.slice(0, -1)}`,
+              boxShadow: `${//@ts-ignore
+                theme.shallowShadow.slice(0, -1)}`,
             }}
             railStyle={{
               top: '3px',
               height: '8px',
-              backgroundColor: `${theme.backgroundInteractive}`,
+              backgroundColor: `${//@ts-ignore
+                theme.backgroundInteractive}`,
             }}
             onChange={handleSliderChange}
           />

@@ -8,7 +8,9 @@ const Button = styled(ButtonOutlined).attrs(() => ({
   padding: '8px',
   $borderRadius: '8px',
 }))`
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.textPrimary};
   flex: 1;
 `
 

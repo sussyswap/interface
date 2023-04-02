@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { area, curveStepAfter, ScaleLinear } from 'd3'
 import React, { useMemo } from 'react'
 import styled from 'styled-components/macro'

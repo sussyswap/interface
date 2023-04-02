@@ -28,13 +28,15 @@ const ContentWrapper = styled(Column)`
 const ActionSelectorHeader = styled.div`
   font-size: 14px;
   font-weight: 500;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
 `
 
 const ActionDropdown = styled(ButtonDropdown)`
   padding: 0px;
   background-color: transparent;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textPrimary};
   font-size: 1.25rem;
 
   :hover,
@@ -51,8 +53,10 @@ const ProposalActionSelectorFlex = styled.div`
   display: flex;
   flex-flow: column nowrap;
   border-radius: 20px;
-  border: 1px solid ${({ theme }) => theme.backgroundInteractive};
-  background-color: ${({ theme }) => theme.deprecated_bg1};
+  border: 1px solid ${({ theme }) => //@ts-ignore
+  theme.backgroundInteractive};
+  background-color: ${({ theme }) =>//@ts-ignore
+  theme.deprecated_bg1};
 `
 
 const ProposalActionSelectorContainer = styled.div`

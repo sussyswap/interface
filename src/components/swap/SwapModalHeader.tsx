@@ -35,9 +35,13 @@ const ArrowWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${({ theme }) => theme.backgroundSurface};
+  background-color: ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundSurface};
   border: 4px solid;
-  border-color: ${({ theme }) => theme.backgroundModule};
+  border-color: ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundModule};
   z-index: 2;
 `
 
@@ -106,7 +110,9 @@ export default function SwapModalHeader({
               <TruncatedText
                 fontSize={24}
                 fontWeight={500}
-                color={showAcceptChanges && trade.tradeType === TradeType.EXACT_OUTPUT ? theme.accentAction : ''}
+                color={showAcceptChanges && trade.tradeType === TradeType.EXACT_OUTPUT ? 
+    //@ts-ignore
+    theme.accentAction : ''}
               >
                 {trade.inputAmount.toSignificant(6)}
               </TruncatedText>
@@ -124,7 +130,9 @@ export default function SwapModalHeader({
         </AutoColumn>
       </LightCard>
       <ArrowWrapper>
-        <ArrowDown size="16" color={theme.textPrimary} />
+        <ArrowDown size="16" color={
+  //@ts-ignore
+  theme.textPrimary} />
       </ArrowWrapper>
       <LightCard padding="0.75rem 1rem" style={{ marginBottom: '0.25rem' }}>
         <AutoColumn gap="sm">
@@ -142,7 +150,9 @@ export default function SwapModalHeader({
             </RowFixed>
           </RowBetween>
           <RowBetween>
-            <ThemedText.DeprecatedBody fontSize={14} color={theme.textTertiary}>
+            <ThemedText.DeprecatedBody fontSize={14} color={
+    //@ts-ignore
+    theme.textTertiary}>
               <FiatValue
                 fiatValue={fiatValueOutput}
                 priceImpact={computeFiatValuePriceImpact(fiatValueInput.data, fiatValueOutput.data)}
@@ -162,7 +172,9 @@ export default function SwapModalHeader({
           <RowBetween>
             <RowFixed>
               <AlertTriangle size={20} style={{ marginRight: '8px', minWidth: 24 }} />
-              <ThemedText.DeprecatedMain color={theme.accentAction}>
+              <ThemedText.DeprecatedMain color={
+    //@ts-ignore
+    theme.accentAction}>
                 <Trans>Price Updated</Trans>
               </ThemedText.DeprecatedMain>
             </RowFixed>

@@ -19,7 +19,7 @@ import { formatTickPrice } from 'utils/formatTickPrice'
 import { unwrappedToken } from 'utils/unwrappedToken'
 import { hasURL } from 'utils/urlChecks'
 
-import { DAI, USDC_MAINNET, USDT, WBTC, WRAPPED_NATIVE_CURRENCY } from '../../constants/tokens'
+import { USDC_FUJI, WRAPPED_NATIVE_CURRENCY } from '../../constants/tokens'
 
 const LinkRow = styled(Link)`
   align-items: center;
@@ -29,7 +29,9 @@ const LinkRow = styled(Link)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.textPrimary};
   padding: 16px;
   text-decoration: none;
   font-weight: 500;
@@ -38,14 +40,18 @@ const LinkRow = styled(Link)`
     text-align: center;
   }
   :hover {
-    background-color: ${({ theme }) => theme.hoverDefault};
+    background-color: ${({ theme }) => 
+  //@ts-ignore
+  theme.hoverDefault};
   }
 
   @media screen and (min-width: ${MEDIA_WIDTHS.deprecated_upToSmall}px) {
     /* flex-direction: row; */
   }
 
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) => 
+  //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToSmall`
     flex-direction: column;
     row-gap: 8px;
   `};
@@ -66,7 +72,9 @@ const RangeLineItem = styled(DataLineItem)`
 const DoubleArrow = styled.span`
   font-size: 12px;
   margin: 0 2px;
-  color: ${({ theme }) => theme.textTertiary};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.textTertiary};
 `
 
 const RangeText = styled(ThemedText.Caption)`
@@ -81,11 +89,15 @@ const FeeTierText = styled(ThemedText.UtilityBadge)`
   margin-left: 14px !important;
 `
 const ExtentsText = styled(ThemedText.Caption)`
-  color: ${({ theme }) => theme.textTertiary};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.textTertiary};
   display: inline-block;
   line-height: 16px;
   margin-right: 4px !important;
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) => 
+  //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToSmall`
     display: none;
   `};
 `
@@ -123,7 +135,7 @@ export function getPriceOrderingFromPositionForUI(position?: Position): {
   const token1 = position.amount1.currency
 
   // if token0 is a dollar-stable asset, set it as the quote token
-  const stables = [DAI, USDC_MAINNET, USDT]
+  const stables = [USDC_FUJI]
   if (stables.some((stable) => stable.equals(token0))) {
     return {
       priceLower: position.token0PriceUpper.invert(),
@@ -134,7 +146,7 @@ export function getPriceOrderingFromPositionForUI(position?: Position): {
   }
 
   // if token1 is an ETH-/BTC-stable asset, set it as the base token
-  const bases = [...Object.values(WRAPPED_NATIVE_CURRENCY), WBTC]
+  const bases = [...Object.values(WRAPPED_NATIVE_CURRENCY)]
   if (bases.some((base) => base && base.equals(token1))) {
     return {
       priceLower: position.token0PriceUpper.invert(),

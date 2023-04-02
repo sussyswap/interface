@@ -9,12 +9,16 @@ const RowWrapper = styled(Row)<{ onClick?: any }>`
   height: 68px;
   padding: 0 16px;
 
-  transition: ${({ theme }) => `${theme.transition.duration.medium} ${theme.transition.timing.ease} background-color`};
+  transition: ${({ theme }) => `${
+    //@ts-ignore
+    theme.transition.duration.medium} ${theme.transition.timing.ease} background-color`};
 
   ${({ onClick }) => onClick && 'cursor: pointer'};
 
   &:hover {
-    background: ${({ theme }) => theme.hoverDefault};
+    background: ${({ theme }) => 
+    //@ts-ignore
+    theme.hoverDefault};
     cursor: pointer;
   }
 `
@@ -95,7 +99,9 @@ const fadeIn = keyframes`
   to { opacity: 1 }
 `
 export const portfolioFadeInAnimation = css`
-  animation: ${fadeIn} ${({ theme }) => `${theme.transition.duration.medium} ${theme.transition.timing.in}`};
+  animation: ${fadeIn} ${({ theme }) => `${
+    //@ts-ignore
+    theme.transition.duration.medium} ${theme.transition.timing.in}`};
 `
 
 export const PortfolioTabWrapper = styled.div`

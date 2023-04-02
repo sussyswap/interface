@@ -16,13 +16,17 @@ const StyledButton = styled.button<{ padded?: boolean; branded?: boolean }>`
   padding: 8px 24px;
   border: none;
   white-space: nowrap;
-  background: ${({ theme, branded }) => (branded ? theme.promotionalGradient : theme.backgroundInteractive)};
+  background: ${({ theme, branded }) => (branded ? 
+    //@ts-ignore
+    theme.promotionalGradient : theme.backgroundInteractive)};
   border-radius: 12px;
 
   font-weight: 600;
   font-size: 14px;
   line-height: 16px;
-  color: ${({ theme, branded }) => (branded ? theme.accentTextLightPrimary : theme.textPrimary)};
+  color: ${({ theme, branded }) => (branded ? 
+    //@ts-ignore
+    theme.accentTextLightPrimary : theme.textPrimary)};
 `
 
 function BaseButton({ onClick, branded, children }: PropsWithChildren<{ onClick?: () => void; branded?: boolean }>) {

@@ -10,7 +10,7 @@ import {
   TransactionInfo,
   TransactionType,
   TransactionType as WidgetTransactionType,
-} from '@uniswap/widgets'
+} from '@sussyswap/widgets'
 import { useWeb3React } from '@web3-react/core'
 import {
   formatPercentInBasisPointsNumber,

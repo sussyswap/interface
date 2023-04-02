@@ -31,11 +31,15 @@ const DetailsRow = styled.div`
   margin-top: 8px;
   font-size: 12px;
   line-height: 16px;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textSecondary};
 `
 
 const StyledLink = styled(ExternalLink)`
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textSecondary};
   font-weight: 700;
 `
 

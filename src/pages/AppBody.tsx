@@ -12,9 +12,11 @@ export const BodyWrapper = styled.main<BodyWrapperProps>`
   margin-top: ${({ $margin }) => $margin ?? '0px'};
   max-width: ${({ $maxWidth }) => $maxWidth ?? '420px'};
   width: 100%;
-  background: ${({ theme }) => theme.backgroundSurface};
+  background: ${({ theme }) => //@ts-ignore
+  theme.backgroundSurface};
   border-radius: 16px;
-  border: 1px solid ${({ theme }) => theme.backgroundOutline};
+  border: 1px solid ${({ theme }) => //@ts-ignore
+  theme.backgroundOutline};
   margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;

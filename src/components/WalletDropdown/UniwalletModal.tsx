@@ -28,12 +28,16 @@ const HeaderRow = styled(RowBetween)`
 const QRCodeWrapper = styled(RowBetween)`
   aspect-ratio: 1;
   border-radius: 12px;
-  background-color: ${({ theme }) => theme.white};
+  background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.white};
   margin: 24px 32px 20px;
   padding: 10px;
 `
 const Divider = styled.div`
-  border-bottom: 1px solid ${({ theme }) => theme.backgroundOutline};
+  border-bottom: 1px solid ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundOutline};
   width: 100%;
 `
 
@@ -84,6 +88,7 @@ export default function UniwalletModal() {
               width="100%"
               height="100%"
               level="M"
+    //@ts-ignore
               fgColor={theme.darkMode ? theme.backgroundSurface : theme.black}
               imageSettings={{
                 src: uniPng,

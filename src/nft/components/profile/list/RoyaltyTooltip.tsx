@@ -22,7 +22,8 @@ const MarketIcon = styled.img`
   height: 16px;
   border-radius: 2px;
   object-fit: cover;
-  outline: 1px solid ${({ theme }) => theme.backgroundInteractive};
+  outline: 1px solid ${({ theme }) => //@ts-ignore
+  theme.backgroundInteractive};
   margin-right: 8px;
 `
 
@@ -32,14 +33,16 @@ const CollectionIcon = styled(MarketIcon)`
 
 const FeePercent = styled(ThemedText.Caption)`
   line-height: 16px;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
   white-space: nowrap;
 `
 
 const MaxFeeContainer = styled(Row)`
   justify-content: space-between;
   padding-top: 12px;
-  border-top: 1px solid ${({ theme }) => theme.backgroundOutline};
+  border-top: 1px solid ${({ theme }) => //@ts-ignore
+  theme.backgroundOutline};
 `
 
 export const RoyaltyTooltip = ({

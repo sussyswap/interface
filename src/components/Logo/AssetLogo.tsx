@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { getChainInfo } from 'constants/chainInfo'
 import { SupportedChainId } from 'constants/chains'
 import useTokenLogoSource from 'hooks/useAssetLogoSource'

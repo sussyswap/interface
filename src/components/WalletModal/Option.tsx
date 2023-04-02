@@ -14,9 +14,13 @@ const OptionCardLeft = styled.div`
 `
 
 const OptionCardClickable = styled.button<{ isActive?: boolean; clickable?: boolean }>`
-  background-color: ${({ theme }) => theme.backgroundModule};
+  background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundModule};
   width: 100% !important;
-  border-color: ${({ theme, isActive }) => (isActive ? theme.accentActive : 'transparent')};
+  border-color: ${({ theme, isActive }) => (isActive ? 
+    //@ts-ignore
+    theme.accentActive : 'transparent')};
 
   display: flex;
   flex-direction: row;
@@ -26,14 +30,20 @@ const OptionCardClickable = styled.button<{ isActive?: boolean; clickable?: bool
   padding: 1rem;
 
   margin-top: 0;
-  transition: ${({ theme }) => theme.transition.duration.fast};
+  transition: ${({ theme }) => 
+    //@ts-ignore
+    theme.transition.duration.fast};
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
   &:hover {
     cursor: ${({ clickable }) => clickable && 'pointer'};
-    background-color: ${({ theme, clickable }) => clickable && theme.hoverState};
+    background-color: ${({ theme, clickable }) => clickable &&
+    //@ts-ignore
+    theme.hoverState};
   }
   &:focus {
-    background-color: ${({ theme, clickable }) => clickable && theme.hoverState};
+    background-color: ${({ theme, clickable }) => clickable && 
+    //@ts-ignore
+    theme.hoverState};
   }
 `
 
@@ -41,7 +51,9 @@ const HeaderText = styled.div`
   ${flexRowNoWrap};
   align-items: center;
   justify-content: center;
-  color: ${(props) => (props.color === 'blue' ? ({ theme }) => theme.accentAction : ({ theme }) => theme.textPrimary)};
+  color: ${(props) => (props.color === 'blue' ? ({ theme }) =>
+    //@ts-ignore
+    theme.accentAction : ({ theme }) => theme.textPrimary)};
   font-size: 16px;
   font-weight: 600;
   padding: 0 8px;
@@ -56,7 +68,9 @@ const IconWrapper = styled.div`
     height: 40px;
     width: 40px;
   }
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToMedium`
+  ${({ theme }) =>
+    //@ts-ignore
+    theme.deprecated_mediaWidth.deprecated_upToMedium`
     align-items: flex-end;
   `};
 `

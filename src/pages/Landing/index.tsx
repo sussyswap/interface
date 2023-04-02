@@ -22,7 +22,8 @@ import { Z_INDEX } from 'theme/zIndex'
 const PageContainer = styled.div<{ isDarkMode: boolean }>`
   position: absolute;
   top: 0;
-  padding: ${({ theme }) => theme.navHeight}px 0px 0px 0px;
+  padding: ${({ theme }) => //@ts-ignore
+  theme.navHeight}px 0px 0px 0px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -51,8 +52,10 @@ const Gradient = styled.div<{ isDarkMode: boolean }>`
       : 'linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(255 255 255 /100%) 45%)'};
   z-index: ${Z_INDEX.under_dropdown};
   pointer-events: none;
-  height: ${({ theme }) => `calc(100vh - ${theme.mobileBottomBarHeight}px)`};
-  @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
+  height: ${({ theme }) => `calc(100vh - ${//@ts-ignore
+    theme.mobileBottomBarHeight}px)`};
+  @media screen and (min-width: ${({ theme }) => //@ts-ignore
+  theme.breakpoint.md}px) {
     height: 100vh;
   }
 `
@@ -66,8 +69,10 @@ const GlowContainer = styled.div`
   bottom: 0;
   width: 100%;
   overflow-y: hidden;
-  height: ${({ theme }) => `calc(100vh - ${theme.mobileBottomBarHeight}px)`};
-  @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
+  height: ${({ theme }) => `calc(100vh - ${//@ts-ignore
+    theme.mobileBottomBarHeight}px)`};
+  @media screen and (min-width: ${({ theme }) =>//@ts-ignore
+  theme.breakpoint.md}px) {
     height: 100vh;
   }
 `
@@ -95,8 +100,10 @@ const ContentContainer = styled.div<{ isDarkMode: boolean }>`
   max-width: min(720px, 90%);
   min-height: 500px;
   z-index: ${Z_INDEX.under_dropdown};
-  transition: ${({ theme }) => `${theme.transition.duration.medium} ${theme.transition.timing.ease} opacity`};
-  height: ${({ theme }) => `calc(100vh - ${theme.navHeight + theme.mobileBottomBarHeight}px)`};
+  transition: ${({ theme }) => `${//@ts-ignore
+    theme.transition.duration.medium} ${theme.transition.timing.ease} opacity`};
+  height: ${({ theme }) => `calc(100vh - ${//@ts-ignore
+    theme.navHeight + theme.mobileBottomBarHeight}px)`};
   pointer-events: none;
   * {
     pointer-events: auto;
@@ -129,7 +136,8 @@ const TitleText = styled.h1<{ isDarkMode: boolean }>`
 `
 
 const SubText = styled.div`
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
@@ -156,8 +164,10 @@ const LandingButton = styled(BaseButton)`
 const ButtonCTA = styled(LandingButton)`
   background: linear-gradient(93.06deg, #ff00c7 2.66%, #ff9ffb 98.99%);
   border: none;
-  color: ${({ theme }) => theme.white};
-  transition: ${({ theme }) => `all ${theme.transition.duration.medium} ${theme.transition.timing.ease}`};
+  color: ${({ theme }) => //@ts-ignore
+  theme.white};
+  transition: ${({ theme }) => `all ${//@ts-ignore
+    theme.transition.duration.medium} ${theme.transition.timing.ease}`};
 
   &:hover {
     box-shadow: 0px 0px 16px 0px #ff00c7;
@@ -183,7 +193,8 @@ const ActionsContainer = styled.span`
 
 const LearnMoreContainer = styled.div`
   align-items: center;
-  color: ${({ theme }) => theme.textTertiary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textTertiary};
   cursor: pointer;
   font-size: 20px;
   font-weight: 600;
@@ -195,7 +206,8 @@ const LearnMoreContainer = styled.div`
     visibility: visible;
   }
 
-  transition: ${({ theme }) => `${theme.transition.duration.medium} ${theme.transition.timing.ease} opacity`};
+  transition: ${({ theme }) => `${//@ts-ignore
+    theme.transition.duration.medium} ${theme.transition.timing.ease} opacity`};
 
   &:hover {
     opacity: 0.6;
@@ -228,7 +240,8 @@ const CardGrid = styled.div<{ cols: number }>`
   width: 100%;
   padding: 24px 0 0;
   max-width: 1440px;
-  scroll-margin: ${({ theme }) => `${theme.navHeight}px 0 0`};
+  scroll-margin: ${({ theme }) => `${//@ts-ignore
+    theme.navHeight}px 0 0`};
 
   grid-template-columns: 1fr;
   @media screen and (min-width: ${BREAKPOINTS.sm}px) {
@@ -251,7 +264,8 @@ const CardGrid = styled.div<{ cols: number }>`
 `
 
 const LandingSwapContainer = styled.div`
-  height: ${({ theme }) => `calc(100vh - ${theme.mobileBottomBarHeight}px)`};
+  height: ${({ theme }) => `calc(100vh - ${//@ts-ignore
+    theme.mobileBottomBarHeight}px)`};
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -266,7 +280,8 @@ const SwapCss = css`
 
   &:hover {
     transform: translateY(-4px);
-    transition: ${({ theme }) => `transform ${theme.transition.duration.medium} ${theme.transition.timing.ease}`};
+    transition: ${({ theme }) => `transform ${//@ts-ignore
+      theme.transition.duration.medium} ${theme.transition.timing.ease}`};
   }
 `
 
@@ -279,7 +294,8 @@ const LinkCss = css`
 const LandingSwap = styled(Swap)`
   ${SwapCss}
   &:hover {
-    border: 1px solid ${({ theme }) => theme.accentAction};
+    border: 1px solid ${({ theme }) =>//@ts-ignore
+    theme.accentAction};
   }
 `
 

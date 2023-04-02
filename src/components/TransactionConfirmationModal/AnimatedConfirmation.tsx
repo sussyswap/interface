@@ -47,7 +47,9 @@ export default function AnimatedConfirmation() {
         <Circle
           className="path circle"
           fill="none"
-          stroke={theme.accentSuccess}
+          stroke={
+    //@ts-ignore
+    theme.accentSuccess}
           strokeWidth="6"
           strokeMiterlimit="10"
           cx="65.1"
@@ -57,7 +59,9 @@ export default function AnimatedConfirmation() {
         <PolyLine
           className="path check"
           fill="none"
-          stroke={theme.accentSuccess}
+          stroke={
+    //@ts-ignore
+    theme.accentSuccess}
           strokeWidth="6"
           strokeLinecap="round"
           strokeMiterlimit="10"

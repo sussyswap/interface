@@ -80,24 +80,25 @@ export function useUnsupportedTokens(): { [address: string]: Token } {
 
     const listUrl = getChainInfo(chainId).defaultListUrl
 
+    //@ts-ignore
     const { current: list } = listsByUrl[listUrl]
     if (!list) {
       return {}
     }
 
     const unsupportedSet = new Set(Object.keys(unsupportedTokens))
-
+    //@ts-ignore
     return list.tokens.reduce((acc, tokenInfo) => {
       const bridgeInfo = tokenInfo.extensions?.bridgeInfo as unknown as BridgeInfo
       if (
         bridgeInfo &&
-        bridgeInfo[SupportedChainId.MAINNET] &&
-        bridgeInfo[SupportedChainId.MAINNET].tokenAddress &&
-        unsupportedSet.has(bridgeInfo[SupportedChainId.MAINNET].tokenAddress)
+        bridgeInfo[SupportedChainId.AVALANCHE] &&
+        bridgeInfo[SupportedChainId.AVALANCHE].tokenAddress &&
+        unsupportedSet.has(bridgeInfo[SupportedChainId.AVALANCHE].tokenAddress)
       ) {
-        const address = bridgeInfo[SupportedChainId.MAINNET].tokenAddress
+        const address = bridgeInfo[SupportedChainId.AVALANCHE].tokenAddress
         // don't rely on decimals--it's possible that a token could be bridged w/ different decimals on the L2
-        return { ...acc, [address]: new Token(SupportedChainId.MAINNET, address, tokenInfo.decimals) }
+        return { ...acc, [address]: new Token(SupportedChainId.AVALANCHE, address, tokenInfo.decimals) }
       }
       return acc
     }, {})

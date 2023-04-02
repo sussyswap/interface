@@ -9,16 +9,24 @@ export const TooltipContainer = styled.div`
   cursor: default;
   padding: 0.6rem 1rem;
 
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textPrimary};
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
   word-break: break-word;
 
-  background: ${({ theme }) => theme.backgroundSurface};
+  background: ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundSurface};
   border-radius: 12px;
-  border: 1px solid ${({ theme }) => theme.backgroundInteractive};
-  box-shadow: 0 4px 8px 0 ${({ theme }) => transparentize(0.9, theme.shadow1)};
+  border: 1px solid ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundInteractive};
+  box-shadow: 0 4px 8px 0 ${({ theme }) => transparentize(0.9, 
+    //@ts-ignore
+    theme.shadow1)};
 `
 
 interface TooltipProps extends Omit<PopoverProps, 'content'> {

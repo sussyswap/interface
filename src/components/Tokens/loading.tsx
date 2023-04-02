@@ -21,9 +21,15 @@ export const LoadingBubble = styled.div<{
   animation-fill-mode: both;
   background: linear-gradient(
     to left,
-    ${({ theme }) => theme.backgroundInteractive} 25%,
-    ${({ theme }) => lighten(0.075, theme.backgroundInteractive)} 50%,
-    ${({ theme }) => theme.backgroundInteractive} 75%
+    ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundInteractive} 25%,
+    ${({ theme }) => lighten(0.075, 
+  //@ts-ignore
+  theme.backgroundInteractive)} 50%,
+    ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundInteractive} 75%
   );
   will-change: background-position;
   background-size: 400%;

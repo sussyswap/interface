@@ -435,14 +435,15 @@ function V2PairMigration({
           <FeeSelector feeAmount={feeAmount} handleFeePoolSelect={setFeeAmount} />
           {noLiquidity && (
             <BlueCard style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <AlertCircle color={theme.textPrimary} style={{ marginBottom: '12px', opacity: 0.8 }} />
+              <AlertCircle color={//@ts-ignore
+      theme.textPrimary} style={{ marginBottom: '12px', opacity: 0.8 }} />
               <ThemedText.DeprecatedBody
                 fontSize={14}
                 style={{ marginBottom: 8, fontWeight: 500, opacity: 0.8 }}
                 textAlign="center"
               >
                 <Trans>
-                  You are the first liquidity provider for this Uniswap V3 pool. Your liquidity will migrate at the
+                  You are the first liquidity provider for this Sussyswap V3 pool. Your liquidity will migrate at the
                   current {isNotUniswap ? 'SushiSwap' : 'V2'} price.
                 </Trans>
               </ThemedText.DeprecatedBody>
@@ -563,7 +564,8 @@ function V2PairMigration({
           {outOfRange ? (
             <YellowCard padding="8px 12px" $borderRadius="12px">
               <RowBetween>
-                <AlertTriangle stroke={theme.deprecated_yellow3} size="16px" />
+                <AlertTriangle stroke={//@ts-ignore
+      theme.deprecated_yellow3} size="16px" />
                 <ThemedText.DeprecatedYellow ml="12px" fontSize="12px">
                   <Trans>
                     Your position will not earn fees or be used in trades until the market price moves into your range.
@@ -576,7 +578,8 @@ function V2PairMigration({
           {invalidRange ? (
             <YellowCard padding="8px 12px" $borderRadius="12px">
               <RowBetween>
-                <AlertTriangle stroke={theme.deprecated_yellow3} size="16px" />
+                <AlertTriangle stroke={//@ts-ignore
+      theme.deprecated_yellow3} size="16px" />
                 <ThemedText.DeprecatedYellow ml="12px" fontSize="12px">
                   <Trans>Invalid range selected. The min price must be lower than the max price.</Trans>
                 </ThemedText.DeprecatedYellow>

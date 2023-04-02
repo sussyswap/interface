@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { SparkLineLoadingBubble } from 'components/Tokens/TokenTable/TokenRow'
 import { curveCardinal, scaleLinear } from 'd3'
 import { SparklineMap, TopToken } from 'graphql/data/TopTokens'

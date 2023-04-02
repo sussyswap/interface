@@ -1,6 +1,5 @@
 import { t } from '@lingui/macro'
 import { formatNumberOrString, NumberType } from '@uniswap/conedison/format'
-import { SupportedChainId } from '@uniswap/sdk-core'
 import { NONFUNGIBLE_POSITION_MANAGER_ADDRESSES, UNI_ADDRESS } from 'constants/addresses'
 import { nativeOnChain } from 'constants/tokens'
 import {
@@ -18,6 +17,7 @@ import { useEffect, useState } from 'react'
 import { isAddress } from 'utils'
 
 import { Activity } from './types'
+import { SupportedChainId } from 'constants/chains'
 
 type TransactionChanges = {
   NftTransfer: NftTransferPartsFragment[]
@@ -35,7 +35,7 @@ const ENS_IMG =
   'https://464911102-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/collections%2F2TjMAeHSzwlQgcOdL48E%2Ficon%2FKWP0gk2C6bdRPliWIA6o%2Fens%20transparent%20background.png?alt=media&token=bd28b063-5a75-4971-890c-97becea09076'
 
 const COMMON_CONTRACTS: { [key: string]: Partial<Activity> | undefined } = {
-  [UNI_ADDRESS[SupportedChainId.MAINNET].toLowerCase()]: {
+  [UNI_ADDRESS[SupportedChainId.AVALANCHE].toLowerCase()]: {
     title: t`UNI Governance`,
     descriptor: t`Contract Interaction`,
     logos: [UNI_IMG],

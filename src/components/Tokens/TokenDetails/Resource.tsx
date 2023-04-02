@@ -4,7 +4,9 @@ import { ExternalLink } from 'theme'
 
 const ResourceLink = styled(ExternalLink)`
   display: flex;
-  color: ${({ theme }) => theme.accentAction};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.accentAction};
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
@@ -13,7 +15,9 @@ const ResourceLink = styled(ExternalLink)`
 
   &:hover,
   &:focus {
-    color: ${({ theme }) => darken(0.1, theme.accentAction)};
+    color: ${({ theme }) => darken(0.1, 
+    //@ts-ignore
+    theme.accentAction)};
     text-decoration: none;
   }
 `

@@ -41,7 +41,8 @@ const hoverState = css`
     left: 0;
     width: 100%;
     height: 100%;
-    background: ${({ theme }) => theme.stateOverlayHover};
+    background: ${({ theme }) => //@ts-ignore
+    theme.stateOverlayHover};
     z-index: 0;
   }
 
@@ -53,7 +54,8 @@ const hoverState = css`
     left: 0;
     width: 100%;
     height: 100%;
-    background: ${({ theme }) => theme.stateOverlayPressed};
+    background: ${({ theme }) => //@ts-ignore
+    theme.stateOverlayPressed};
     z-index: 0;
   }
 `
@@ -76,8 +78,10 @@ const BestPriceContainer = styled.div`
   flex-direction: column;
   gap: 8px;
   padding: 12px;
-  background-color: ${({ theme }) => theme.backgroundSurface};
-  border: 1px solid ${({ theme }) => theme.backgroundOutline};
+  background-color: ${({ theme }) => //@ts-ignore
+  theme.backgroundSurface};
+  border: 1px solid ${({ theme }) => //@ts-ignore
+  theme.backgroundOutline};
   border-radius: 16px;
 `
 
@@ -104,7 +108,8 @@ const BuyNowButton = styled.div<{ assetInBag: boolean; margin: boolean; useAccen
   position: relative;
   width: 100%;
   background-color: ${({ theme, assetInBag, useAccentColor }) =>
-    assetInBag ? theme.accentFailure : useAccentColor ? theme.accentAction : theme.backgroundInteractive};
+    assetInBag ?//@ts-ignore
+    theme.accentFailure : useAccentColor ? theme.accentAction : theme.backgroundInteractive};
   border-radius: 12px;
   padding: 10px 12px;
   margin-top: ${({ margin }) => (margin ? '12px' : '0px')};
@@ -119,11 +124,13 @@ const BuyNowButtonContainer = styled.div`
 `
 
 const Tertiary = styled(ThemedText.BodySecondary)`
-  color: ${({ theme }) => theme.textTertiary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textTertiary};
 `
 
 const UploadLink = styled.a`
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
   cursor: pointer;
 
   ${OpacityHoverState}
@@ -150,14 +157,16 @@ const OwnerText = styled.a`
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
   text-decoration: none;
 
   ${OpacityHoverState}
 `
 
 const OwnerInformationContainer = styled.div`
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -180,7 +189,8 @@ const AssetHeader = styled.div`
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textPrimary};
 `
 
 const CollectionNameContainer = styled.div`
@@ -192,7 +202,8 @@ const CollectionHeader = styled.span`
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textPrimary};
   text-decoration: none;
   ${OpacityHoverState};
 `
@@ -299,7 +310,8 @@ const NotForSale = ({ collectionName, collectionUrl }: { collectionName: string;
   return (
     <BestPriceContainer>
       <NotForSaleContainer>
-        <CancelListingIcon width="79px" height="79px" color={theme.textTertiary} />
+        <CancelListingIcon width="79px" height="79px" color={//@ts-ignore
+      theme.textTertiary} />
         <ThemedText.SubHeader fontWeight={500} lineHeight="24px">
           Not for sale
         </ThemedText.SubHeader>

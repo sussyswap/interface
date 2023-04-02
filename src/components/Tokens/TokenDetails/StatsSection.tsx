@@ -8,12 +8,14 @@ import styled from 'styled-components/macro'
 import { ExternalLink, ThemedText } from 'theme'
 import { textFadeIn } from 'theme/styles'
 
-import { UNSUPPORTED_METADATA_CHAINS } from '../constants'
+//import { UNSUPPORTED_METADATA_CHAINS } from '../constants'
 import { TokenSortMethod } from '../state'
 import { HEADER_DESCRIPTIONS } from '../TokenTable/TokenRow'
 
 export const StatWrapper = styled.div`
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.textSecondary};
   font-size: 14px;
   min-width: 168px;
   flex: 1;
@@ -36,10 +38,14 @@ const Header = styled(ThemedText.MediumHeader)`
 const StatPrice = styled.div`
   margin-top: 4px;
   font-size: 28px;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.textPrimary};
 `
 const NoData = styled.div`
-  color: ${({ theme }) => theme.textTertiary};
+  color: ${({ theme }) =>
+  //@ts-ignore
+  theme.textTertiary};
 `
 export const StatsWrapper = styled.div`
   gap: 16px;
@@ -112,22 +118,6 @@ export default function StatsSection(props: StatsSectionProps) {
       </StatsWrapper>
     )
   } else {
-    return UNSUPPORTED_METADATA_CHAINS.includes(chainId) ? (
-      <>
-        <Header>
-          <Trans>Stats</Trans>
-        </Header>
-        <ThemedText.BodySecondary paddingTop="12px">
-          <Trans>
-            Token stats and charts for {label} are available on{' '}
-            <ExternalLink color="currentColor" href={`${infoLink}tokens/${address}`}>
-              info.uniswap.org
-            </ExternalLink>
-          </Trans>
-        </ThemedText.BodySecondary>
-      </>
-    ) : (
-      <NoData>No stats available</NoData>
-    )
+    return <text> wowoowowo </text>
   }
 }

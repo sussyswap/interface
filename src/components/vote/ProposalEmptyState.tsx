@@ -5,7 +5,9 @@ import styled from 'styled-components/macro'
 import { ThemedText } from 'theme'
 
 const EmptyProposals = styled.div`
-  border: 1px solid ${({ theme }) => theme.deprecated_text4};
+  border: 1px solid ${({ theme }) => 
+    //@ts-ignore
+    theme.deprecated_text4};
   padding: 16px 12px;
   border-radius: 12px;
   display: flex;
@@ -38,13 +40,13 @@ const EmptyState = ({ HeaderContent, SubHeaderContent }: EmptyStateProps) => (
 
 export default function ProposalEmptyState() {
   const { chainId } = useWeb3React()
-  if (chainId && chainId !== SupportedChainId.MAINNET) {
+  if (chainId && chainId !== SupportedChainId.AVALANCHE) {
     return (
       <EmptyState
-        HeaderContent={() => <Trans>Please connect to Layer 1 Ethereum</Trans>}
+        HeaderContent={() => <Trans>Please connect to Layer 1 Avalanche</Trans>}
         SubHeaderContent={() => (
           <Trans>
-            Uniswap governance is only available on Layer 1. Switch your network to Ethereum Mainnet to view Proposals
+            Uniswap governance is only available on Layer 1. Switch your network to Avalanche Mainnet to view Proposals
             and Vote.
           </Trans>
         )}

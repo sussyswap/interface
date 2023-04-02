@@ -127,7 +127,9 @@ export default function ExecuteModal({ isOpen, onDismiss, proposalId }: ExecuteM
             <StyledClosed onClick={wrappedOnDismiss} />
           </RowBetween>
           <ConfirmedIcon>
-            <ArrowUpCircle strokeWidth={0.5} size={90} color={theme.accentAction} />
+            <ArrowUpCircle strokeWidth={0.5} size={90} color={
+    //@ts-ignore
+    theme.accentAction} />
           </ConfirmedIcon>
           <AutoColumn gap="100px" justify="center">
             <AutoColumn gap="md" justify="center">

@@ -1,5 +1,6 @@
 import { NetworkStatus } from '@apollo/client'
-import { Currency, CurrencyAmount, Price, SupportedChainId, TradeType } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount, Price, TradeType } from '@uniswap/sdk-core'
+import { SupportedChainId } from 'constants/chains'
 import { nativeOnChain } from 'constants/tokens'
 import { Chain, useTokenSpotPriceQuery } from 'graphql/data/__generated__/types-and-hooks'
 import { chainIdToBackendName, isGqlSupportedChain, PollingInterval } from 'graphql/data/util'
@@ -13,11 +14,8 @@ import useStablecoinPrice from './useStablecoinPrice'
 // ETH amounts used when calculating spot price for a given currency.
 // The amount is large enough to filter low liquidity pairs.
 const ETH_AMOUNT_OUT: { [chainId: number]: CurrencyAmount<Currency> } = {
-  [SupportedChainId.MAINNET]: CurrencyAmount.fromRawAmount(nativeOnChain(SupportedChainId.MAINNET), 100e18),
-  [SupportedChainId.ARBITRUM_ONE]: CurrencyAmount.fromRawAmount(nativeOnChain(SupportedChainId.ARBITRUM_ONE), 10e18),
-  [SupportedChainId.OPTIMISM]: CurrencyAmount.fromRawAmount(nativeOnChain(SupportedChainId.OPTIMISM), 10e18),
-  [SupportedChainId.POLYGON]: CurrencyAmount.fromRawAmount(nativeOnChain(SupportedChainId.POLYGON), 10_000e18),
-  [SupportedChainId.CELO]: CurrencyAmount.fromRawAmount(nativeOnChain(SupportedChainId.CELO), 10e18),
+  [SupportedChainId.AVALANCHE]: CurrencyAmount.fromRawAmount(nativeOnChain(SupportedChainId.AVALANCHE), 100e18),
+
 }
 
 function useETHValue(currencyAmount?: CurrencyAmount<Currency>): {
@@ -59,7 +57,7 @@ export function useUSDPrice(currencyAmount?: CurrencyAmount<Currency>): {
   const { data: ethValue, isLoading: isEthValueLoading } = useETHValue(currencyAmount)
 
   const { data, networkStatus } = useTokenSpotPriceQuery({
-    variables: { chain: chain ?? Chain.Ethereum, address: getNativeTokenDBAddress(chain ?? Chain.Ethereum) },
+    variables: { chain: chain ?? Chain.AVALANCHE, address: getNativeTokenDBAddress(chain ?? Chain.AVALANCHE) },
     skip: !chain || !isGqlSupportedChain(currency?.chainId),
     pollInterval: PollingInterval.Normal,
     notifyOnNetworkStatusChange: true,

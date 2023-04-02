@@ -24,9 +24,13 @@ import { RowBetween, RowFixed } from '../Row'
 import AnimatedConfirmation from './AnimatedConfirmation'
 
 const Wrapper = styled.div`
-  background-color: ${({ theme }) => theme.backgroundSurface};
+  background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundSurface};
   border-radius: 20px;
-  outline: 1px solid ${({ theme }) => theme.backgroundOutline};
+  outline: 1px solid ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundOutline};
   width: 100%;
   padding: 1rem;
 `
@@ -74,13 +78,19 @@ function ConfirmationPendingContent({
           <CustomLightSpinner src={Circle} alt="loader" size={inline ? '40px' : '90px'} />
         </ConfirmedIcon>
         <AutoColumn gap="md" justify="center">
-          <Text fontWeight={500} fontSize={20} color={theme.textPrimary} textAlign="center">
+          <Text fontWeight={500} fontSize={20} color={
+    //@ts-ignore
+    theme.textPrimary} textAlign="center">
             <Trans>Waiting for confirmation</Trans>
           </Text>
-          <Text fontWeight={600} fontSize={16} color={theme.textPrimary} textAlign="center">
+          <Text fontWeight={600} fontSize={16} color={
+    //@ts-ignore
+    theme.textPrimary} textAlign="center">
             {pendingText}
           </Text>
-          <Text fontWeight={400} fontSize={12} color={theme.textSecondary} textAlign="center" marginBottom="12px">
+          <Text fontWeight={400} fontSize={12} color={
+    //@ts-ignore
+    theme.textSecondary} textAlign="center" marginBottom="12px">
             <Trans>Confirm this transaction in your wallet</Trans>
           </Text>
         </AutoColumn>
@@ -133,7 +143,9 @@ function TransactionSubmittedContent({
           </RowBetween>
         )}
         <ConfirmedIcon inline={inline}>
-          <ArrowUpCircle strokeWidth={1} size={inline ? '40px' : '75px'} color={theme.accentActive} />
+          <ArrowUpCircle strokeWidth={1} size={inline ? '40px' : '75px'} color={
+    //@ts-ignore
+    theme.accentActive} />
         </ConfirmedIcon>
         <AutoColumn gap="md" justify="center" style={{ paddingBottom: '12px' }}>
           <ThemedText.MediumHeader textAlign="center">
@@ -148,20 +160,26 @@ function TransactionSubmittedContent({
               ) : (
                 <RowFixed>
                   <Trans>Added {currencyToAdd.symbol} </Trans>
-                  <CheckCircle size="16px" stroke={theme.accentSuccess} style={{ marginLeft: '6px' }} />
+                  <CheckCircle size="16px" stroke={
+    //@ts-ignore
+    theme.accentSuccess} style={{ marginLeft: '6px' }} />
                 </RowFixed>
               )}
             </ButtonLight>
           )}
           <ButtonPrimary onClick={onDismiss} style={{ margin: '20px 0 0 0' }}>
-            <Text fontWeight={600} fontSize={20} color={theme.accentTextLightPrimary}>
+            <Text fontWeight={600} fontSize={20} color={
+    //@ts-ignore
+    theme.accentTextLightPrimary}>
               {inline ? <Trans>Return</Trans> : <Trans>Close</Trans>}
             </Text>
           </ButtonPrimary>
           {chainId && hash && (
             <ExternalLink href={getExplorerLink(chainId, hash, ExplorerDataType.TRANSACTION)}>
-              <Text fontWeight={600} fontSize={14} color={theme.accentAction}>
-                <Trans>View on {chainId === SupportedChainId.MAINNET ? 'Etherscan' : 'Block Explorer'}</Trans>
+              <Text fontWeight={600} fontSize={14} color={
+    //@ts-ignore
+    theme.accentAction}>
+                <Trans>View on {chainId === SupportedChainId.AVALANCHE ? 'Snowtrace' : 'Block Explorer'}</Trans>
               </Text>
             </ExternalLink>
           )}
@@ -210,7 +228,9 @@ export function TransactionErrorContent({ message, onDismiss }: { message: React
           <CloseIcon onClick={onDismiss} />
         </RowBetween>
         <AutoColumn style={{ marginTop: 20, padding: '2rem 0' }} gap="24px" justify="center">
-          <AlertTriangle color={theme.accentCritical} style={{ strokeWidth: 1 }} size={90} />
+          <AlertTriangle color={
+    //@ts-ignore
+    theme.accentCritical} style={{ strokeWidth: 1 }} size={90} />
           <ThemedText.MediumHeader textAlign="center">{message}</ThemedText.MediumHeader>
         </AutoColumn>
       </Section>
@@ -270,7 +290,9 @@ function L2Content({
               // <CheckCircle strokeWidth={1} size={inline ? '40px' : '90px'} color={theme.accentSuccess} />
               <AnimatedConfirmation />
             ) : (
-              <AlertCircle strokeWidth={1} size={inline ? '40px' : '90px'} color={theme.accentFailure} />
+              <AlertCircle strokeWidth={1} size={inline ? '40px' : '90px'} color={
+    //@ts-ignore
+    theme.accentFailure} />
             )
           ) : (
             <CustomLightSpinner src={Circle} alt="loader" size={inline ? '40px' : '90px'} />
@@ -293,20 +315,26 @@ function L2Content({
           </Text>
           {chainId && hash ? (
             <ExternalLink href={getExplorerLink(chainId, hash, ExplorerDataType.TRANSACTION)}>
-              <Text fontWeight={500} fontSize={14} color={theme.accentAction}>
+              <Text fontWeight={500} fontSize={14} color={
+    //@ts-ignore
+    theme.accentAction}>
                 <Trans>View on Explorer</Trans>
               </Text>
             </ExternalLink>
           ) : (
             <div style={{ height: '17px' }} />
           )}
-          <Text color={theme.textTertiary} style={{ margin: '20px 0 0 0' }} fontSize="14px">
+          <Text color={
+    //@ts-ignore
+    theme.textTertiary} style={{ margin: '20px 0 0 0' }} fontSize="14px">
             {!secondsToConfirm ? (
               <div style={{ height: '24px' }} />
             ) : (
               <div>
                 <Trans>Transaction completed in </Trans>
-                <span style={{ fontWeight: 500, marginLeft: '4px', color: theme.textPrimary }}>
+                <span style={{ fontWeight: 500, marginLeft: '4px', color: 
+    //@ts-ignore
+    theme.textPrimary }}>
                   {secondsToConfirm} seconds 🎉
                 </span>
               </div>

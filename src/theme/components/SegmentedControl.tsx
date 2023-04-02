@@ -17,22 +17,28 @@ const SegmentWrapper = styled(AutoRow)<{ active?: boolean }>`
 
   border-radius: 12px;
   padding: 6px;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) =>//@ts-ignore
+  theme.textSecondary};
   gap: 4px;
 
   ${({ theme, active }) =>
     active &&
     css`
-      background-color: ${theme.accentActionSoft};
-      color: ${({ theme }) => theme.accentAction};
+      background-color: ${//@ts-ignore
+        theme.accentActionSoft};
+      color: ${({ theme }) =>//@ts-ignore
+      theme.accentAction};
     `};
 
   :hover {
-    background-color: ${({ theme, active }) => (active ? theme.backgroundInteractive : theme.backgroundModule)};
-    color: ${({ theme }) => theme.textPrimary};
+    background-color: ${({ theme, active }) => (active ? //@ts-ignore
+    theme.backgroundInteractive : theme.backgroundModule)};
+    color: ${({ theme }) =>//@ts-ignore
+    theme.textPrimary};
   }
 
-  transition: ${({ theme }) => `${theme.transition.duration.medium} ${theme.transition.timing.ease}`};
+  transition: ${({ theme }) => `${//@ts-ignore
+    theme.transition.duration.medium} ${theme.transition.timing.ease}`};
 `
 
 type SegmentProps<T> = PropsWithChildren<{
@@ -55,7 +61,8 @@ const SegmentedControlWrapper = styled(Row)`
   border-radius: 16px;
   gap: 4px;
   padding: 4px;
-  outline: 1px solid ${({ theme }) => theme.backgroundOutline};
+  outline: 1px solid ${({ theme }) => //@ts-ignore
+  theme.backgroundOutline};
   outline-offset: -1px;
 `
 

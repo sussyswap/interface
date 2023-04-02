@@ -27,11 +27,17 @@ const Nav = styled(AutoRow)`
 `
 
 const NavItem = styled(ThemedText.SubHeader)<{ active?: boolean }>`
-  color: ${({ theme, active }) => (active ? theme.textPrimary : theme.textTertiary)};
-  transition: ${({ theme }) => `${theme.transition.duration.medium} ${theme.transition.timing.ease} color`};
+  color: ${({ theme, active }) => (active ? 
+    //@ts-ignore
+    theme.textPrimary : theme.textTertiary)};
+  transition: ${({ theme }) => `${
+    //@ts-ignore
+    theme.transition.duration.medium} ${theme.transition.timing.ease} color`};
 
   &:hover {
-    ${({ theme, active }) => !active && `color: ${theme.textSecondary}`};
+    ${({ theme, active }) => !active && `color: ${
+    //@ts-ignore
+    theme.textSecondary}`};
     cursor: pointer;
   }
 `

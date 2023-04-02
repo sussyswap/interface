@@ -14,7 +14,7 @@ import {
   OnReviewSwapClick,
   SwapWidget,
   SwapWidgetSkeleton,
-} from '@uniswap/widgets'
+} from '@sussyswap/widgets'
 import { useWeb3React } from '@web3-react/core'
 import { useToggleWalletDrawer } from 'components/WalletDropdown'
 import { useActiveLocale } from 'hooks/useActiveLocale'

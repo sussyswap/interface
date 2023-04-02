@@ -303,7 +303,8 @@ export default function RemoveLiquidity() {
           </RowFixed>
         </RowBetween>
         <RowFixed>
-          <Plus size="16" color={theme.textSecondary} />
+          <Plus size="16" color={//@ts-ignore
+      theme.textSecondary} />
         </RowFixed>
         <RowBetween align="flex-end">
           <Text fontSize={24} fontWeight={500}>
@@ -317,7 +318,8 @@ export default function RemoveLiquidity() {
           </RowFixed>
         </RowBetween>
 
-        <ThemedText.DeprecatedItalic fontSize={12} color={theme.textSecondary} textAlign="left" padding="12px 0 0 0">
+        <ThemedText.DeprecatedItalic fontSize={12} color={//@ts-ignore
+      theme.textSecondary} textAlign="left" padding="12px 0 0 0">
           <Trans>
             Output is estimated. If the price changes by more than {allowedSlippage.toSignificant(4)}% your transaction
             will revert.
@@ -331,7 +333,8 @@ export default function RemoveLiquidity() {
     return (
       <>
         <RowBetween>
-          <Text color={theme.textSecondary} fontWeight={500} fontSize={16}>
+          <Text color={//@ts-ignore
+      theme.textSecondary} fontWeight={500} fontSize={16}>
             <Trans>
               UNI {currencyA?.symbol}/{currencyB?.symbol} Burned
             </Trans>
@@ -346,16 +349,19 @@ export default function RemoveLiquidity() {
         {pair && (
           <>
             <RowBetween>
-              <Text color={theme.textSecondary} fontWeight={500} fontSize={16}>
+              <Text color={//@ts-ignore
+      theme.textSecondary} fontWeight={500} fontSize={16}>
                 <Trans>Price</Trans>
               </Text>
-              <Text fontWeight={500} fontSize={16} color={theme.textPrimary}>
+              <Text fontWeight={500} fontSize={16} color={//@ts-ignore
+      theme.textPrimary}>
                 1 {currencyA?.symbol} = {tokenA ? pair.priceOf(tokenA).toSignificant(6) : '-'} {currencyB?.symbol}
               </Text>
             </RowBetween>
             <RowBetween>
               <div />
-              <Text fontWeight={500} fontSize={16} color={theme.textPrimary}>
+              <Text fontWeight={500} fontSize={16} color={//@ts-ignore
+      theme.textPrimary}>
                 1 {currencyB?.symbol} = {tokenB ? pair.priceOf(tokenB).toSignificant(6) : '-'} {currencyA?.symbol}
               </Text>
             </RowBetween>
@@ -503,7 +509,8 @@ export default function RemoveLiquidity() {
             {!showDetailed && (
               <>
                 <ColumnCenter>
-                  <ArrowDown size="16" color={theme.textSecondary} />
+                  <ArrowDown size="16" color={//@ts-ignore
+      theme.textSecondary} />
                 </ColumnCenter>
                 <LightCard>
                   <AutoColumn gap="10px">
@@ -577,7 +584,8 @@ export default function RemoveLiquidity() {
                   id="liquidity-amount"
                 />
                 <ColumnCenter>
-                  <ArrowDown size="16" color={theme.textSecondary} />
+                  <ArrowDown size="16" color={//@ts-ignore
+      theme.textSecondary} />
                 </ColumnCenter>
                 <CurrencyInputPanel
                   hideBalance={true}
@@ -591,7 +599,8 @@ export default function RemoveLiquidity() {
                   id="remove-liquidity-tokena"
                 />
                 <ColumnCenter>
-                  <Plus size="16" color={theme.textSecondary} />
+                  <Plus size="16" color={//@ts-ignore
+      theme.textSecondary} />
                 </ColumnCenter>
                 <CurrencyInputPanel
                   hideBalance={true}

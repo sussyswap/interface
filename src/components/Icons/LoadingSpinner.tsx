@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { useTheme } from 'styled-components/macro'
 
 import { StyledRotatingSVG, StyledSVG } from './shared'

@@ -29,10 +29,13 @@ const ListModalWrapper = styled.div`
   transform: translate(-50%, -50%);
   width: 420px;
   z-index: ${Z_INDEX.modal};
-  background: ${({ theme }) => theme.backgroundSurface};
+  background: ${({ theme }) => //@ts-ignore
+  theme.backgroundSurface};
   border-radius: 20px;
-  border: 1px solid ${({ theme }) => theme.backgroundOutline};
-  box-shadow: ${({ theme }) => theme.deepShadow};
+  border: 1px solid ${({ theme }) => //@ts-ignore
+  theme.backgroundOutline};
+  box-shadow: ${({ theme }) => //@ts-ignore
+  theme.deepShadow};
   padding: 20px 24px 24px;
   display: flex;
   flex-direction: column;

@@ -19,11 +19,13 @@ const ExploreContainer = styled.div`
   min-width: 320px;
   padding: 68px 12px 0px;
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.md}px`}) {
     padding-top: 48px;
   }
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.sm}px`}) {
     padding-top: 20px;
   }
 `
@@ -57,7 +59,8 @@ const FiltersWrapper = styled.div`
   max-width: ${MAX_WIDTH_MEDIA_BREAKPOINT};
   margin: 0 auto;
   margin-bottom: 20px;
-  color: ${({ theme }) => theme.textTertiary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textTertiary};
   flex-direction: row;
 
   @media only screen and (max-width: ${MEDIUM_MEDIA_BREAKPOINT}) {
@@ -79,11 +82,11 @@ const Tokens = () => {
       <ExploreContainer>
         <TitleContainer>
           <MouseoverTooltip
-            text={<Trans>This table contains the top tokens by Uniswap volume, sorted based on your input.</Trans>}
+            text={<Trans>This table contains the top tokens by Sussyswap volume, sorted based on your input.</Trans>}
             placement="bottom"
           >
             <ThemedText.LargeHeader>
-              <Trans>Top tokens on Uniswap</Trans>
+              <Trans>Top tokens on Sussyswap</Trans>
             </ThemedText.LargeHeader>
           </MouseoverTooltip>
         </TitleContainer>

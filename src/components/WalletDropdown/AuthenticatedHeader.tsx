@@ -85,7 +85,9 @@ const IconContainer = styled.div`
 `
 const FiatOnrampNotAvailableText = styled(ThemedText.Caption)`
   align-items: center;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textSecondary};
   display: flex;
   justify-content: center;
 `
@@ -121,7 +123,9 @@ const StyledInfoIcon = styled(Info)`
   flex: 1 1 auto;
 `
 const StyledLoadingButtonSpinner = styled(LoadingButtonSpinner)`
-  fill: ${({ theme }) => theme.accentAction};
+  fill: ${({ theme }) => 
+    //@ts-ignore
+    theme.accentAction};
 `
 
 const HeaderWrapper = styled.div`
@@ -150,9 +154,13 @@ const PortfolioDrawerContainer = styled(Column)`
 export function PortfolioArrow({ change, ...rest }: { change: number } & IconProps) {
   const theme = useTheme()
   return change < 0 ? (
-    <ArrowDownRight color={theme.accentCritical} size={20} {...rest} />
+    <ArrowDownRight color={
+    //@ts-ignore
+    theme.accentCritical} size={20} {...rest} />
   ) : (
-    <ArrowUpRight color={theme.accentSuccess} size={20} {...rest} />
+    <ArrowUpRight color={
+    //@ts-ignore
+    theme.accentSuccess} size={20} {...rest} />
   )
 }
 

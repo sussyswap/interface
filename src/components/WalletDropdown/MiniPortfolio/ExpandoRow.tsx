@@ -7,13 +7,19 @@ import styled from 'styled-components/macro'
 import { ThemedText } from 'theme'
 
 const ExpandIcon = styled(ChevronDown)<{ $expanded: boolean }>`
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textSecondary};
   transform: ${({ $expanded }) => ($expanded ? 'rotate(180deg)' : 'rotate(0deg)')};
-  transition: transform ${({ theme }) => theme.transition.duration.medium};
+  transition: transform ${({ theme }) =>
+    //@ts-ignore
+    theme.transition.duration.medium};
 `
 
 const ToggleButton = styled(Row)`
-  background-color: ${({ theme }) => theme.backgroundInteractive};
+  background-color: ${({ theme }) =>
+    //@ts-ignore
+    theme.backgroundInteractive};
   border-radius: 12px;
   padding: 4px 8px 4px 12px;
   height: 100%;
@@ -26,7 +32,9 @@ const ToggleButton = styled(Row)`
 
 const Wrapper = styled(Column)<{ numItems: number; isExpanded: boolean }>`
   height: ${({ numItems, isExpanded }) => (isExpanded ? numItems * 68 + 'px' : 0)};
-  transition: ${({ theme }) => `height ${theme.transition.duration.medium} ease-in-out`};
+  transition: ${({ theme }) => `height ${
+    //@ts-ignore
+    theme.transition.duration.medium} ease-in-out`};
   overflow: hidden;
 `
 

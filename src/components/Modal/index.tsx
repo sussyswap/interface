@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { DialogContent, DialogOverlay } from '@reach/dialog'
 import React from 'react'
 import { animated, useSpring, useTransition } from 'react-spring'

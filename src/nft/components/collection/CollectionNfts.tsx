@@ -70,13 +70,19 @@ const rarityStatusCache = new Map<string, boolean>()
 
 const InfiniteScrollWrapperCss = css`
   margin: 0 16px;
-  @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
+  @media screen and (min-width: ${({ theme }) => 
+      //@ts-ignore
+      theme.breakpoint.sm}px) {
     margin: 0 20px;
   }
-  @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
+  @media screen and (min-width: ${({ theme }) => 
+      //@ts-ignore
+      theme.breakpoint.md}px) {
     margin: 0 26px;
   }
-  @media screen and (min-width: ${({ theme }) => theme.breakpoint.lg}px) {
+  @media screen and (min-width: ${({ theme }) => 
+      //@ts-ignore
+      theme.breakpoint.lg}px) {
     margin: 0 48px;
   }
 `
@@ -95,7 +101,9 @@ const ActionsSubContainer = styled.div`
   gap: 12px;
   flex: 1;
   min-width: 0px;
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${
+      //@ts-ignore
+      theme.breakpoint.md}px`}) {
     gap: 10px;
   }
 `
@@ -103,10 +111,14 @@ const ActionsSubContainer = styled.div`
 const SortDropdownContainer = styled.div<{ isFiltersExpanded: boolean }>`
   width: max-content;
   height: 44px;
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${
+      //@ts-ignore
+      theme.breakpoint.lg}px`}) {
     ${({ isFiltersExpanded }) => isFiltersExpanded && `display: none;`}
   }
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${
+      //@ts-ignore
+      theme.breakpoint.md}px`}) {
     display: none;
   }
 `
@@ -131,28 +143,39 @@ const SweepButton = styled.div<{ toggled: boolean; disabled?: boolean }>`
   border-radius: 12px;
   padding: 12px 18px 12px 12px;
   cursor: ${({ disabled }) => (disabled ? 'auto' : 'pointer')};
-  color: ${({ toggled, disabled, theme }) => (toggled && !disabled ? theme.accentTextLightPrimary : theme.textPrimary)};
+  color: ${({ toggled, disabled, theme }) => (toggled && !disabled ? 
+      //@ts-ignore
+      theme.accentTextLightPrimary : theme.textPrimary)};
   background: ${({ theme, toggled, disabled }) =>
     !disabled && toggled
       ? 'radial-gradient(101.8% 4091.31% at 0% 0%, #4673FA 0%, #9646FA 100%)'
-      : theme.backgroundInteractive};
+      : 
+      //@ts-ignore
+      theme.backgroundInteractive};
   opacity: ${({ disabled }) => (disabled ? 0.4 : 1)};
   :hover {
-    background-color: ${({ theme }) => theme.hoverState};
+    background-color: ${({ theme }) => 
+      //@ts-ignore
+      theme.hoverState};
     transition: ${({
       theme: {
-        transition: { duration, timing },
+      //@ts-ignore
+      transition: { duration, timing },
       },
     }) => `${duration.fast} background-color ${timing.in}`};
   }
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${
+      //@ts-ignore
+      theme.breakpoint.md}px`}) {
     padding: 12px 12px 12px 12px;
   }
 `
 
 const SweepText = styled(ThemedText.BodyPrimary)`
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${
+      //@ts-ignore
+       theme.breakpoint.md}px`}) {
     display: none;
   }
 `

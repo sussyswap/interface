@@ -26,9 +26,13 @@ export default function TransactionPopup({ hash }: { hash: string }) {
     <RowNoFlex>
       <div style={{ paddingRight: 16 }}>
         {success ? (
-          <CheckCircle color={theme.accentSuccess} size={24} />
+          <CheckCircle color={
+  //@ts-ignore
+  theme.accentSuccess} size={24} />
         ) : (
-          <AlertCircle color={theme.accentFailure} size={24} />
+          <AlertCircle color={
+  //@ts-ignore
+  theme.accentFailure} size={24} />
         )}
       </div>
       <AutoColumn gap="8px">

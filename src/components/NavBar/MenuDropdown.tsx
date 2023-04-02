@@ -140,7 +140,10 @@ export const MenuDropdown = () => {
                 <Box display={{ sm: 'none', lg: 'flex', xxl: 'none' }}>
                   <PrimaryMenuRow to="/pool" close={toggleOpen}>
                     <Icon>
-                      <PoolIcon width={24} height={24} color={theme.textSecondary} />
+                      <PoolIcon width={24} height={24} color={
+    //@ts-ignore
+                        theme.textSecondary
+                        } />
                     </Icon>
                     <PrimaryMenuRow.Text>
                       <Trans>Pool</Trans>
@@ -149,7 +152,9 @@ export const MenuDropdown = () => {
                 </Box>
                 <PrimaryMenuRow to="/vote" close={toggleOpen}>
                   <Icon>
-                    <GovernanceIcon width={24} height={24} color={theme.textSecondary} />
+                    <GovernanceIcon width={24} height={24} color={
+    //@ts-ignore
+    theme.textSecondary} />
                   </Icon>
                   <PrimaryMenuRow.Text>
                     <Trans>Vote in governance</Trans>
@@ -157,7 +162,9 @@ export const MenuDropdown = () => {
                 </PrimaryMenuRow>
                 <PrimaryMenuRow href="https://info.uniswap.org/#/">
                   <Icon>
-                    <BarChartIcon width={24} height={24} color={theme.textSecondary} />
+                    <BarChartIcon width={24} height={24} color={
+    //@ts-ignore
+    theme.textSecondary} />
                   </Icon>
                   <PrimaryMenuRow.Text>
                     <Trans>View more analytics</Trans>

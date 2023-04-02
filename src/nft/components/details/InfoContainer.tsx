@@ -6,24 +6,29 @@ const Header = styled.div<{ isOpen: boolean }>`
   display: flex;
   border-radius: ${({ isOpen }) => (isOpen ? '16px 16px 0px 0px' : '16px')};
   justify-content: space-between;
-  background-color: ${({ theme }) => theme.backgroundSurface};
+  background-color: ${({ theme }) => //@ts-ignore
+  theme.backgroundSurface};
   padding: 14px 20px;
   cursor: pointer;
-  border: 1px solid ${({ theme }) => theme.backgroundOutline};
+  border: 1px solid ${({ theme }) => //@ts-ignore
+  theme.backgroundOutline};
   margin-top: 28px;
   width: 100%;
   align-items: center;
 
   &:hover {
-    background-color: ${({ theme }) => theme.stateOverlayHover};
+    background-color: ${({ theme }) => //@ts-ignore
+    theme.stateOverlayHover};
   }
 
   &:active {
-    background-color: ${({ theme }) => theme.stateOverlayPressed};
+    background-color: ${({ theme }) => //@ts-ignore
+    theme.stateOverlayPressed};
   }
 
   transition: ${({
     theme: {
+      //@ts-ignore
       transition: { duration, timing },
     },
   }) => css`background-color ${duration.medium} ${timing.ease}`};
@@ -33,7 +38,8 @@ const PrimaryHeader = styled.span`
   display: flex;
   align-items: center;
   gap: 16px;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textPrimary};
   font-weight: 500;
   line-height: 28px;
   font-size: 20px;
@@ -41,7 +47,8 @@ const PrimaryHeader = styled.span`
 
 const SecondaryHeader = styled.span`
   font-size: 12px;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
 `
 
 const SecondaryHeaderContainer = styled.span`
@@ -49,15 +56,18 @@ const SecondaryHeaderContainer = styled.span`
   align-items: center;
   justify-content: center;
   gap: 32px;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textPrimary};
 `
 
 const ContentContainer = styled.div`
   padding: 20px;
-  border: 1px solid ${({ theme }) => theme.backgroundOutline};
+  border: 1px solid ${({ theme }) => //@ts-ignore
+  theme.backgroundOutline};
   border-top: none;
   border-radius: 0px 0px 16px 16px;
-  background-color: ${({ theme }) => theme.backgroundSurface}; ;
+  background-color: ${({ theme }) => //@ts-ignore
+  theme.backgroundSurface}; ;
 `
 
 const InfoContainer = ({

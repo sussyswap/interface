@@ -35,11 +35,13 @@ import { ProposalStatus } from './styled'
 const PageWrapper = styled(AutoColumn)`
   padding-top: 68px;
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.md}px`}) {
     padding: 48px 8px 0px;
   }
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.sm}px`}) {
     padding-top: 20px;
   }
 `
@@ -60,19 +62,24 @@ const Proposal = styled(Button)`
   text-align: left;
   outline: none;
   cursor: pointer;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textPrimary};
   text-decoration: none;
-  background-color: ${({ theme }) => theme.deprecated_bg1};
+  background-color: ${({ theme }) => //@ts-ignore
+  theme.deprecated_bg1};
   &:focus {
-    background-color: ${({ theme }) => darken(0.05, theme.deprecated_bg1)};
+    background-color: ${({ theme }) => darken(0.05, //@ts-ignore
+    theme.deprecated_bg1)};
   }
   &:hover {
-    background-color: ${({ theme }) => theme.backgroundInteractive};
+    background-color: ${({ theme }) =>//@ts-ignore
+    theme.backgroundInteractive};
   }
 `
 
 const ProposalNumber = styled.span`
-  opacity: ${({ theme }) => theme.opacity.hover};
+  opacity: ${({ theme }) => //@ts-ignore
+  theme.opacity.hover};
   flex: 0 0 40px;
 `
 
@@ -92,13 +99,15 @@ const VoteCard = styled(DataCard)`
 
 const WrapSmall = styled(RowBetween)`
   margin-bottom: 1rem;
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) => //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToSmall`
     flex-wrap: wrap;
   `};
 `
 
 const TextButton = styled(ThemedText.DeprecatedMain)`
-  color: ${({ theme }) => theme.accentAction};
+  color: ${({ theme }) => //@ts-ignore
+  theme.accentAction};
   :hover {
     cursor: pointer;
     text-decoration: underline;
@@ -111,11 +120,13 @@ const AddressButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${({ theme }) => theme.accentAction};
+  color: ${({ theme }) => //@ts-ignore
+  theme.accentAction};
 `
 
 const StyledExternalLink = styled(ExternalLink)`
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textPrimary};
 `
 
 export default function Landing() {
@@ -173,7 +184,8 @@ export default function Landing() {
                   </RowBetween>
                   <ExternalLink
                     style={{
-                      color: theme.white,
+                      color://@ts-ignore
+                      theme.white,
                       textDecoration: 'underline',
                     }}
                     href="https://uniswap.org/blog/uni"

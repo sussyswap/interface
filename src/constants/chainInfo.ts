@@ -16,7 +16,7 @@ import ms from 'ms.macro'
 import { darkTheme } from 'theme/colors'
 
 import { SupportedL1ChainId, SupportedL2ChainId } from './chains'
-import { ARBITRUM_LIST, CELO_LIST, OPTIMISM_LIST, PLASMA_BNB_LIST } from './lists'
+import { } from './lists'
 
 export const AVERAGE_L1_BLOCK_TIME = ms`12s`
 
@@ -62,158 +62,29 @@ type ChainInfoMap = { readonly [chainId: number]: L1ChainInfo | L2ChainInfo } & 
 } & { readonly [chainId in SupportedL1ChainId]: L1ChainInfo }
 
 const CHAIN_INFO: ChainInfoMap = {
-  [SupportedChainId.MAINNET]: {
+  [SupportedChainId.AVALANCHE]: {
     networkType: NetworkType.L1,
-    docs: 'https://docs.uniswap.org/',
-    explorer: 'https://etherscan.io/',
-    infoLink: 'https://info.uniswap.org/#/',
-    label: 'Ethereum',
-    logoUrl: ethereumLogoUrl,
-    nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
-    color: darkTheme.chain_1,
+    docs: 'https://docs.avax.network/learn/platform-overview',
+    explorer: 'https://snowtrace.io/',
+    infoLink: 'https://info.uniswap.org/#/avalanche',
+    label: 'Avalanche',
+    logoUrl: 'https://cryptologos.cc/logos/avalanche-avax-logo.png',
+    nativeCurrency: { name: 'Avalanche', symbol: 'AVAX', decimals: 18 },
+    color: darkTheme.chain_4,
+    defaultListUrl: 'https://raw.githubusercontent.com/ava-labs/bridge-tokens/main/avalanche.tokenlist.json',
   },
-  [SupportedChainId.GOERLI]: {
+  [SupportedChainId.AVALANCHE_FUJI]: {
     networkType: NetworkType.L1,
-    docs: 'https://docs.uniswap.org/',
-    explorer: 'https://goerli.etherscan.io/',
-    infoLink: 'https://info.uniswap.org/#/',
-    label: 'Görli',
-    logoUrl: ethereumLogoUrl,
-    nativeCurrency: { name: 'Görli Ether', symbol: 'görETH', decimals: 18 },
-    color: darkTheme.chain_5,
+    docs: 'https://docs.avax.network/',
+    explorer: 'https://snowtrace.io/',
+    infoLink: 'https://info.uniswap.org/#/avalanche',
+    label: 'Avalanche Fuji',
+    logoUrl: 'https://cryptologos.cc/logos/avalanche-avax-logo.png',
+    nativeCurrency: { name: 'Avalanche', symbol: 'AVAX', decimals: 18 },
+    color: darkTheme.chain_4,
+    defaultListUrl: 'https://raw.githubusercontent.com/ava-labs/bridge-tokens/main/avalanche.tokenlist.json',
   },
-  [SupportedChainId.OPTIMISM]: {
-    networkType: NetworkType.L2,
-    blockWaitMsBeforeWarning: ms`25m`,
-    bridge: 'https://app.optimism.io/bridge',
-    defaultListUrl: OPTIMISM_LIST,
-    docs: 'https://optimism.io/',
-    explorer: 'https://optimistic.etherscan.io/',
-    infoLink: 'https://info.uniswap.org/#/optimism/',
-    label: 'Optimism',
-    logoUrl: optimismLogoUrl,
-    // Optimism perfers same icon for both
-    circleLogoUrl: optimismLogoUrl,
-    squareLogoUrl: optimismSquareLogoUrl,
-    statusPage: 'https://optimism.io/status',
-    helpCenterUrl: 'https://help.uniswap.org/en/collections/3137778-uniswap-on-optimistic-ethereum-oξ',
-    nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
-    color: darkTheme.chain_10,
-    backgroundColor: darkTheme.chain_10_background,
-  },
-  [SupportedChainId.OPTIMISM_GOERLI]: {
-    networkType: NetworkType.L2,
-    blockWaitMsBeforeWarning: ms`25m`,
-    bridge: 'https://app.optimism.io/bridge',
-    defaultListUrl: OPTIMISM_LIST,
-    docs: 'https://optimism.io/',
-    explorer: 'https://goerli-optimism.etherscan.io/',
-    infoLink: 'https://info.uniswap.org/#/optimism/',
-    label: 'Optimism Görli',
-    logoUrl: optimismLogoUrl,
-    statusPage: 'https://optimism.io/status',
-    helpCenterUrl: 'https://help.uniswap.org/en/collections/3137778-uniswap-on-optimistic-ethereum-oξ',
-    nativeCurrency: { name: 'Optimism Goerli Ether', symbol: 'görOpETH', decimals: 18 },
-    color: darkTheme.chain_420,
-  },
-  [SupportedChainId.ARBITRUM_ONE]: {
-    networkType: NetworkType.L2,
-    blockWaitMsBeforeWarning: ms`10m`,
-    bridge: 'https://bridge.arbitrum.io/',
-    docs: 'https://offchainlabs.com/',
-    explorer: 'https://arbiscan.io/',
-    infoLink: 'https://info.uniswap.org/#/arbitrum',
-    label: 'Arbitrum',
-    logoUrl: arbitrumLogoUrl,
-    circleLogoUrl: arbitrumCircleLogoUrl,
-    defaultListUrl: ARBITRUM_LIST,
-    helpCenterUrl: 'https://help.uniswap.org/en/collections/3137787-uniswap-on-arbitrum',
-    nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
-    color: darkTheme.chain_42,
-    backgroundColor: darkTheme.chain_42161_background,
-  },
-  [SupportedChainId.ARBITRUM_GOERLI]: {
-    networkType: NetworkType.L2,
-    blockWaitMsBeforeWarning: ms`10m`,
-    bridge: 'https://bridge.arbitrum.io/',
-    docs: 'https://offchainlabs.com/',
-    explorer: 'https://goerli.arbiscan.io/',
-    infoLink: 'https://info.uniswap.org/#/arbitrum/',
-    label: 'Arbitrum Goerli',
-    logoUrl: arbitrumLogoUrl,
-    defaultListUrl: ARBITRUM_LIST, // TODO: use arbitrum goerli token list
-    helpCenterUrl: 'https://help.uniswap.org/en/collections/3137787-uniswap-on-arbitrum',
-    nativeCurrency: { name: 'Goerli Arbitrum Ether', symbol: 'goerliArbETH', decimals: 18 },
-    color: darkTheme.chain_421613,
-  },
-  [SupportedChainId.POLYGON]: {
-    networkType: NetworkType.L1,
-    blockWaitMsBeforeWarning: ms`10m`,
-    bridge: 'https://wallet.polygon.technology/login',
-    docs: 'https://polygon.io/',
-    explorer: 'https://polygonscan.com/',
-    infoLink: 'https://info.uniswap.org/#/polygon/',
-    label: 'Polygon',
-    logoUrl: polygonMaticLogo,
-    circleLogoUrl: polygonCircleLogoUrl,
-    squareLogoUrl: polygonSquareLogoUrl,
-    nativeCurrency: { name: 'Polygon Matic', symbol: 'MATIC', decimals: 18 },
-    color: darkTheme.chain_137,
-    backgroundColor: darkTheme.chain_137_background,
-  },
-  [SupportedChainId.POLYGON_MUMBAI]: {
-    networkType: NetworkType.L1,
-    blockWaitMsBeforeWarning: ms`10m`,
-    bridge: 'https://wallet.polygon.technology/bridge',
-    docs: 'https://polygon.io/',
-    explorer: 'https://mumbai.polygonscan.com/',
-    infoLink: 'https://info.uniswap.org/#/polygon/',
-    label: 'Polygon Mumbai',
-    logoUrl: polygonMaticLogo,
-    nativeCurrency: { name: 'Polygon Mumbai Matic', symbol: 'mMATIC', decimals: 18 },
-  },
-  [SupportedChainId.CELO]: {
-    networkType: NetworkType.L1,
-    blockWaitMsBeforeWarning: ms`10m`,
-    bridge: 'https://www.portalbridge.com/#/transfer',
-    docs: 'https://docs.celo.org/',
-    explorer: 'https://celoscan.io/',
-    infoLink: 'https://info.uniswap.org/#/celo/',
-    label: 'Celo',
-    logoUrl: celoLogo,
-    circleLogoUrl: celoCircleLogoUrl,
-    squareLogoUrl: celoSquareLogoUrl,
-    nativeCurrency: { name: 'Celo', symbol: 'CELO', decimals: 18 },
-    defaultListUrl: CELO_LIST,
-  },
-  [SupportedChainId.CELO_ALFAJORES]: {
-    networkType: NetworkType.L1,
-    blockWaitMsBeforeWarning: ms`10m`,
-    bridge: 'https://www.portalbridge.com/#/transfer',
-    docs: 'https://docs.celo.org/',
-    explorer: 'https://alfajores-blockscout.celo-testnet.org/',
-    infoLink: 'https://info.uniswap.org/#/celo/',
-    label: 'Celo Alfajores',
-    logoUrl: celoLogo,
-    nativeCurrency: { name: 'Celo', symbol: 'CELO', decimals: 18 },
-    defaultListUrl: CELO_LIST,
-  },
-  [SupportedChainId.BNB]: {
-    networkType: NetworkType.L1,
-    blockWaitMsBeforeWarning: ms`10m`,
-    bridge: 'https://cbridge.celer.network/1/56',
-    docs: 'https://docs.bnbchain.org/',
-    explorer: 'https://bscscan.com/',
-    infoLink: 'https://info.uniswap.org/#/bnb/',
-    label: 'BNB Chain',
-    logoUrl: bnbLogo,
-    circleLogoUrl: bnbCircleLogoUrl,
-    squareLogoUrl: bnbSquareLogoUrl,
-    nativeCurrency: { name: 'BNB', symbol: 'BNB', decimals: 18 },
-    defaultListUrl: PLASMA_BNB_LIST,
-    color: darkTheme.chain_56,
-    backgroundColor: darkTheme.chain_56_background,
-  },
+  
 }
 
 export function getChainInfo(chainId: SupportedL1ChainId): L1ChainInfo
@@ -238,7 +109,7 @@ export function getChainInfo(chainId: any): any {
   return undefined
 }
 
-const MAINNET_INFO = CHAIN_INFO[SupportedChainId.MAINNET]
+const MAINNET_INFO = CHAIN_INFO[SupportedChainId.AVALANCHE]
 export function getChainInfoOrDefault(chainId: number | undefined) {
   return getChainInfo(chainId) ?? MAINNET_INFO
 }

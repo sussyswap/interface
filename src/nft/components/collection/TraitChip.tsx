@@ -8,12 +8,14 @@ const TraitChipWrap = styled.div`
   padding: 6px 6px 6px 12px;
   font-weight: 600;
   border-radius: 8px;
-  background-color: ${({ theme }) => theme.backgroundInteractive};
+  background-color: ${({ theme }) => //@ts-ignore
+  theme.backgroundInteractive};
   font-size: 14px;
 `
 
 const CrossIconWrap = styled.div`
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
   height: 28px;
   width: 28px;
   border: none;

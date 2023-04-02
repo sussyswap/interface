@@ -40,14 +40,20 @@ const ScrimBackground = styled.div<{ open: boolean }>`
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: ${({ theme }) => theme.backgroundScrim};
+  background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundScrim};
 
   opacity: 0;
   pointer-events: none;
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${
+    //@ts-ignore
+    theme.breakpoint.sm}px`}) {
     opacity: ${({ open }) => (open ? 1 : 0)};
     pointer-events: ${({ open }) => (open ? 'auto' : 'none')};
-    transition: opacity ${({ theme }) => theme.transition.duration.medium} ease-in-out;
+    transition: opacity ${({ theme }) => 
+    //@ts-ignore
+    theme.transition.duration.medium} ease-in-out;
   }
 `
 const Scrim = ({ onClick, open }: { onClick: () => void; open: boolean }) => {
@@ -86,7 +92,9 @@ const WalletDropdownWrapper = styled.div<{ open: boolean }>`
 
   height: calc(100% - 2 * ${DRAWER_MARGIN});
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${
+    //@ts-ignore
+    theme.breakpoint.sm}px`}) {
     z-index: ${Z_INDEX.modal};
     top: unset;
     left: 0;
@@ -108,16 +116,28 @@ const WalletDropdownWrapper = styled.div<{ open: boolean }>`
   border-radius: 12px;
   width: ${DRAWER_WIDTH};
   font-size: 16px;
-  background-color: ${({ theme }) => theme.backgroundSurface};
-  border: ${({ theme }) => `1px solid ${theme.backgroundOutline}`};
+  background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundSurface};
+  border: ${({ theme }) => `1px solid ${
+    //@ts-ignore
+    theme.backgroundOutline}`};
 
-  box-shadow: ${({ theme }) => theme.deepShadow};
-  transition: right ${({ theme }) => theme.transition.duration.medium},
-    bottom ${({ theme }) => theme.transition.duration.medium};
+  box-shadow: ${({ theme }) =>
+    //@ts-ignore
+    theme.deepShadow};
+  transition: right ${({ theme }) => 
+    //@ts-ignore
+    theme.transition.duration.medium},
+    bottom ${({ theme }) => 
+    //@ts-ignore
+    theme.transition.duration.medium};
 `
 
 const CloseIcon = styled(ChevronsRight).attrs({ size: 24 })`
-  stroke: ${({ theme }) => theme.textSecondary};
+  stroke: ${({ theme }) =>
+    //@ts-ignore
+    theme.textSecondary};
 `
 
 const CloseDrawer = styled.div`
@@ -132,12 +152,18 @@ const CloseDrawer = styled.div`
   padding: 24px calc(18px + ${DRAWER_OFFSET}) 24px 14px;
   border-radius: 20px 0 0 20px;
   transition: ${({ theme }) =>
-    `${theme.transition.duration.medium} ${theme.transition.timing.ease} background-color, ${theme.transition.duration.medium} ${theme.transition.timing.ease} margin`};
+    `${
+    //@ts-ignore
+    theme.transition.duration.medium} ${theme.transition.timing.ease} background-color, ${theme.transition.duration.medium} ${theme.transition.timing.ease} margin`};
   &:hover {
     margin: 0 -4px 0 0;
-    background-color: ${({ theme }) => theme.stateOverlayHover};
+    background-color: ${({ theme }) =>
+    //@ts-ignore
+    theme.stateOverlayHover};
   }
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${
+    //@ts-ignore
+    theme.breakpoint.sm}px`}) {
     display: none;
   }
   @media screen and (min-width: 1440px) {

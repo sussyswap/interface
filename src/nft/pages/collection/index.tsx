@@ -32,7 +32,8 @@ export const CollectionBannerLoading = styled(LoadingBubble)`
   height: 100%;
   border-radius: 0px;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
+  @media screen and (min-width: ${({ theme }) => //@ts-ignore
+  theme.breakpoint.sm}px) {
     border-radius: 16px;
   }
 `
@@ -55,7 +56,8 @@ export const BannerWrapper = styled.div`
   height: 100px;
   max-width: 100%;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
+  @media screen and (min-width: ${({ theme }) => //@ts-ignore
+  theme.breakpoint.sm}px) {
     margin-top: 16px;
     margin-left: 20px;
     margin-right: 20px;
@@ -70,7 +72,8 @@ const Banner = styled.div<{ src: string }>`
   background-position-y: center;
   background-size: cover;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
+  @media screen and (min-width: ${({ theme }) => //@ts-ignore
+  theme.breakpoint.sm}px) {
     border-radius: 16px;
   }
 `
@@ -85,11 +88,13 @@ const FiltersContainer = styled.div<{ isMobile: boolean; isFiltersExpanded: bool
   left: 0px;
   width: ${({ isMobile }) => (isMobile ? '100%' : '0px')};
   height: ${({ isMobile, isFiltersExpanded }) => (isMobile && isFiltersExpanded ? '100%' : undefined)};
-  background: ${({ theme, isMobile }) => (isMobile ? theme.backgroundBackdrop : undefined)};
+  background: ${({ theme, isMobile }) => (isMobile ?//@ts-ignore
+  theme.backgroundBackdrop : undefined)};
   z-index: ${Z_INDEX.modalBackdrop - 3};
   overflow-y: ${({ isMobile }) => (isMobile ? 'scroll' : undefined)};
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
+  @media screen and (min-width: ${({ theme }) => //@ts-ignore
+  theme.breakpoint.sm}px) {
     top: 72px;
   }
 `
@@ -111,7 +116,8 @@ const IconWrapper = styled.button`
   background-color: transparent;
   border-radius: 8px;
   border: none;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) =>//@ts-ignore
+  theme.textPrimary};
   cursor: pointer;
   display: flex;
   padding: 2px 0px;

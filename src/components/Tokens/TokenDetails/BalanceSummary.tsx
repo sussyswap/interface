@@ -12,11 +12,19 @@ import styled, { useTheme } from 'styled-components/macro'
 import { ThemedText } from 'theme'
 
 const BalancesCard = styled.div`
-  box-shadow: ${({ theme }) => theme.shallowShadow};
-  background-color: ${({ theme }) => theme.backgroundSurface};
-  border: ${({ theme }) => `1px solid ${theme.backgroundOutline}`};
+  box-shadow: ${({ theme }) => 
+  //@ts-ignore
+  theme.shallowShadow};
+  background-color: ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundSurface};
+  border: ${({ theme }) => `1px solid ${
+  //@ts-ignore
+  theme.backgroundOutline}`};
   border-radius: 16px;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.textPrimary};
   display: none;
   height: fit-content;
   padding: 20px;
@@ -67,7 +75,7 @@ const StyledNetworkLabel = styled.div`
 export default function BalanceSummary({ token }: { token: Currency }) {
   const { account, chainId } = useWeb3React()
   const theme = useTheme()
-  const { label, color } = getChainInfo(isSupportedChain(chainId) ? chainId : SupportedChainId.MAINNET)
+  const { label, color } = getChainInfo(isSupportedChain(chainId) ? chainId : SupportedChainId.AVALANCHE)
   const balance = useCurrencyBalance(account, token)
   const formattedBalance = formatCurrencyAmount(balance, NumberType.TokenNonTx)
   const formattedUsdValue = formatCurrencyAmount(useStablecoinValue(balance), NumberType.FiatTokenStats)
@@ -78,7 +86,9 @@ export default function BalanceSummary({ token }: { token: Currency }) {
   return (
     <BalancesCard>
       <BalanceSection>
-        <ThemedText.SubHeaderSmall color={theme.textPrimary}>
+        <ThemedText.SubHeaderSmall color={
+  //@ts-ignore
+  theme.textPrimary}>
           <Trans>Your balance on {label}</Trans>
         </ThemedText.SubHeaderSmall>
         <BalanceRow>

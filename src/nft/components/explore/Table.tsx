@@ -27,7 +27,8 @@ const RankCellContainer = styled.div`
   align-items: center;
   padding-left: 24px;
   gap: 12px;
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.sm}px`}) {
     padding-left: 8px;
   }
 `
@@ -35,10 +36,12 @@ const RankCellContainer = styled.div`
 const StyledRow = styled.tr`
   cursor: pointer;
   :hover {
-    background: ${({ theme }) => theme.stateOverlayHover};
+    background: ${({ theme }) => //@ts-ignore
+    theme.stateOverlayHover};
   }
   :active {
-    background: ${({ theme }) => theme.stateOverlayPressed};
+    background: ${({ theme }) => //@ts-ignore
+    theme.stateOverlayPressed};
   }
 `
 
@@ -50,11 +53,13 @@ const StyledHeader = styled.th<{ disabled?: boolean }>`
   ${({ disabled }) => !disabled && `cursor: pointer;`}
 
   :hover {
-    ${({ theme, disabled }) => !disabled && `opacity: ${theme.opacity.hover};`}
+    ${({ theme, disabled }) => !disabled && `opacity: ${//@ts-ignore
+      theme.opacity.hover};`}
   }
 
   :active {
-    ${({ theme, disabled }) => !disabled && `opacity: ${theme.opacity.click};`}
+    ${({ theme, disabled }) => !disabled && `opacity: ${//@ts-ignore
+      theme.opacity.click};`}
   }
 `
 
@@ -129,16 +134,20 @@ export function Table<D extends Record<string, unknown>>({
   useEffect(() => {
     if (!width) return
 
-    if (width <= theme.breakpoint.sm) {
+    if (width <=//@ts-ignore
+    theme.breakpoint.sm) {
       setHiddenColumns(smallHiddenColumns)
-    } else if (width <= theme.breakpoint.md) {
+    } else if (width <= //@ts-ignore
+    theme.breakpoint.md) {
       setHiddenColumns(mediumHiddenColumns)
-    } else if (width <= theme.breakpoint.lg) {
+    } else if (width <= //@ts-ignore
+    theme.breakpoint.lg) {
       setHiddenColumns(largeHiddenColumns)
     } else {
       setHiddenColumns([])
     }
-  }, [width, setHiddenColumns, columns, smallHiddenColumns, mediumHiddenColumns, largeHiddenColumns, theme.breakpoint])
+  }, [width, setHiddenColumns, columns, smallHiddenColumns, mediumHiddenColumns, largeHiddenColumns, //@ts-ignore
+  theme.breakpoint])
 
   if (data.length === 0) {
     return <LoadingTable headerGroups={headerGroups} visibleColumns={visibleColumns} {...getTableProps()} />

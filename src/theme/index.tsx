@@ -106,13 +106,16 @@ export function getTheme(darkMode: boolean) {
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
   const darkMode = useIsDarkMode()
   const themeObject = useMemo(() => getTheme(darkMode), [darkMode])
+  //@ts-ignore
   return <StyledComponentsThemeProvider theme={themeObject}>{children}</StyledComponentsThemeProvider>
 }
 
 export const ThemedGlobalStyle = createGlobalStyle`
   html {
-    color: ${({ theme }) => theme.textPrimary};
-    background-color: ${({ theme }) => theme.background} !important;
+    color: ${({ theme }) => //@ts-ignore
+    theme.textPrimary};
+    background-color: ${({ theme }) => //@ts-ignore
+    theme.background} !important;
   }
 
   summary::-webkit-details-marker {
@@ -120,10 +123,12 @@ export const ThemedGlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${({ theme }) => theme.accentAction}; 
+    color: ${({ theme }) => //@ts-ignore
+    theme.accentAction}; 
   }
 
   :root {
-    ${({ theme }) => rootCssString(theme.darkMode)}
+    ${({ theme }) => rootCssString(//@ts-ignore
+    theme.darkMode)}
   }
 `

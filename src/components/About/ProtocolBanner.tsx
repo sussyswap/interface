@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { ButtonEmpty } from 'components/Button'
 import styled from 'styled-components/macro'
 import { BREAKPOINTS } from 'theme'

@@ -27,7 +27,9 @@ const StyledMenuIcon = styled(Settings)`
   width: 20px;
 
   > * {
-    stroke: ${({ theme }) => theme.textSecondary};
+    stroke: ${({ theme }) => 
+  //@ts-ignore
+  theme.textSecondary};
   }
 `
 
@@ -39,7 +41,9 @@ const StyledCloseIcon = styled(X)`
   }
 
   > * {
-    stroke: ${({ theme }) => theme.textSecondary};
+    stroke: ${({ theme }) => 
+  //@ts-ignore
+  theme.textSecondary};
   }
 `
 
@@ -84,8 +88,12 @@ const StyledMenu = styled.div`
 
 const MenuFlyout = styled.span`
   min-width: 20.125rem;
-  background-color: ${({ theme }) => theme.backgroundSurface};
-  border: 1px solid ${({ theme }) => theme.backgroundOutline};
+  background-color: ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundSurface};
+  border: 1px solid ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundOutline};
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.01), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04),
     0px 24px 32px rgba(0, 0, 0, 0.01);
   border-radius: 12px;
@@ -96,9 +104,13 @@ const MenuFlyout = styled.span`
   top: 2rem;
   right: 0rem;
   z-index: 100;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.textPrimary};
 
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToMedium`
+  ${({ theme }) => 
+  //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToMedium`
     min-width: 18.125rem;
   `};
 
@@ -108,7 +120,9 @@ const MenuFlyout = styled.span`
 const Break = styled.div`
   width: 100%;
   height: 1px;
-  background-color: ${({ theme }) => theme.deprecated_bg3};
+  background-color: ${({ theme }) => 
+  //@ts-ignore
+  theme.deprecated_bg3};
 `
 
 const ModalContentWrapper = styled.div`
@@ -116,7 +130,9 @@ const ModalContentWrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding: 2rem 0;
-  background-color: ${({ theme }) => theme.backgroundInteractive};
+  background-color: ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundInteractive};
   border-radius: 20px;
 `
 
@@ -208,7 +224,9 @@ export default function SettingsTab({ placeholderSlippage }: { placeholderSlippa
             {isSupportedChainId(chainId) && (
               <RowBetween>
                 <RowFixed>
-                  <ThemedText.DeprecatedBlack fontWeight={400} fontSize={14} color={theme.textSecondary}>
+                  <ThemedText.DeprecatedBlack fontWeight={400} fontSize={14} color={
+  //@ts-ignore
+  theme.textSecondary}>
                     <Trans>Auto Router API</Trans>
                   </ThemedText.DeprecatedBlack>
                   <QuestionHelper text={<Trans>Use the Uniswap Labs API to get faster quotes.</Trans>} />
@@ -228,7 +246,9 @@ export default function SettingsTab({ placeholderSlippage }: { placeholderSlippa
             )}
             <RowBetween>
               <RowFixed>
-                <ThemedText.DeprecatedBlack fontWeight={400} fontSize={14} color={theme.textSecondary}>
+                <ThemedText.DeprecatedBlack fontWeight={400} fontSize={14} color={
+  //@ts-ignore
+  theme.textSecondary}>
                   <Trans>Expert Mode</Trans>
                 </ThemedText.DeprecatedBlack>
                 <QuestionHelper

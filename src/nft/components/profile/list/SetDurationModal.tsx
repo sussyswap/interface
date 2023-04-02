@@ -24,14 +24,16 @@ const InputWrapper = styled(Row)<{ isInvalid: boolean }>`
   position: relative;
   height: 44px;
   border-radius: 8px;
-  border-color: ${({ isInvalid, theme }) => (isInvalid ? theme.accentCritical : theme.backgroundOutline)};
+  border-color: ${({ isInvalid, theme }) => (isInvalid ? //@ts-ignore
+  theme.accentCritical : theme.backgroundOutline)};
   width: 160px;
   justify-content: space-between;
 `
 
 const DropdownPrompt = styled(Row)`
   gap: 4px;
-  background-color: ${({ theme }) => theme.backgroundInteractive};
+  background-color: ${({ theme }) =>//@ts-ignore
+  theme.backgroundInteractive};
   cursor: pointer;
   font-weight: 600;
   font-size: 14px;
@@ -39,20 +41,24 @@ const DropdownPrompt = styled(Row)`
   border-radius: 8px;
   padding: 6px 4px 6px 8px;
   white-space: nowrap;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textPrimary};
 
   &:hover {
-    opacity: ${({ theme }) => theme.opacity.hover};
+    opacity: ${({ theme }) => //@ts-ignore
+    theme.opacity.hover};
   }
 `
 
 const DropdownChevron = styled(ChevronDown)<{ isOpen: boolean }>`
   height: 20px;
   width: 20px;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
   transform: ${({ isOpen }) => isOpen && 'rotate(180deg)'};
   transition: ${({
     theme: {
+      //@ts-ignore
       transition: { duration, timing },
     },
   }) => `transform ${duration.fast} ${timing.ease}`};
@@ -66,7 +72,8 @@ const DropdownContainer = styled.div`
 `
 
 const ErrorMessage = styled(Row)`
-  color: ${({ theme }) => theme.accentCritical};
+  color: ${({ theme }) => //@ts-ignore
+  theme.accentCritical};
   gap: 4px;
   position: absolute;
   top: 44px;
@@ -75,7 +82,8 @@ const ErrorMessage = styled(Row)`
 
 const WarningIcon = styled(AlertTriangle)`
   width: 16px;
-  color: ${({ theme }) => theme.accentCritical};
+  color: ${({ theme }) => //@ts-ignore
+  theme.accentCritical};
 `
 
 enum Duration {

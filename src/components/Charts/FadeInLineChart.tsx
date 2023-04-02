@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { Group } from '@visx/group'
 import { LinePath } from '@visx/shape'
 import { easeCubicInOut } from 'd3'

@@ -6,7 +6,9 @@ import styled from 'styled-components/macro'
 import { ButtonText, ThemedText } from 'theme'
 
 const ClearButton = styled(ButtonText)`
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => 
+      //@ts-ignore
+      theme.textSecondary};
   cursor: pointer;
   font-weight: 600;
   font-size: 14px;
@@ -22,7 +24,9 @@ const IconWrapper = styled.button`
   background-color: transparent;
   border-radius: 8px;
   border: none;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => 
+      //@ts-ignore
+      theme.textPrimary};
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -35,10 +39,14 @@ const IconWrapper = styled.button`
 `
 const CounterDot = styled.div<{ sizing: string }>`
   align-items: center;
-  background-color: ${({ theme }) => theme.accentAction};
+  background-color: ${({ theme }) => 
+      //@ts-ignore
+      theme.accentAction};
   border-radius: 100px;
   font-weight: bold;
-  color: ${({ theme }) => theme.accentTextLightPrimary};
+  color: ${({ theme }) => 
+      //@ts-ignore
+      theme.accentTextLightPrimary};
   display: flex;
   font-size: 10px;
   justify-content: center;

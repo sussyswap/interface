@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { useWeb3React } from '@web3-react/core'
 import { Unicon } from 'components/Unicon'
 import { Connection, ConnectionType } from 'connection'

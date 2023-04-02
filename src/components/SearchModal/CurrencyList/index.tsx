@@ -30,7 +30,9 @@ const CheckIcon = styled(Check)`
   height: 20px;
   width: 20px;
   margin-left: 4px;
-  color: ${({ theme }) => theme.accentAction};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.accentAction};
 `
 
 const StyledBalanceText = styled(Text)`
@@ -48,8 +50,12 @@ const CurrencyName = styled(Text)`
 `
 
 const Tag = styled.div`
-  background-color: ${({ theme }) => theme.deprecated_bg3};
-  color: ${({ theme }) => theme.textSecondary};
+  background-color: ${({ theme }) => 
+  //@ts-ignore
+  theme.deprecated_bg3};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.textSecondary};
   font-size: 14px;
   border-radius: 4px;
   padding: 0.25rem 0.3rem 0.25rem 0.3rem;

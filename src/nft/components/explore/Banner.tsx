@@ -20,7 +20,8 @@ const BannerContainer = styled.div`
   padding-top: 22px;
   position: relative;
 
-  @media only screen and (min-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (min-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.sm}px`}) {
     padding: 32px 16px;
   }
 `
@@ -41,11 +42,13 @@ const BannerBackground = styled(AbsoluteFill)<{ backgroundImage: string }>`
   background-image: ${(props) => `url(${props.backgroundImage})`};
   filter: blur(62px);
 
-  opacity: ${({ theme }) => (theme.darkMode ? 0.3 : 0.2)};
+  opacity: ${({ theme }) => (//@ts-ignore
+  theme.darkMode ? 0.3 : 0.2)};
 `
 
 const PlainBackground = styled(AbsoluteFill)`
-  background: ${({ theme }) => `linear-gradient(${opacify(10, theme.userThemeColor)}, transparent)`};
+  background: ${({ theme }) => `linear-gradient(${opacify(10, //@ts-ignore
+  theme.userThemeColor)}, transparent)`};
 `
 
 const BannerMainArea = styled.div`
@@ -58,7 +61,8 @@ const BannerMainArea = styled.div`
   justify-content: space-between;
   z-index: 2;
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.sm}px`}) {
     flex-direction: column;
     height: 100%;
     gap: 14px;
@@ -77,19 +81,23 @@ const HeaderContainer = styled.div`
   flex-shrink: 0;
   padding-bottom: 32px;
 
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textPrimary};
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.lg}px`}) {
     font-size: 48px;
     line-height: 67px;
   }
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.md}px`}) {
     font-size: 36px;
     line-height: 50px;
   }
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.sm}px`}) {
     line-height: 43px;
     text-align: center;
     padding-bottom: 16px;

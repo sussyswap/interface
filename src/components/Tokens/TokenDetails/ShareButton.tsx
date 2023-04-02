@@ -25,11 +25,15 @@ const ShareButtonDisplay = styled.div`
 `
 
 const Share = styled(ShareIcon)<{ open: boolean }>`
-  stroke: ${({ theme }) => theme.textSecondary};
+  stroke: ${({ theme }) => 
+  //@ts-ignore
+  theme.textSecondary};
   height: 24px;
   width: 24px;
   ${ClickableStyle}
-  ${({ open, theme }) => open && `opacity: ${theme.opacity.click} !important`};
+  ${({ open, theme }) => open && `opacity: ${
+  //@ts-ignore
+  theme.opacity.click} !important`};
 `
 
 const ShareActions = styled.div`
@@ -43,9 +47,15 @@ const ShareActions = styled.div`
   flex-direction: column;
   overflow: auto;
   padding: 8px;
-  background-color: ${({ theme }) => theme.backgroundSurface};
-  border: 0.5px solid ${({ theme }) => theme.backgroundOutline};
-  box-shadow: ${({ theme }) => theme.deepShadow};
+  background-color: ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundSurface};
+  border: 0.5px solid ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundOutline};
+  box-shadow: ${({ theme }) => 
+  //@ts-ignore
+  theme.deepShadow};
   border-radius: 12px;
 `
 const ShareAction = styled.div`
@@ -57,10 +67,14 @@ const ShareAction = styled.div`
   font-weight: 400;
   gap: 12px;
   height: 40px;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.textPrimary};
   cursor: pointer;
   :hover {
-    background-color: ${({ theme }) => opacify(10, theme.darkMode ? colors.gray200 : colors.gray300)};
+    background-color: ${({ theme }) => opacify(10, 
+  //@ts-ignore
+  theme.darkMode ? colors.gray200 : colors.gray300)};
   }
 `
 
@@ -97,7 +111,9 @@ export default function ShareButton({ currency }: { currency: Currency }) {
           <ShareAction onClick={() => copyHelperRef.current?.forceCopy()}>
             <CopyHelper
               InitialIcon={Link}
-              color={theme.textPrimary}
+              color={
+  //@ts-ignore
+  theme.textPrimary}
               iconPosition="left"
               gap={12}
               toCopy={window.location.href}
@@ -108,7 +124,9 @@ export default function ShareButton({ currency }: { currency: Currency }) {
           </ShareAction>
 
           <ShareAction onClick={shareTweet}>
-            <Twitter color={theme.textPrimary} size={20} strokeWidth={1.5} />
+            <Twitter color={
+  //@ts-ignore
+  theme.textPrimary} size={20} strokeWidth={1.5} />
             <Trans>Share to Twitter</Trans>
           </ShareAction>
         </ShareActions>

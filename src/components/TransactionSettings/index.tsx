@@ -23,21 +23,31 @@ enum DeadlineError {
 }
 
 const FancyButton = styled.button`
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textPrimary};
   align-items: center;
   height: 2rem;
   border-radius: 36px;
   font-size: 1rem;
   width: auto;
   min-width: 3.5rem;
-  border: 1px solid ${({ theme }) => theme.deprecated_bg3};
+  border: 1px solid ${({ theme }) => 
+    //@ts-ignore
+    theme.deprecated_bg3};
   outline: none;
-  background: ${({ theme }) => theme.deprecated_bg1};
+  background: ${({ theme }) =>
+    //@ts-ignore
+    theme.deprecated_bg1};
   :hover {
-    border: 1px solid ${({ theme }) => theme.deprecated_bg4};
+    border: 1px solid ${({ theme }) => 
+    //@ts-ignore
+    theme.deprecated_bg4};
   }
   :focus {
-    border: 1px solid ${({ theme }) => theme.accentAction};
+    border: 1px solid ${({ theme }) => 
+    //@ts-ignore
+    theme.accentAction};
   }
 `
 
@@ -47,12 +57,18 @@ const Option = styled(FancyButton)<{ active: boolean }>`
   :hover {
     cursor: pointer;
   }
-  background-color: ${({ active, theme }) => active && theme.accentAction};
-  color: ${({ active, theme }) => (active ? theme.white : theme.textPrimary)};
+  background-color: ${({ active, theme }) =>
+    //@ts-ignore
+    active && theme.accentAction};
+  color: ${({ active, theme }) => (active ? 
+    //@ts-ignore
+    theme.white : theme.textPrimary)};
 `
 
 const Input = styled.input`
-  background: ${({ theme }) => theme.deprecated_bg1};
+  background: ${({ theme }) => 
+    //@ts-ignore
+    theme.deprecated_bg1};
   font-size: 16px;
   border-radius: 12px;
   width: auto;
@@ -61,11 +77,15 @@ const Input = styled.input`
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
-  color: ${({ theme, color }) => (color === 'red' ? theme.accentFailure : theme.textPrimary)};
+  color: ${({ theme, color }) => (color === 'red' ?
+    //@ts-ignore
+    theme.accentFailure : theme.textPrimary)};
   text-align: right;
 
   ::placeholder {
-    color: ${({ theme }) => theme.textTertiary};
+    color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textTertiary};
   }
 `
 
@@ -77,11 +97,17 @@ const OptionCustom = styled(FancyButton)<{ active?: boolean; warning?: boolean }
   flex: 1;
   border: ${({ theme, active, warning }) =>
     active
-      ? `1px solid ${warning ? theme.accentFailure : theme.accentAction}`
-      : warning && `1px solid ${theme.accentFailure}`};
+      ? `1px solid ${warning ?
+    //@ts-ignore
+    theme.accentFailure : theme.accentAction}`
+      : warning && `1px solid ${
+    //@ts-ignore
+    theme.accentFailure}`};
   :hover {
     border: ${({ theme, active, warning }) =>
-      active && `1px solid ${warning ? darken(0.1, theme.accentFailure) : darken(0.1, theme.accentAction)}`};
+      active && `1px solid ${warning ? darken(0.1, 
+    //@ts-ignore
+    theme.accentFailure) : darken(0.1, theme.accentAction)}`};
   }
 
   input {
@@ -94,7 +120,9 @@ const OptionCustom = styled(FancyButton)<{ active?: boolean; warning?: boolean }
 
 const SlippageEmojiContainer = styled.span`
   color: #f3841e;
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) => 
+    //@ts-ignore
+    theme.deprecated_mediaWidth.deprecated_upToSmall`
     display: none;
   `}
 `
@@ -164,14 +192,16 @@ export default function TransactionSettings({ placeholderSlippage }: Transaction
       }
     }
   }
-
+    //@ts-ignore
   const showCustomDeadlineRow = Boolean(chainId && !L2_CHAIN_IDS.includes(chainId))
 
   return (
     <AutoColumn gap="md">
       <AutoColumn gap="sm">
         <RowFixed>
-          <ThemedText.DeprecatedBlack fontWeight={400} fontSize={14} color={theme.textSecondary}>
+          <ThemedText.DeprecatedBlack fontWeight={400} fontSize={14} color={
+    //@ts-ignore
+    theme.textSecondary}>
             <Trans>Slippage tolerance</Trans>
           </ThemedText.DeprecatedBlack>
           <QuestionHelper
@@ -240,7 +270,9 @@ export default function TransactionSettings({ placeholderSlippage }: Transaction
       {showCustomDeadlineRow && (
         <AutoColumn gap="sm">
           <RowFixed>
-            <ThemedText.DeprecatedBlack fontSize={14} fontWeight={400} color={theme.textSecondary}>
+            <ThemedText.DeprecatedBlack fontSize={14} fontWeight={400} color={
+    //@ts-ignore
+    theme.textSecondary}>
               <Trans>Transaction deadline</Trans>
             </ThemedText.DeprecatedBlack>
             <QuestionHelper

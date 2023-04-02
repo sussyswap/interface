@@ -12,7 +12,9 @@ import { TokenPrice } from './PriceChart'
 import { StatPair, StatsWrapper, StatWrapper } from './StatsSection'
 
 export const Hr = styled.hr`
-  background-color: ${({ theme }) => theme.backgroundOutline};
+  background-color: ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundOutline};
   border: none;
   height: 0.5px;
 `
@@ -22,15 +24,21 @@ export const TokenDetailsLayout = styled.div`
   justify-content: center;
   width: 100%;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
+  @media screen and (min-width: ${({ theme }) =>
+  //@ts-ignore
+  theme.breakpoint.sm}px) {
     gap: 16px;
     padding: 0 16px 52px;
   }
-  @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
+  @media screen and (min-width: ${({ theme }) => 
+  //@ts-ignore
+  theme.breakpoint.md}px) {
     gap: 40px;
     padding: 48px 20px;
   }
-  @media screen and (min-width: ${({ theme }) => theme.breakpoint.xl}px) {
+  @media screen and (min-width: ${({ theme }) => 
+  //@ts-ignore
+  theme.breakpoint.xl}px) {
     gap: 60px;
   }
 `
@@ -45,7 +53,9 @@ export const RightPanel = styled.div`
   gap: 20px;
   width: ${DEFAULT_WIDGET_WIDTH}px;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoint.lg}px) {
+  @media screen and (min-width: ${({ theme }) => 
+  //@ts-ignore
+  theme.breakpoint.lg}px) {
     display: flex;
   }
 `
@@ -72,7 +82,9 @@ export const TokenInfoContainer = styled.div`
   align-items: center;
   margin-bottom: 4px;
   ${textFadeIn};
-  animation-duration: ${({ theme }) => theme.transition.duration.medium};
+  animation-duration: ${({ theme }) => 
+  //@ts-ignore
+  theme.transition.duration.medium};
 `
 export const TokenNameCell = styled.div`
   display: flex;
@@ -159,7 +171,9 @@ function Wave() {
   const theme = useTheme()
   return (
     <svg width="416" height="160" xmlns="http://www.w3.org/2000/svg">
-      <path d="M 0 80 Q 104 10, 208 80 T 416 80" stroke={theme.backgroundOutline} fill="transparent" strokeWidth="2" />
+      <path d="M 0 80 Q 104 10, 208 80 T 416 80" stroke={
+  //@ts-ignore
+  theme.backgroundOutline} fill="transparent" strokeWidth="2" />
     </svg>
   )
 }

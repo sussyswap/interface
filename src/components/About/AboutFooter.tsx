@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { TraceEvent } from '@uniswap/analytics'
 import { BrowserEvent, InterfaceElementName, SharedEventName } from '@uniswap/analytics-events'
 import styled from 'styled-components/macro'

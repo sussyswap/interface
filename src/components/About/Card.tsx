@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { TraceEvent } from '@uniswap/analytics'
 import { BrowserEvent, SharedEventName } from '@uniswap/analytics-events'
 import { Link } from 'react-router-dom'

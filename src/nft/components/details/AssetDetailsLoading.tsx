@@ -124,7 +124,8 @@ export const AssetDetailsLoading = () => {
     <LoadingContainer>
       <StyledColumn>
         <LoaderContainer>
-          <Loader stroke={theme.accentAction} size="40px" />
+          <Loader stroke={//@ts-ignore
+      theme.accentAction} size="40px" />
         </LoaderContainer>
         <BuyNowLoadingMobile>
           <Column>

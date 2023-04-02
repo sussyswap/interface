@@ -1,10 +1,10 @@
 import { skipToken } from '@reduxjs/toolkit/query/react'
 import { Currency, CurrencyAmount, TradeType } from '@uniswap/sdk-core'
-import { IMetric, MetricLoggerUnit, setGlobalMetric } from '@uniswap/smart-order-router'
+import { IMetric, MetricLoggerUnit, setGlobalMetric } from '@sussyswap/smart-order-router'
 import { sendTiming } from 'components/analytics'
 import { AVERAGE_L1_BLOCK_TIME } from 'constants/chainInfo'
 import { useStablecoinAmountFromFiatValue } from 'hooks/useStablecoinPrice'
-import { useRoutingAPIArguments } from 'lib/hooks/routing/useRoutingAPIArguments'
+import {  } from 'lib/hooks/routing/useRoutingAPIArguments'
 import ms from 'ms.macro'
 import { useMemo } from 'react'
 import { RouterPreference, useGetQuoteQuery } from 'state/routing/slice'
@@ -35,20 +35,20 @@ export function useRoutingAPITrade<TTradeType extends TradeType>(
     [amountSpecified, otherCurrency, tradeType]
   )
 
-  const queryArgs = useRoutingAPIArguments({
-    tokenIn: currencyIn,
-    tokenOut: currencyOut,
-    amount: amountSpecified,
-    tradeType,
-    routerPreference,
-  })
+  // const queryArgs = useRoutingAPIArguments({
+  //   tokenIn: currencyIn,
+  //   tokenOut: currencyOut,
+  //   amount: amountSpecified,
+  //   tradeType,
+  //   routerPreference,
+  // })
 
   const {
     isLoading,
     isError,
     data: quoteResult,
     currentData,
-  } = useGetQuoteQuery(queryArgs ?? skipToken, {
+  } = useGetQuoteQuery(skipToken, {
     // Price-fetching is informational and costly, so it's done less frequently.
     pollingInterval: routerPreference === RouterPreference.PRICE ? ms`1m` : AVERAGE_L1_BLOCK_TIME,
     // If latest quote from cache was fetched > 2m ago, instantly repoll for another instead of waiting for next poll period
@@ -92,7 +92,7 @@ export function useRoutingAPITrade<TTradeType extends TradeType>(
       }
     }
 
-    if (isError || !otherAmount || !route || route.length === 0 || !queryArgs) {
+    if (isError || !otherAmount || !route || route.length === 0 ) {
       return {
         state: TradeState.NO_ROUTE_FOUND,
         trade: undefined,
@@ -117,13 +117,14 @@ export function useRoutingAPITrade<TTradeType extends TradeType>(
     tradeType,
     isError,
     route,
-    queryArgs,
+    //queryArgs,
     gasUseEstimateUSD,
     isSyncing,
   ])
 }
 
 // only want to enable this when app hook called
+//@ts-ignore
 class GAMetric extends IMetric {
   putDimensions() {
     return

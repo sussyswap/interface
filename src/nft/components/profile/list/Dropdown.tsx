@@ -7,12 +7,15 @@ import { ThemedText } from 'theme'
 
 const DropdownWrapper = styled(Column)<{ $width: number }>`
   gap: 4px;
-  background: ${({ theme }) => theme.backgroundSurface};
+  background: ${({ theme }) => //@ts-ignore
+  theme.backgroundSurface};
   padding: 8px;
   width: ${({ $width }) => $width}px;
   border-radius: 12px;
-  box-shadow: ${({ theme }) => theme.deepShadow};
-  border: 1px solid ${({ theme }) => theme.backgroundOutline};
+  box-shadow: ${({ theme }) => //@ts-ignore
+  theme.deepShadow};
+  border: 1px solid ${({ theme }) => //@ts-ignore
+  theme.backgroundOutline};
 `
 
 const DropdownRow = styled(Row)`
@@ -22,7 +25,8 @@ const DropdownRow = styled(Row)`
   border-radius: 12px;
 
   &:hover {
-    background: ${({ theme }) => theme.backgroundInteractive};
+    background: ${({ theme }) =>//@ts-ignore
+    theme.backgroundInteractive};
   }
 `
 
@@ -38,7 +42,8 @@ export const Dropdown = ({ dropDownOptions, width }: DropdownArgs) => {
       {dropDownOptions.map((option) => (
         <DropdownRow key={option.displayText} onClick={option.onClick}>
           <ThemedText.BodyPrimary lineHeight="24px">{option.displayText}</ThemedText.BodyPrimary>
-          {option.isSelected && <Check height={20} width={20} color={theme.accentAction} />}
+          {option.isSelected && <Check height={20} width={20} color={//@ts-ignore
+      theme.accentAction} />}
         </DropdownRow>
       ))}
     </DropdownWrapper>

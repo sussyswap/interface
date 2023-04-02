@@ -13,12 +13,18 @@ import { StyledInternalLink } from 'theme'
 const Wrapper = styled.div`
   align-content: center;
   align-items: center;
-  border: 1px solid ${({ theme }) => theme.backgroundOutline};
+  border: 1px solid ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundOutline};
   border-bottom: none;
-  background-color: ${({ theme }) => theme.backgroundSurface};
+  background-color: ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundSurface};
   border-radius: 20px 20px 0px 0px;
   bottom: 52px;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.textSecondary};
   display: flex;
   flex-direction: row;
   font-weight: 500;
@@ -31,15 +37,21 @@ const Wrapper = styled.div`
   position: fixed;
   width: 100%;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoint.md}px) {
+  @media screen and (min-width: ${({ theme }) => 
+  //@ts-ignore
+  theme.breakpoint.md}px) {
     bottom: 0px;
   }
-  @media screen and (min-width: ${({ theme }) => theme.breakpoint.lg}px) {
+  @media screen and (min-width: ${({ theme }) => 
+  //@ts-ignore
+  theme.breakpoint.lg}px) {
     display: none;
   }
 `
 const BalanceValue = styled.div`
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.textPrimary};
   font-size: 20px;
   line-height: 28px;
   display: flex;
@@ -62,15 +74,21 @@ const FiatValue = styled.span`
   font-size: 12px;
   line-height: 16px;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoint.sm}px) {
+  @media screen and (min-width: ${({ theme }) => 
+  //@ts-ignore
+  theme.breakpoint.sm}px) {
     line-height: 24px;
   }
 `
 const SwapButton = styled(StyledInternalLink)`
-  background-color: ${({ theme }) => theme.accentAction};
+  background-color: ${({ theme }) => 
+  //@ts-ignore
+  theme.accentAction};
   border: none;
   border-radius: 12px;
-  color: ${({ theme }) => theme.accentTextLightPrimary};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.accentTextLightPrimary};
   display: flex;
   flex: 1 1 auto;
   padding: 12px 16px;

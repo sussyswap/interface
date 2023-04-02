@@ -58,7 +58,8 @@ const BackArrow = styled(ArrowLeft)`
   height: 16px;
   width: 16px;
   cursor: pointer;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
 
   @media screen and (min-width: ${BREAKPOINTS.sm}px) {
     height: 20px;
@@ -113,11 +114,13 @@ const GridWrapper = styled.div`
 const FloatingConfirmationBar = styled(Row)<{ issues: boolean }>`
   padding: 12px 12px 12px 32px;
   border: 1px solid;
-  border-color: ${({ theme, issues }) => (issues ? theme.backgroundOutline : theme.accentAction)};
+  border-color: ${({ theme, issues }) => (issues ? //@ts-ignore
+  theme.backgroundOutline : theme.accentAction)};
   border-radius: 20px;
   white-space: nowrap;
   justify-content: space-between;
-  background: ${({ theme }) => theme.backgroundSurface};
+  background: ${({ theme }) => //@ts-ignore
+  theme.backgroundSurface};
   position: fixed;
   bottom: 32px;
   width: calc(100vw - ${LIST_PAGE_MARGIN * 2}px);
@@ -125,7 +128,8 @@ const FloatingConfirmationBar = styled(Row)<{ issues: boolean }>`
   transform: translateX(-50%);
   max-width: 1200px;
   z-index: ${Z_INDEX.under_dropdown};
-  box-shadow: ${({ theme }) => theme.shallowShadow};
+  box-shadow: ${({ theme }) => //@ts-ignore
+  theme.shallowShadow};
 
   @media screen and (max-width: ${BREAKPOINTS.lg}px) {
     bottom: 68px;
@@ -142,12 +146,14 @@ const Overlay = styled.div`
   bottom: 0px;
   height: 158px;
   width: 100vw;
-  background: ${({ theme }) => `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, ${theme.backgroundBackdrop} 100%)`};
+  background: ${({ theme }) => `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, ${//@ts-ignore
+    theme.backgroundBackdrop} 100%)`};
 `
 
 const UsdValue = styled(ThemedText.SubHeader)`
   line-height: 24px;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) =>//@ts-ignore
+  theme.textSecondary};
   display: none;
 
   @media screen and (min-width: ${BREAKPOINTS.lg}px) {
@@ -173,7 +179,8 @@ const EthValueWrapper = styled.span<{ totalEthListingValue: boolean }>`
   font-weight: 500;
   font-size: 20px;
   line-height: 28px;
-  color: ${({ theme, totalEthListingValue }) => (totalEthListingValue ? theme.textPrimary : theme.textSecondary)};
+  color: ${({ theme, totalEthListingValue }) => (totalEthListingValue ? //@ts-ignore
+  theme.textPrimary : theme.textSecondary)};
 
   @media screen and (max-width: ${BREAKPOINTS.sm}px) {
     font-size: 16px;

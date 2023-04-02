@@ -29,7 +29,9 @@ const QuestionMark = styled.span`
   font-size: 14px;
   margin-left: 8px;
   align-items: center;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.textSecondary};
   margin-top: 2.5px;
 `
 

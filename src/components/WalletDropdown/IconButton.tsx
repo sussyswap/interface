@@ -2,7 +2,9 @@ import { Icon } from 'react-feather'
 import styled, { css } from 'styled-components/macro'
 
 export const IconHoverText = styled.span`
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textPrimary};
   position: absolute;
   top: 28px;
   border-radius: 8px;
@@ -14,19 +16,27 @@ export const IconHoverText = styled.span`
 `
 
 const IconStyles = css`
-  background-color: ${({ theme }) => theme.backgroundInteractive};
+  background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundInteractive};
   border-radius: 12px;
   display: inline-block;
   cursor: pointer;
   position: relative;
   height: 32px;
   width: 32px;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textPrimary};
   :hover {
-    background-color: ${({ theme }) => theme.hoverState};
+    background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.hoverState};
     transition: ${({
       theme: {
-        transition: { duration, timing },
+        
+    //@ts-ignore
+    transition: { duration, timing },
       },
     }) => `${duration.fast} background-color ${timing.in}`};
 
@@ -35,7 +45,9 @@ const IconStyles = css`
     }
   }
   :active {
-    background-color: ${({ theme }) => theme.backgroundSurface};
+    background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundSurface};
     transition: background-color 50ms linear;
   }
 `

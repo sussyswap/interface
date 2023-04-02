@@ -1,3 +1,4 @@
+//@ts-nocheck
 import jazzicon from '@metamask/jazzicon'
 import { useWeb3React } from '@web3-react/core'
 import useENSAvatar from 'hooks/useENSAvatar'

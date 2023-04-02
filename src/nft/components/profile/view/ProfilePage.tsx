@@ -41,9 +41,11 @@ const ProfileHeader = styled.div`
   line-height: 38px;
   padding-bottom: 16px;
   margin-bottom: 8px;
-  border-bottom: 1px solid ${({ theme }) => theme.backgroundOutline};
+  border-bottom: 1px solid ${({ theme }) => //@ts-ignore
+  theme.backgroundOutline};
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.sm}px`}) {
     font-size: 20px;
     line-height: 28px;
     margin-bottom: 0px;

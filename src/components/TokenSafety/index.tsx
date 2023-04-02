@@ -53,18 +53,28 @@ const StyledButton = styled(ButtonPrimary)`
 
 const StyledCancelButton = styled(ButtonText)`
   margin-top: 16px;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textSecondary};
   font-weight: 600;
   font-size: 14px;
 `
 
 const StyledCloseButton = styled(StyledButton)`
-  background-color: ${({ theme }) => theme.backgroundInteractive};
-  color: ${({ theme }) => theme.textPrimary};
+  background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundInteractive};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textPrimary};
 
   &:hover {
-    background-color: ${({ theme }) => theme.backgroundInteractive};
-    opacity: ${({ theme }) => theme.opacity.hover};
+    background-color: ${({ theme }) =>
+    //@ts-ignore
+    theme.backgroundInteractive};
+    opacity: ${({ theme }) => 
+    //@ts-ignore
+    theme.opacity.hover};
     transition: opacity 250ms ease;
   }
 `
@@ -116,8 +126,12 @@ const ExplorerContainer = styled.div`
   height: 32px;
   margin-top: 10px;
   font-size: 20px;
-  background-color: ${({ theme }) => theme.accentActionSoft};
-  color: ${({ theme }) => theme.accentAction};
+  background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.accentActionSoft};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.accentAction};
   border-radius: 8px;
   padding: 2px 12px;
   display: flex;
@@ -132,10 +146,14 @@ const ExplorerLinkWrapper = styled.div`
   cursor: pointer;
 
   :hover {
-    opacity: ${({ theme }) => theme.opacity.hover};
+    opacity: ${({ theme }) => 
+    //@ts-ignore
+    theme.opacity.hover};
   }
   :active {
-    opacity: ${({ theme }) => theme.opacity.click};
+    opacity: ${({ theme }) => 
+    //@ts-ignore
+    theme.opacity.click};
   }
 `
 
@@ -183,7 +201,9 @@ function ExplorerView({ token }: { token: Token }) {
 }
 
 const StyledExternalLink = styled(ExternalLink)`
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textSecondary};
   stroke: currentColor;
   font-weight: 600;
 `

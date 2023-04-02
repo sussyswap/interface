@@ -17,10 +17,13 @@ const ModalWrapper = styled(Column)`
   transform: translate(-50%, -50%);
   width: 420px;
   z-index: ${Z_INDEX.modal};
-  background: ${({ theme }) => theme.backgroundSurface};
+  background: ${({ theme }) => //@ts-ignore
+  theme.backgroundSurface};
   border-radius: 20px;
-  border: 1px solid ${({ theme }) => theme.backgroundOutline};
-  box-shadow: ${({ theme }) => theme.deepShadow};
+  border: 1px solid ${({ theme }) => //@ts-ignore
+  theme.backgroundOutline};
+  box-shadow: ${({ theme }) =>//@ts-ignore
+  theme.deepShadow};
   padding: 20px 24px 24px;
   display: flex;
   flex-direction: column;
@@ -61,7 +64,8 @@ const EditListings = styled.span`
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
-  color: ${({ theme }) => theme.accentAction};
+  color: ${({ theme }) => //@ts-ignore
+  theme.accentAction};
   text-align: center;
   cursor: pointer;
   padding: 12px 16px;
@@ -94,7 +98,8 @@ export const BelowFloorWarningModal = ({
           <CloseIcon width={24} height={24} onClick={closeModal} />{' '}
         </CloseIconWrapper>
         <HazardIconWrap>
-          <AlertTriangle height={90} width={90} color={theme.accentCritical} />
+          <AlertTriangle height={90} width={90} color={//@ts-ignore
+      theme.accentCritical} />
         </HazardIconWrap>
         <ThemedText.HeadlineSmall lineHeight="28px" textAlign="center">
           <Trans>Low listing price</Trans>

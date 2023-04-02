@@ -1,3 +1,4 @@
+    //@ts-nocheck
 import { Trans } from '@lingui/macro'
 import { useWeb3React } from '@web3-react/core'
 import NewBadge from 'components/WalletModal/NewBadge'
@@ -22,6 +23,7 @@ import { MenuDropdown } from './MenuDropdown'
 import { SearchBar } from './SearchBar'
 import * as styles from './style.css'
 
+    //@ts-ignore
 const Nav = styled.nav`
   padding: 20px 12px;
   width: 100%;
@@ -65,12 +67,12 @@ export const PageTabs = () => {
       <MenuItem href="/swap" isActive={pathname.startsWith('/swap')}>
         <Trans>Swap</Trans>
       </MenuItem>
-      <MenuItem href={`/tokens/${chainName.toLowerCase()}`} isActive={pathname.startsWith('/tokens')}>
+      {/* <MenuItem href={`/tokens/${chainName.toLowerCase()}`} isActive={pathname.startsWith('/tokens')}>
         <Trans>Tokens</Trans>
       </MenuItem>
       <MenuItem dataTestId="nft-nav" href="/nfts" isActive={isNftPage}>
         <Trans>NFTs</Trans>
-      </MenuItem>
+      </MenuItem> */}
       <Box display={{ sm: 'flex', lg: 'none', xxl: 'flex' }} width="full">
         <MenuItem href="/pools" dataTestId="pool-nav-link" isActive={isPoolActive}>
           <Trans>Pools</Trans>
@@ -84,9 +86,9 @@ export const PageTabs = () => {
           </MenuItem>
         </Box>
       )}
-      <Box marginY={{ sm: '4', md: 'unset' }}>
+      {/* <Box marginY={{ sm: '4', md: 'unset' }}>
         <MenuDropdown />
-      </Box>
+      </Box> */}
     </>
   )
 }
@@ -103,18 +105,19 @@ const Navbar = ({ blur }: { blur: boolean }) => {
         <Box display="flex" height="full" flexWrap="nowrap">
           <Box className={styles.leftSideContainer}>
             <Box className={styles.logoContainer}>
-              <UniIcon
+           
+              {/* <UniIcon
                 width="48"
                 height="48"
-                data-testid="uniswap-logo"
+                data-testid="sussyswap-logo"
                 className={styles.logo}
                 onClick={() => {
                   navigate({
                     pathname: '/',
-                    search: '?intro=true',
+                    search: 'swap'//'?intro=true',
                   })
                 }}
-              />
+              /> */}
             </Box>
             {!isNftPage && (
               <Box display={{ sm: 'flex', lg: 'none' }}>
@@ -125,9 +128,9 @@ const Navbar = ({ blur }: { blur: boolean }) => {
               <PageTabs />
             </Row>
           </Box>
-          <Box className={styles.searchContainer}>
+          {/* <Box className={styles.searchContainer}>
             <SearchBar />
-          </Box>
+          </Box> */}
           <Box className={styles.rightSideContainer}>
             <Row gap="12">
               <Box position="relative" display={{ sm: 'flex', navSearchInputVisible: 'none' }}>

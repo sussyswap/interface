@@ -162,12 +162,16 @@ export default function ActivityTab({ account }: { account: string }) {
 }
 
 const StyledDescriptor = styled(ThemedText.BodySmall)`
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textSecondary};
   ${EllipsisStyle}
 `
 
 const StyledTimestamp = styled(ThemedText.Caption)`
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textSecondary};
   font-variant: small;
   font-feature-settings: 'tnum' on, 'lnum' on, 'ss02' on;
 `

@@ -13,7 +13,9 @@ const GridContainer = styled.div`
   display: flex;
   flex-direction: column;
   max-width: ${MAX_WIDTH_MEDIA_BREAKPOINT};
-  background-color: ${({ theme }) => theme.backgroundSurface};
+  background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundSurface};
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.01), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04),
     0px 24px 32px rgba(0, 0, 0, 0.01);
   margin-left: auto;
@@ -21,7 +23,9 @@ const GridContainer = styled.div`
   border-radius: 12px;
   justify-content: center;
   align-items: center;
-  border: 1px solid ${({ theme }) => theme.backgroundOutline};
+  border: 1px solid ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundOutline};
 `
 
 const TokenDataContainer = styled.div`
@@ -37,7 +41,9 @@ const NoTokenDisplay = styled.div`
   justify-content: center;
   width: 100%;
   height: 60px;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textSecondary};
   font-size: 16px;
   font-weight: 500;
   align-items: center;

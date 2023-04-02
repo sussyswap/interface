@@ -45,8 +45,12 @@ const FooterContainer = styled.div`
 `
 
 const Footer = styled.div`
-  border-top: 1px solid ${({ theme }) => theme.backgroundOutline};
-  color: ${({ theme }) => theme.textPrimary};
+  border-top: 1px solid ${({ theme }) => 
+      //@ts-ignore
+      theme.backgroundOutline};
+  color: ${({ theme }) =>
+      //@ts-ignore
+      theme.textPrimary};
   display: flex;
   flex-direction: column;
   margin: 0px 16px 8px;
@@ -317,7 +321,7 @@ export const BagFooter = ({ setModalIsOpen, eventProperties }: BagFooterProps) =
   const [tokenSelectorOpen, setTokenSelectorOpen] = useState(false)
   const isPending = PENDING_BAG_STATUSES.includes(bagStatus)
   const activeCurrency = inputCurrency ?? defaultCurrency
-  const usingPayWithAnyToken = !!inputCurrency && shouldUsePayWithAnyToken && chainId === SupportedChainId.MAINNET
+  const usingPayWithAnyToken = !!inputCurrency && shouldUsePayWithAnyToken && chainId === SupportedChainId.AVALANCHE
 
   useSubscribeTransactionState(setModalIsOpen)
   const fetchAssets = useFetchAssets()
@@ -345,7 +349,7 @@ export const BagFooter = ({ setModalIsOpen, eventProperties }: BagFooterProps) =
 
   const { balance: balanceInEth } = useWalletBalance()
   const sufficientBalance = useMemo(() => {
-    if (!connected || chainId !== SupportedChainId.MAINNET) {
+    if (!connected || chainId !== SupportedChainId.AVALANCHE) {
       return undefined
     }
 
@@ -381,14 +385,18 @@ export const BagFooter = ({ setModalIsOpen, eventProperties }: BagFooterProps) =
     let buttonText = <Trans>Something went wrong</Trans>
     let disabled = true
     let warningText = undefined
+      //@ts-ignore
     let warningTextColor = theme.accentWarning
     let helperText = undefined
+      //@ts-ignore
     let helperTextColor = theme.textSecondary
+      //@ts-ignore
     let buttonColor = theme.accentAction
+      //@ts-ignore
     let buttonTextColor = theme.accentTextLightPrimary
 
-    if (connected && chainId !== SupportedChainId.MAINNET) {
-      handleClick = () => switchChain(connector, SupportedChainId.MAINNET)
+    if (connected && chainId !== SupportedChainId.AVALANCHE) {
+      handleClick = () => switchChain(connector, SupportedChainId.AVALANCHE)
       buttonText = <Trans>Switch networks</Trans>
       disabled = false
       warningText = <Trans>Wrong network</Trans>
@@ -421,7 +429,9 @@ export const BagFooter = ({ setModalIsOpen, eventProperties }: BagFooterProps) =
 
       if (tradeState === TradeState.NO_ROUTE_FOUND) {
         buttonText = <Trans>Insufficient liquidity</Trans>
+      //@ts-ignore
         buttonColor = theme.backgroundInteractive
+      //@ts-ignore
         buttonTextColor = theme.textPrimary
         helperText = <Trans>Insufficient pool liquidity to complete transaction</Trans>
       }
@@ -441,6 +451,7 @@ export const BagFooter = ({ setModalIsOpen, eventProperties }: BagFooterProps) =
       }
     } else if (bagStatus === BagStatus.CONFIRM_QUOTE) {
       disabled = false
+      //@ts-ignore
       warningTextColor = theme.accentAction
       warningText = <Trans>Price updated</Trans>
       buttonText = <Trans>Pay</Trans>
@@ -469,11 +480,17 @@ export const BagFooter = ({ setModalIsOpen, eventProperties }: BagFooterProps) =
     }
   }, [
     fetchAssets,
+      //@ts-ignore
     theme.accentWarning,
+      //@ts-ignore
     theme.textSecondary,
+      //@ts-ignore
     theme.accentAction,
+      //@ts-ignore
     theme.accentTextLightPrimary,
+      //@ts-ignore
     theme.backgroundInteractive,
+      //@ts-ignore
     theme.textPrimary,
     connected,
     chainId,
@@ -519,7 +536,9 @@ export const BagFooter = ({ setModalIsOpen, eventProperties }: BagFooterProps) =
                   <ThemedText.HeadlineSmall fontWeight={500} lineHeight="24px">
                     {activeCurrency?.symbol}
                   </ThemedText.HeadlineSmall>
-                  <ChevronDown size={20} color={theme.textSecondary} />
+                  <ChevronDown size={20} color={
+      //@ts-ignore
+      theme.textSecondary} />
                 </CurrencyInput>
               </Column>
               <TotalColumn gap="xs">

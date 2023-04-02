@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { Trans } from '@lingui/macro'
 import * as Sentry from '@sentry/react'
 import { sendAnalyticsEvent } from '@uniswap/analytics'

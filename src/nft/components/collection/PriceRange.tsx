@@ -181,7 +181,8 @@ export const PriceRange = () => {
           trackStyle={{
             top: '3px',
             height: '8px',
-            background: `${theme.accentAction}`,
+            background: `${//@ts-ignore
+              theme.accentAction}`,
           }}
           handleStyle={{
             top: '3px',
@@ -196,7 +197,8 @@ export const PriceRange = () => {
           railStyle={{
             top: '3px',
             height: '8px',
-            backgroundColor: `${theme.accentActionSoft}`,
+            backgroundColor: `${//@ts-ignore
+              theme.accentActionSoft}`,
           }}
           onChange={handleSliderLogic}
         />

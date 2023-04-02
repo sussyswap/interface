@@ -20,20 +20,26 @@ const Wrapper = styled.div`
 `
 
 const StyledExternalCard = styled(Card)`
-  background-color: ${({ theme }) => theme.deprecated_primary5};
+  background-color: ${({ theme }) => 
+  //@ts-ignore
+  theme.deprecated_primary5};
   padding: 0.5rem;
   width: 100%;
 
   :hover,
   :focus,
   :active {
-    background-color: ${({ theme }) => theme.deprecated_primary4};
+    background-color: ${({ theme }) => 
+  //@ts-ignore
+  theme.deprecated_primary4};
   }
 `
 
 const HoverText = styled.div`
   text-decoration: none;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.textPrimary};
   display: flex;
   align-items: center;
 

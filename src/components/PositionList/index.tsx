@@ -10,7 +10,9 @@ const DesktopHeader = styled.div`
   font-size: 14px;
   font-weight: 500;
   padding: 16px;
-  border-bottom: 1px solid ${({ theme }) => theme.backgroundOutline};
+  border-bottom: 1px solid ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundOutline};
 
   @media screen and (min-width: ${MEDIA_WIDTHS.deprecated_upToSmall}px) {
     align-items: center;
@@ -32,7 +34,9 @@ const MobileHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  border-bottom: 1px solid ${({ theme }) => theme.backgroundOutline};
+  border-bottom: 1px solid ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundOutline};
 
   @media screen and (min-width: ${MEDIA_WIDTHS.deprecated_upToSmall}px) {
     display: none;
@@ -55,7 +59,9 @@ const ToggleLabel = styled.button`
   cursor: pointer;
   background-color: transparent;
   border: none;
-  color: ${({ theme }) => theme.accentAction};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.accentAction};
   font-size: 1rem;
 `
 

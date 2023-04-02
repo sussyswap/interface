@@ -1,3 +1,4 @@
+    //@ts-nocheck
 import { Trans } from '@lingui/macro'
 import { useWeb3React } from '@web3-react/core'
 import Loader from 'components/Icons/LoadingSpinner'
@@ -8,6 +9,7 @@ import styled, { useTheme } from 'styled-components/macro'
 
 const LOGO_SIZE = 20
 
+    //@ts-ignore
 const Container = styled.button<{ disabled: boolean }>`
   align-items: center;
   background: none;

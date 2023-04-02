@@ -71,7 +71,8 @@ const MarketIcon = styled.img<{ index: number }>`
   object-fit: cover;
   z-index: ${({ index }) => 2 - index};
   margin-left: ${({ index }) => `${index === 0 ? 0 : -8}px`};
-  outline: 1px solid ${({ theme }) => theme.backgroundInteractive};
+  outline: 1px solid ${({ theme }) => //@ts-ignore
+  theme.backgroundInteractive};
 `
 
 const ExpandMarketIconWrapper = styled.div`

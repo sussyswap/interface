@@ -12,13 +12,17 @@ import styled from 'styled-components/macro'
 import { currencyId } from 'utils/currencyId'
 
 const MobileWrapper = styled(AutoColumn)`
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) => 
+  //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToSmall`
     display: none;
   `};
 `
 
 const BaseWrapper = styled.div<{ disable?: boolean }>`
-  border: 1px solid ${({ theme, disable }) => (disable ? theme.accentActive : theme.backgroundOutline)};
+  border: 1px solid ${({ theme, disable }) => (disable ? 
+  //@ts-ignore
+  theme.accentActive : theme.backgroundOutline)};
   border-radius: 16px;
   display: flex;
   padding: 6px;
@@ -27,11 +31,17 @@ const BaseWrapper = styled.div<{ disable?: boolean }>`
   align-items: center;
   :hover {
     cursor: ${({ disable }) => !disable && 'pointer'};
-    background-color: ${({ theme }) => theme.hoverDefault};
+    background-color: ${({ theme }) => 
+  //@ts-ignore
+  theme.hoverDefault};
   }
 
-  color: ${({ theme, disable }) => disable && theme.accentActive};
-  background-color: ${({ theme, disable }) => disable && theme.accentActiveSoft};
+  color: ${({ theme, disable }) => 
+  //@ts-ignore
+  disable && theme.accentActive};
+  background-color: ${({ theme, disable }) => 
+  //@ts-ignore
+  disable && theme.accentActiveSoft};
 `
 
 const formatAnalyticsEventProperties = (currency: Currency, searchQuery: string, isAddressSearch: string | false) => ({

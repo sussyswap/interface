@@ -10,7 +10,7 @@ import {
 } from '@uniswap/analytics-events'
 import { Trade } from '@uniswap/router-sdk'
 import { Currency, CurrencyAmount, Percent, Token, TradeType } from '@uniswap/sdk-core'
-import { UNIVERSAL_ROUTER_ADDRESS } from '@uniswap/universal-router-sdk'
+import { UNIVERSAL_ROUTER_ADDRESS } from '@sussyswap/universal-router-sdk'
 import { useWeb3React } from '@web3-react/core'
 import { sendEvent } from 'components/analytics'
 import Loader from 'components/Icons/LoadingSpinner'
@@ -69,6 +69,7 @@ import { computeFiatValuePriceImpact } from '../../utils/computeFiatValuePriceIm
 import { maxAmountSpend } from '../../utils/maxAmountSpend'
 import { computeRealizedPriceImpact, warningSeverity } from '../../utils/prices'
 import { supportedChainId } from '../../utils/supportedChainId'
+import UNIVERSAL_ROUTER from 'constants/universalRouter'
 
 const ArrowContainer = styled.div`
   display: inline-block;
@@ -82,10 +83,12 @@ const ArrowContainer = styled.div`
 
 const SwapSection = styled.div`
   position: relative;
-  background-color: ${({ theme }) => theme.backgroundModule};
+  background-color: ${({ theme }) => //@ts-ignore
+  theme.backgroundModule};
   border-radius: 12px;
   padding: 16px;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
@@ -103,20 +106,24 @@ const SwapSection = styled.div`
     height: 100%;
     pointer-events: none;
     content: '';
-    border: 1px solid ${({ theme }) => theme.backgroundModule};
+    border: 1px solid ${({ theme }) => //@ts-ignore
+    theme.backgroundModule};
   }
 
   &:hover:before {
-    border-color: ${({ theme }) => theme.stateOverlayHover};
+    border-color: ${({ theme }) => //@ts-ignore
+    theme.stateOverlayHover};
   }
 
   &:focus-within:before {
-    border-color: ${({ theme }) => theme.stateOverlayPressed};
+    border-color: ${({ theme }) => //@ts-ignore
+    theme.stateOverlayPressed};
   }
 `
 
 const OutputSwapSection = styled(SwapSection)<{ showDetailsDropdown: boolean }>`
-  border-bottom: ${({ theme }) => `1px solid ${theme.backgroundSurface}`};
+  border-bottom: ${({ theme }) => `1px solid ${//@ts-ignore
+    theme.backgroundSurface}`};
   border-bottom-left-radius: ${({ showDetailsDropdown }) => showDetailsDropdown && '0'};
   border-bottom-right-radius: ${({ showDetailsDropdown }) => showDetailsDropdown && '0'};
 `
@@ -309,7 +316,7 @@ export default function Swap({ className }: { className?: string }) {
       (parsedAmounts[Field.INPUT]?.currency.isToken
         ? (parsedAmounts[Field.INPUT] as CurrencyAmount<Token>)
         : undefined),
-    isSupportedChain(chainId) ? UNIVERSAL_ROUTER_ADDRESS(chainId) : undefined
+    isSupportedChain(chainId) ? UNIVERSAL_ROUTER(chainId) : undefined
   )
   const isApprovalLoading = allowance.state === AllowanceState.REQUIRED && allowance.isApprovalLoading
   const [isAllowancePending, setIsAllowancePending] = useState(false)
@@ -555,12 +562,14 @@ export default function Swap({ className }: { className?: string }) {
                       onClick={() => {
                         onSwitchTokens()
                       }}
-                      color={theme.textPrimary}
+                      color={//@ts-ignore
+                        theme.textPrimary}
                     >
                       <ArrowDown
                         size="16"
                         color={
-                          currencies[Field.INPUT] && currencies[Field.OUTPUT] ? theme.textPrimary : theme.textTertiary
+                          //@ts-ignore
+      currencies[Field.INPUT] && currencies[Field.OUTPUT] ? theme.textPrimary : theme.textTertiary
                         }
                       />
                     </ArrowContainer>
@@ -598,7 +607,8 @@ export default function Swap({ className }: { className?: string }) {
                       <>
                         <AutoRow justify="space-between" style={{ padding: '0 1rem' }}>
                           <ArrowWrapper clickable={false}>
-                            <ArrowDown size="16" color={theme.textSecondary} />
+                            <ArrowDown size="16" color={//@ts-ignore
+      theme.textSecondary} />
                           </ArrowWrapper>
                           <LinkStyledButton id="remove-recipient-button" onClick={() => onChangeRecipient(null)}>
                             <Trans>- Remove recipient</Trans>

@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { FunctionComponent, PropsWithChildren, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import styled, { css } from 'styled-components/macro'

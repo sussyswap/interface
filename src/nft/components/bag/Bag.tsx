@@ -37,14 +37,22 @@ const BagContainer = styled.div<{ raiseZIndex: boolean; isProfilePage: boolean }
   right: 20px;
   width: ${BAG_WIDTH}px;
   height: calc(100vh - 108px);
-  background: ${({ theme }) => theme.backgroundSurface};
-  border: 1px solid ${({ theme }) => theme.backgroundOutline};
+  background: ${({ theme }) => 
+      //@ts-ignore
+      theme.backgroundSurface};
+  border: 1px solid ${({ theme }) => 
+      //@ts-ignore
+      theme.backgroundOutline};
   border-radius: 16px;
-  box-shadow: ${({ theme }) => theme.shallowShadow};
+  box-shadow: ${({ theme }) => 
+      //@ts-ignore
+      theme.shallowShadow};
   z-index: ${({ raiseZIndex, isProfilePage }) =>
     raiseZIndex ? (isProfilePage ? Z_INDEX.modalOverTooltip : Z_INDEX.modalBackdrop - 1) : 3};
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${
+      //@ts-ignore
+      theme.breakpoint.sm}px`}) {
     right: 0px;
     top: 0px;
     width: 100%;
@@ -53,7 +61,9 @@ const BagContainer = styled.div<{ raiseZIndex: boolean; isProfilePage: boolean }
     border: none;
   }
 
-  @media only screen and (min-width: ${({ theme }) => `${theme.breakpoint.xxxl}px`}) {
+  @media only screen and (min-width: ${({ theme }) => `${
+      //@ts-ignore
+      theme.breakpoint.xxxl}px`}) {
     width: ${XXXL_BAG_WIDTH}px;
   }
 `
@@ -67,8 +77,12 @@ const DetailsPageBackground = styled.div`
 `
 
 const ContinueButton = styled.div`
-  background: ${({ theme }) => theme.accentAction};
-  color: ${({ theme }) => theme.accentTextLightPrimary};
+  background: ${({ theme }) => 
+      //@ts-ignore
+      theme.accentAction};
+  color: ${({ theme }) => 
+      //@ts-ignore
+      theme.accentTextLightPrimary};
   margin: 32px 28px 16px;
   padding: 10px 0px;
   border-radius: 12px;
@@ -77,10 +91,14 @@ const ContinueButton = styled.div`
   font-weight: 600;
   line-height: 20px;
   cursor: pointer;
-  transition: ${({ theme }) => theme.transition.duration.medium};
+  transition: ${({ theme }) => 
+      //@ts-ignore
+      theme.transition.duration.medium};
 
   :hover {
-    opacity: ${({ theme }) => theme.opacity.hover};
+    opacity: ${({ theme }) => 
+      //@ts-ignore
+      theme.opacity.hover};
   }
 `
 

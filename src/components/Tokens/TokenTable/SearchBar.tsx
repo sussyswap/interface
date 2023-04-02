@@ -21,28 +21,44 @@ const SearchInput = styled.input`
   background-image: url(${searchIcon});
   background-size: 20px 20px;
   background-position: 12px center;
-  background-color: ${({ theme }) => theme.backgroundModule};
+  background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundModule};
   border-radius: 12px;
-  border: 1.5px solid ${({ theme }) => theme.backgroundOutline};
+  border: 1.5px solid ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundOutline};
   height: 100%;
   width: min(200px, 100%);
   font-size: 14px;
   padding-left: 40px;
-  color: ${({ theme }) => theme.textSecondary};
-  transition-duration: ${({ theme }) => theme.transition.duration.fast};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textSecondary};
+  transition-duration: ${({ theme }) => 
+    //@ts-ignore
+    theme.transition.duration.fast};
 
   :hover {
-    background-color: ${({ theme }) => theme.backgroundSurface};
+    background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundSurface};
   }
 
   :focus {
     outline: none;
-    background-color: ${({ theme }) => theme.backgroundSurface};
-    border-color: ${({ theme }) => theme.accentActionSoft};
+    background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundSurface};
+    border-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.accentActionSoft};
   }
 
   ::placeholder {
-    color: ${({ theme }) => theme.textTertiary};
+    color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textTertiary};
   }
   ::-webkit-search-cancel-button {
     -webkit-appearance: none;

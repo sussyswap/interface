@@ -20,7 +20,8 @@ const MarketplaceRowWrapper = styled(Row)`
   justify-content: space-between;
   padding: 0px 16px;
   &:hover {
-    background-color: ${({ theme }) => theme.backgroundInteractive};
+    background-color: ${({ theme }) => //@ts-ignore
+    theme.backgroundInteractive};
   }
   border-radius: 12px;
 `
@@ -33,7 +34,8 @@ const MarketplaceDropdownIcon = styled.img`
 `
 
 const FeeText = styled.div`
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
 `
 
 interface MarketplaceRowProps {
@@ -79,10 +81,12 @@ const HeaderButtonWrap = styled(Row)`
   border-radius: 12px;
   width: 180px;
   justify-content: space-between;
-  background: ${({ theme }) => theme.backgroundInteractive};
+  background: ${({ theme }) =>//@ts-ignore
+  theme.backgroundInteractive};
   cursor: pointer;
   &:hover {
-    opacity: ${({ theme }) => theme.opacity.hover};
+    opacity: ${({ theme }) =>//@ts-ignore
+    theme.opacity.hover};
   }
   @media screen and (min-width: ${SMALL_MEDIA_BREAKPOINT}) {
     width: 220px;
@@ -98,7 +102,8 @@ const MarketIcon = styled.img<{ index: number; totalSelected: number }>`
   width: 20px;
   margin-right: 8px;
   border: 1px solid;
-  border-color: ${({ theme }) => theme.backgroundInteractive};
+  border-color: ${({ theme }) => //@ts-ignore
+  theme.backgroundInteractive};
   border-radius: 4px;
   z-index: ${({ index, totalSelected }) => totalSelected - index};
   margin-left: ${({ index }) => `${index === 0 ? 0 : -18}px`};
@@ -107,10 +112,12 @@ const MarketIcon = styled.img<{ index: number; totalSelected: number }>`
 const Chevron = styled(ChevronUpIcon)<{ isOpen: boolean }>`
   height: 20px;
   width: 20px;
-  fill: ${({ theme }) => theme.textPrimary};
+  fill: ${({ theme }) => //@ts-ignore
+  theme.textPrimary};
   transition: ${({
     theme: {
-      transition: { duration },
+     //@ts-ignore
+     transition: { duration },
     },
   }) => `${duration.fast} transform`};
   transform: ${({ isOpen }) => `rotate(${isOpen ? 0 : 180}deg)`};
@@ -124,7 +131,8 @@ const ModalWrapper = styled.div`
 
 const DropdownWrapper = styled(Column)<{ isOpen: boolean }>`
   padding: 16px 0px;
-  background-color: ${({ theme }) => theme.backgroundSurface};
+  background-color: ${({ theme }) =>//@ts-ignore
+  theme.backgroundSurface};
   display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
   position: absolute;
   top: 52px;
@@ -132,8 +140,10 @@ const DropdownWrapper = styled(Column)<{ isOpen: boolean }>`
   border-radius: 12px;
   gap: 12px;
   z-index: ${Z_INDEX.modalBackdrop};
-  box-shadow: ${({ theme }) => theme.deepShadow};
-  border: 0.5px solid ${({ theme }) => theme.backgroundOutline};
+  box-shadow: ${({ theme }) =>//@ts-ignore
+  theme.deepShadow};
+  border: 0.5px solid ${({ theme }) =>//@ts-ignore
+  theme.backgroundOutline};
 `
 
 export const SelectMarketplacesDropdown = ({

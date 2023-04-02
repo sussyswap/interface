@@ -26,7 +26,9 @@ const StyledArrow = styled(ArrowLeft)`
 `
 
 const Header = styled.div`
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textPrimary};
 
   display: flex;
   justify-content: space-between;

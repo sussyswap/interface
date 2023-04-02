@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro'
 import { Trace } from '@uniswap/analytics'
 import { InterfacePageName } from '@uniswap/analytics-events'
-import { Currency, Field } from '@uniswap/widgets'
+import { Currency, Field } from '@sussyswap/widgets'
 import { useWeb3React } from '@web3-react/core'
 import CurrencyLogo from 'components/Logo/CurrencyLogo'
 import { AboutSection } from 'components/Tokens/TokenDetails/About'
@@ -45,12 +45,16 @@ import InvalidTokenDetails from './InvalidTokenDetails'
 
 const TokenSymbol = styled.span`
   text-transform: uppercase;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.textSecondary};
 `
 const TokenActions = styled.div`
   display: flex;
   gap: 16px;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.textSecondary};
 `
 
 function useOnChainToken(address: string | undefined, skip: boolean) {

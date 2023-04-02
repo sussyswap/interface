@@ -10,7 +10,8 @@ export const PageWrapper = styled(BodyWrapper)<{ wide: boolean }>`
 
   padding: ${({ wide }) => (wide ? '10px' : '0')};
 
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToMedium`
+  ${({ theme }) => //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToMedium`
     max-width: 480px;
   `};
 `
@@ -20,11 +21,13 @@ export const Wrapper = styled.div`
   padding: 26px 16px;
   min-width: 480px;
 
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToMedium`
+  ${({ theme }) => //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToMedium`
     min-width: 400px;
   `};
 
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToExtraSmall`
+  ${({ theme }) => //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToExtraSmall`
   min-width: 340px;
 `};
 `
@@ -35,16 +38,19 @@ export const ScrollablePage = styled.div`
   display: flex;
   flex-direction: column;
 
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToMedium`
+  ${({ theme }) => //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToMedium`
     max-width: 480px;
     margin: 0 auto;
   `};
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.md}px`}) {
     padding: 48px 8px 0px;
   }
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.sm}px`}) {
     padding-top: 20px;
   }
 `
@@ -59,7 +65,8 @@ export const CurrencyDropdown = styled(CurrencyInputPanel)`
 `
 
 export const StyledInput = styled(Input)`
-  background-color: ${({ theme }) => theme.backgroundSurface};
+  background-color: ${({ theme }) => //@ts-ignore
+  theme.backgroundSurface};
   text-align: left;
   font-size: 18px;
   width: 100%;
@@ -76,9 +83,11 @@ export const ResponsiveTwoColumns = styled.div<{ wide: boolean }>`
 
   padding-top: 20px;
 
-  border-top: 1px solid ${({ theme }) => theme.backgroundInteractive};
+  border-top: 1px solid ${({ theme }) =>//@ts-ignore
+  theme.backgroundInteractive};
 
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToMedium`
+  ${({ theme }) => //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToMedium`
     grid-template-columns: 1fr;
 
     margin-top: 0;
@@ -90,7 +99,8 @@ export const RightContainer = styled(AutoColumn)`
   grid-column: 2;
   height: fit-content;
 
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToMedium`
+  ${({ theme }) => //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToMedium`
   grid-row: 2 / 3;
   grid-column: 1;
   `};
@@ -108,7 +118,8 @@ export const StackedItem = styled.div<{ zIndex?: number }>`
 `
 
 export const MediumOnly = styled.div`
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToMedium`
+  ${({ theme }) => //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToMedium`
     display: none;
   `};
 `
@@ -116,7 +127,8 @@ export const MediumOnly = styled.div`
 export const HideMedium = styled.div`
   display: none;
 
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToMedium`
+  ${({ theme }) => //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToMedium`
     display: block;
   `};
 `

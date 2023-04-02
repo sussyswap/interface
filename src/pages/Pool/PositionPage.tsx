@@ -6,7 +6,7 @@ import { InterfacePageName } from '@uniswap/analytics-events'
 import { formatPrice, NumberType } from '@uniswap/conedison/format'
 import { Currency, CurrencyAmount, Fraction, Percent, Price, Token } from '@uniswap/sdk-core'
 import { NonfungiblePositionManager, Pool, Position } from '@uniswap/v3-sdk'
-import { SupportedChainId } from '@uniswap/widgets'
+import { SupportedChainId } from '@sussyswap/widgets'
 import { useWeb3React } from '@web3-react/core'
 import { sendEvent } from 'components/analytics'
 import Badge from 'components/Badge'
@@ -75,12 +75,14 @@ const PageWrapper = styled.div`
   min-width: 800px;
   max-width: 960px;
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.md}px`}) {
     min-width: 100%;
     padding: 16px;
   }
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.sm}px`}) {
     min-width: 100%;
     padding: 16px;
   }
@@ -102,7 +104,8 @@ const Label = styled(({ end, ...props }) => <ThemedText.DeprecatedLabel {...prop
 `
 
 const ExtentsText = styled.span`
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
   font-size: 14px;
   text-align: center;
   margin-right: 4px;
@@ -111,19 +114,23 @@ const ExtentsText = styled.span`
 
 const HoverText = styled(ThemedText.DeprecatedMain)`
   text-decoration: none;
-  color: ${({ theme }) => theme.textTertiary};
+  color: ${({ theme }) =>//@ts-ignore
+  theme.textTertiary};
   :hover {
-    color: ${({ theme }) => theme.textPrimary};
+    color: ${({ theme }) => //@ts-ignore
+    theme.textPrimary};
     text-decoration: none;
   }
 `
 
 const DoubleArrow = styled.span`
-  color: ${({ theme }) => theme.textTertiary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textTertiary};
   margin: 0 1rem;
 `
 const ResponsiveRow = styled(RowBetween)`
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.sm}px`}) {
     flex-direction: column;
     align-items: flex-start;
     row-gap: 16px;
@@ -135,7 +142,8 @@ const ActionButtonResponsiveRow = styled(ResponsiveRow)`
   width: 50%;
   justify-content: flex-end;
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.sm}px`}) {
     width: 100%;
     flex-direction: row;
     * {
@@ -150,11 +158,13 @@ const ResponsiveButtonConfirmed = styled(ButtonConfirmed)`
   width: fit-content;
   font-size: 16px;
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.md}px`}) {
     width: fit-content;
   }
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.sm}px`}) {
     width: fit-content;
   }
 `
@@ -740,7 +750,8 @@ export function PositionPage() {
                           <Trans>${fiatValueOfLiquidity.toFixed(2, { groupSeparator: ',' })}</Trans>
                         </ThemedText.DeprecatedLargeHeader>
                       ) : (
-                        <ThemedText.DeprecatedLargeHeader color={theme.textPrimary} fontSize="36px" fontWeight={500}>
+                        <ThemedText.DeprecatedLargeHeader color={//@ts-ignore
+                          theme.textPrimary} fontSize="36px" fontWeight={500}>
                           <Trans>$-</Trans>
                         </ThemedText.DeprecatedLargeHeader>
                       )}
@@ -755,7 +766,8 @@ export function PositionPage() {
                             </ThemedText.DeprecatedMain>
                             {typeof ratio === 'number' && !removed ? (
                               <Badge style={{ marginLeft: '10px' }}>
-                                <ThemedText.DeprecatedMain color={theme.textSecondary} fontSize={11}>
+                                <ThemedText.DeprecatedMain color={//@ts-ignore
+      theme.textSecondary} fontSize={11}>
                                   <Trans>{inverted ? ratio : 100 - ratio}%</Trans>
                                 </ThemedText.DeprecatedMain>
                               </Badge>
@@ -770,7 +782,8 @@ export function PositionPage() {
                             </ThemedText.DeprecatedMain>
                             {typeof ratio === 'number' && !removed ? (
                               <Badge style={{ marginLeft: '10px' }}>
-                                <ThemedText.DeprecatedMain color={theme.textSecondary} fontSize={11}>
+                                <ThemedText.DeprecatedMain color={//@ts-ignore
+      theme.textSecondary} fontSize={11}>
                                   <Trans>{inverted ? 100 - ratio : ratio}%</Trans>
                                 </ThemedText.DeprecatedMain>
                               </Badge>
@@ -791,7 +804,8 @@ export function PositionPage() {
                           </Label>
                           {fiatValueOfFees?.greaterThan(new Fraction(1, 100)) ? (
                             <ThemedText.DeprecatedLargeHeader
-                              color={theme.accentSuccess}
+                              color={//@ts-ignore
+                                theme.accentSuccess}
                               fontSize="36px"
                               fontWeight={500}
                             >
@@ -799,7 +813,8 @@ export function PositionPage() {
                             </ThemedText.DeprecatedLargeHeader>
                           ) : (
                             <ThemedText.DeprecatedLargeHeader
-                              color={theme.textPrimary}
+                              color={//@ts-ignore
+                                theme.textPrimary}
                               fontSize="36px"
                               fontWeight={500}
                             >
@@ -818,11 +833,13 @@ export function PositionPage() {
                             onClick={() => setShowConfirm(true)}
                           >
                             {!!collectMigrationHash && !isCollectPending ? (
-                              <ThemedText.DeprecatedMain color={theme.textPrimary}>
+                              <ThemedText.DeprecatedMain color={//@ts-ignore
+                                theme.textPrimary}>
                                 <Trans> Collected</Trans>
                               </ThemedText.DeprecatedMain>
                             ) : isCollectPending || collecting ? (
-                              <ThemedText.DeprecatedMain color={theme.textPrimary}>
+                              <ThemedText.DeprecatedMain color={//@ts-ignore
+                                theme.textPrimary}>
                                 {' '}
                                 <Dots>
                                   <Trans>Collecting</Trans>
@@ -830,7 +847,8 @@ export function PositionPage() {
                               </ThemedText.DeprecatedMain>
                             ) : (
                               <>
-                                <ThemedText.DeprecatedMain color={theme.white}>
+                                <ThemedText.DeprecatedMain color={//@ts-ignore
+      theme.white}>
                                   <Trans>Collect fees</Trans>
                                 </ThemedText.DeprecatedMain>
                               </>
@@ -938,7 +956,8 @@ export function PositionPage() {
                       </ExtentsText>
 
                       {inRange && (
-                        <ThemedText.DeprecatedSmall color={theme.textTertiary}>
+                        <ThemedText.DeprecatedSmall color={//@ts-ignore
+                          theme.textTertiary}>
                           <Trans>Your position will be 100% {currencyBase?.symbol} at this price.</Trans>
                         </ThemedText.DeprecatedSmall>
                       )}
@@ -967,7 +986,8 @@ export function PositionPage() {
                       </ExtentsText>
 
                       {inRange && (
-                        <ThemedText.DeprecatedSmall color={theme.textTertiary}>
+                        <ThemedText.DeprecatedSmall color={//@ts-ignore
+                          theme.textTertiary}>
                           <Trans>Your position will be 100% {currencyQuote?.symbol} at this price.</Trans>
                         </ThemedText.DeprecatedSmall>
                       )}

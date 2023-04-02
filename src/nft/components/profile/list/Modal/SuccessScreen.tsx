@@ -56,14 +56,18 @@ const buttonStyle = css`
 `
 
 const ReturnButton = styled.button`
-  background-color: ${({ theme }) => theme.backgroundInteractive};
-  color: ${({ theme }) => theme.textPrimary};
+  background-color: ${({ theme }) => //@ts-ignore
+  theme.backgroundInteractive};
+  color: ${({ theme }) =>//@ts-ignore
+  theme.textPrimary};
   ${buttonStyle}
 `
 
 const TweetButton = styled.a`
-  background-color: ${({ theme }) => theme.accentAction};
-  color: ${({ theme }) => theme.accentTextLightPrimary};
+  background-color: ${({ theme }) =>//@ts-ignore
+  theme.accentAction};
+  color: ${({ theme }) => //@ts-ignore
+  theme.accentTextLightPrimary};
   text-decoration: none;
   ${buttonStyle}
 `
@@ -119,7 +123,8 @@ export const SuccessScreen = ({ overlayClick }: { overlayClick: () => void }) =>
         </ReturnButton>
         <TweetButton href={generateTweetForList(sellAssets)} target="_blank" rel="noreferrer">
           <TweetRow>
-            <Twitter height={20} width={20} color={theme.accentTextLightPrimary} fill={theme.accentTextLightPrimary} />
+            <Twitter height={20} width={20} color={//@ts-ignore
+      theme.accentTextLightPrimary} fill={theme.accentTextLightPrimary} />
             <Trans>Share on Twitter</Trans>
           </TweetRow>
         </TweetButton>

@@ -14,11 +14,15 @@ export const PageWrapper = styled.div`
   max-width: 480px;
   width: 100%;
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${
+  //@ts-ignore
+  theme.breakpoint.md}px`}) {
     padding-top: 48px;
   }
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${
+  //@ts-ignore
+  theme.breakpoint.sm}px`}) {
     padding-top: 20px;
   }
 `
@@ -26,16 +30,22 @@ export const PageWrapper = styled.div`
 // Mostly copied from `AppBody` but it was getting too hard to maintain backwards compatibility.
 export const SwapWrapper = styled.main<{ chainId: number | undefined }>`
   position: relative;
-  background: ${({ theme }) => theme.backgroundSurface};
+  background: ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundSurface};
   border-radius: 16px;
-  border: 1px solid ${({ theme }) => theme.backgroundOutline};
+  border: 1px solid ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundOutline};
   padding: 8px;
-  box-shadow: ${({ chainId }) => !!chainId && chainId === SupportedChainId.BNB && '0px 40px 120px 0px #f0b90b29'};
+  box-shadow: ${({ chainId }) => !!chainId && chainId === SupportedChainId.AVALANCHE_FUJI && '0px 40px 120px 0px #f0b90b29'};
   z-index: ${Z_INDEX.deprecated_content};
   transition: transform 250ms ease;
 
   &:hover {
-    border: 1px solid ${({ theme }) => theme.backgroundOutline};
+    border: 1px solid ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundOutline};
   }
 `
 
@@ -48,9 +58,13 @@ export const ArrowWrapper = styled.div<{ clickable: boolean }>`
   margin-bottom: -18px;
   margin-left: auto;
   margin-right: auto;
-  background-color: ${({ theme }) => theme.backgroundInteractive};
+  background-color: ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundInteractive};
   border: 4px solid;
-  border-color: ${({ theme }) => theme.backgroundSurface};
+  border-color: ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundSurface};
 
   z-index: 2;
   ${({ clickable }) =>
@@ -67,12 +81,20 @@ export const ArrowWrapper = styled.div<{ clickable: boolean }>`
 export const ErrorText = styled(Text)<{ severity?: 0 | 1 | 2 | 3 | 4 }>`
   color: ${({ theme, severity }) =>
     severity === 3 || severity === 4
-      ? theme.accentFailure
+      ? 
+  //@ts-ignore
+  theme.accentFailure
       : severity === 2
-      ? theme.deprecated_yellow2
+      ? 
+  //@ts-ignore
+  theme.deprecated_yellow2
       : severity === 1
-      ? theme.textPrimary
-      : theme.textSecondary};
+      ? 
+  //@ts-ignore
+  theme.textPrimary
+      : 
+  //@ts-ignore
+  theme.textSecondary};
 `
 
 export const TruncatedText = styled(Text)`
@@ -105,7 +127,9 @@ export const Dots = styled.span`
 `
 
 const SwapCallbackErrorInner = styled.div`
-  background-color: ${({ theme }) => transparentize(0.9, theme.accentFailure)};
+  background-color: ${({ theme }) => transparentize(0.9, 
+  //@ts-ignore
+  theme.accentFailure)};
   border-radius: 1rem;
   display: flex;
   align-items: center;
@@ -113,7 +137,9 @@ const SwapCallbackErrorInner = styled.div`
   width: 100%;
   padding: 3rem 1.25rem 1rem 1rem;
   margin-top: -2rem;
-  color: ${({ theme }) => theme.accentFailure};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.accentFailure};
   z-index: -1;
   p {
     padding: 0;
@@ -123,7 +149,9 @@ const SwapCallbackErrorInner = styled.div`
 `
 
 const SwapCallbackErrorInnerAlertTriangle = styled.div`
-  background-color: ${({ theme }) => transparentize(0.9, theme.accentFailure)};
+  background-color: ${({ theme }) => transparentize(0.9, 
+  //@ts-ignore
+  theme.accentFailure)};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -145,20 +173,30 @@ export function SwapCallbackError({ error }: { error: ReactNode }) {
 }
 
 export const SwapShowAcceptChanges = styled(AutoColumn)`
-  background-color: ${({ theme }) => transparentize(0.95, theme.deprecated_primary3)};
-  color: ${({ theme }) => theme.accentAction};
+  background-color: ${({ theme }) => transparentize(0.95, 
+  //@ts-ignore
+  theme.deprecated_primary3)};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.accentAction};
   padding: 0.5rem;
   border-radius: 12px;
   margin-top: 8px;
 `
 
 export const ResponsiveTooltipContainer = styled(TooltipContainer)<{ origin?: string; width?: string }>`
-  background-color: ${({ theme }) => theme.backgroundSurface};
-  border: 1px solid ${({ theme }) => theme.backgroundInteractive};
+  background-color: ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundSurface};
+  border: 1px solid ${({ theme }) => 
+  //@ts-ignore
+  theme.backgroundInteractive};
   padding: 1rem;
   width: ${({ width }) => width ?? 'auto'};
 
-  ${({ theme, origin }) => theme.deprecated_mediaWidth.deprecated_upToExtraSmall`
+  ${({ theme, origin }) => 
+  //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToExtraSmall`
     transform: scale(0.8);
     transform-origin: ${origin ?? 'top left'};
   `}

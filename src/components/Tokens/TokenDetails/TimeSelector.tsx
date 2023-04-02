@@ -31,7 +31,9 @@ const TimeButton = styled.button<{ active: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${({ theme, active }) => (active ? theme.backgroundInteractive : 'transparent')};
+  background-color: ${({ theme, active }) => (active ? 
+    //@ts-ignore
+    theme.backgroundInteractive : 'transparent')};
   font-weight: 600;
   font-size: 16px;
   padding: 6px 12px;
@@ -39,10 +41,16 @@ const TimeButton = styled.button<{ active: boolean }>`
   line-height: 20px;
   border: none;
   cursor: pointer;
-  color: ${({ theme, active }) => (active ? theme.textPrimary : theme.textSecondary)};
-  transition-duration: ${({ theme }) => theme.transition.duration.fast};
+  color: ${({ theme, active }) => (active ? 
+    //@ts-ignore
+    theme.textPrimary : theme.textSecondary)};
+  transition-duration: ${({ theme }) => 
+    //@ts-ignore
+    theme.transition.duration.fast};
   :hover {
-    ${({ active, theme }) => !active && `opacity: ${theme.opacity.hover};`}
+    ${({ active, theme }) => !active && `opacity: ${
+    //@ts-ignore
+    theme.opacity.hover};`}
   }
 `
 

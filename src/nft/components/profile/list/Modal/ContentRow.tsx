@@ -11,14 +11,16 @@ import { ThemedText } from 'theme'
 import { opacify } from 'theme/utils'
 
 const ContentColumn = styled(Column)<{ failed: boolean }>`
-  background-color: ${({ theme, failed }) => failed && opacify(12, theme.accentCritical)};
+  background-color: ${({ theme, failed }) => failed && opacify(12, //@ts-ignore
+  theme.accentCritical)};
   border-radius: 12px;
   padding-bottom: ${({ failed }) => failed && '16px'};
 `
 
 const ContentRowWrapper = styled(Row)<{ active: boolean; failed: boolean }>`
   padding: 16px;
-  border: ${({ failed, theme }) => !failed && `1px solid ${theme.backgroundOutline}`};
+  border: ${({ failed, theme }) => !failed && `1px solid ${//@ts-ignore
+    theme.backgroundOutline}`};
   border-radius: 12px;
   opacity: ${({ active, failed }) => (active || failed ? '1' : '0.6')};
 `
@@ -46,7 +48,8 @@ const MarketplaceIcon = styled.img`
 `
 
 const ContentName = styled(ThemedText.SubHeaderSmall)`
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textPrimary};
   line-height: 20px;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -58,14 +61,16 @@ const ProceedText = styled.span`
   font-weight: 600;
   font-size: 12px;
   line-height: 16px;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
 `
 
 const FailedText = styled.span`
   font-weight: 600;
   font-size: 10px;
   line-height: 12px;
-  color: ${({ theme }) => theme.accentCritical};
+  color: ${({ theme }) =>//@ts-ignore
+  theme.accentCritical};
   margin-left: 4px;
 `
 
@@ -102,14 +107,18 @@ const failedButtonStyle = css`
 `
 
 const RemoveButton = styled.button`
-  background-color: ${({ theme }) => theme.accentCritical};
-  color: ${({ theme }) => theme.accentTextDarkPrimary};
+  background-color: ${({ theme }) => //@ts-ignore
+  theme.accentCritical};
+  color: ${({ theme }) => //@ts-ignore
+  theme.accentTextDarkPrimary};
   ${failedButtonStyle}
 `
 
 const RetryButton = styled.button`
-  background-color: ${({ theme }) => theme.backgroundInteractive};
-  color: ${({ theme }) => theme.textPrimary};
+  background-color: ${({ theme }) => //@ts-ignore
+  theme.backgroundInteractive};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textPrimary};
   ${failedButtonStyle}
 `
 
@@ -146,18 +155,21 @@ export const ContentRow = ({
             <Loader
               height="14px"
               width="14px"
-              stroke={row.status === ListingStatus.PENDING ? theme.accentAction : theme.textTertiary}
+              stroke={row.status === ListingStatus.PENDING ? //@ts-ignore
+              theme.accentAction : theme.textTertiary}
             />
           ) : row.status === ListingStatus.SIGNING ? (
             <ProceedText>
               <Trans>Proceed in wallet</Trans>
             </ProceedText>
           ) : row.status === ListingStatus.APPROVED ? (
-            <Check height="20" width="20" stroke={theme.accentSuccess} />
+            <Check height="20" width="20" stroke={//@ts-ignore
+              theme.accentSuccess} />
           ) : (
             failed && (
               <Row>
-                <XOctagon height="20" width="20" color={theme.accentCritical} />
+                <XOctagon height="20" width="20" color={//@ts-ignore
+      theme.accentCritical} />
                 <FailedText>
                   {row.status === ListingStatus.FAILED ? <Trans>Failed</Trans> : <Trans>Rejected</Trans>}
                 </FailedText>

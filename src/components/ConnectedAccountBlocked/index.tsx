@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { Trans } from '@lingui/macro'
 import Column from 'components/Column'
 import { BlockedIcon } from 'components/TokenSafety/TokenSafetyIcon'

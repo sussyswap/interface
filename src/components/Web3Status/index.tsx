@@ -45,34 +45,52 @@ const Web3StatusGeneric = styled(ButtonSecondary)`
   }
 `
 const Web3StatusError = styled(Web3StatusGeneric)`
-  background-color: ${({ theme }) => theme.accentFailure};
-  border: 1px solid ${({ theme }) => theme.accentFailure};
-  color: ${({ theme }) => theme.white};
+  background-color: ${({ theme }) =>
+    //@ts-ignore
+    theme.accentFailure};
+  border: 1px solid ${({ theme }) =>
+    //@ts-ignore
+    theme.accentFailure};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.white};
   font-weight: 500;
   :hover,
   :focus {
-    background-color: ${({ theme }) => darken(0.1, theme.accentFailure)};
+    background-color: ${({ theme }) => darken(0.1, 
+    //@ts-ignore
+    theme.accentFailure)};
   }
 `
 
 const Web3StatusConnectWrapper = styled.div<{ faded?: boolean }>`
   ${flexRowNoWrap};
   align-items: center;
-  background-color: ${({ theme }) => theme.accentActionSoft};
+  background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.accentActionSoft};
   border-radius: ${FULL_BORDER_RADIUS}px;
   border: none;
   padding: 0;
   height: 40px;
 
-  color: ${({ theme }) => theme.accentAction};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.accentAction};
   :hover {
-    color: ${({ theme }) => theme.accentActionSoft};
-    stroke: ${({ theme }) => theme.accentActionSoft};
+    color: ${({ theme }) => 
+    //@ts-ignore
+    theme.accentActionSoft};
+    stroke: ${({ theme }) =>
+    //@ts-ignore
+    theme.accentActionSoft};
   }
 
   transition: ${({
     theme: {
-      transition: { duration, timing },
+      
+    //@ts-ignore
+    transition: { duration, timing },
     },
   }) => `${duration.fast} color ${timing.in}`};
 `
@@ -81,23 +99,35 @@ const Web3StatusConnected = styled(Web3StatusGeneric)<{
   pending?: boolean
   isClaimAvailable?: boolean
 }>`
-  background-color: ${({ pending, theme }) => (pending ? theme.accentAction : theme.deprecated_bg1)};
-  border: 1px solid ${({ pending, theme }) => (pending ? theme.accentAction : theme.deprecated_bg1)};
-  color: ${({ pending, theme }) => (pending ? theme.white : theme.textPrimary)};
+  background-color: ${({ pending, theme }) => (pending ? 
+    //@ts-ignore
+    theme.accentAction : theme.deprecated_bg1)};
+  border: 1px solid ${({ pending, theme }) => (pending ? 
+    //@ts-ignore
+    theme.accentAction : theme.deprecated_bg1)};
+  color: ${({ pending, theme }) => (pending ? 
+    //@ts-ignore
+    theme.white : theme.textPrimary)};
   font-weight: 500;
   border: ${({ isClaimAvailable }) => isClaimAvailable && `1px solid ${colors.purple300}`};
   :hover,
   :focus {
-    border: 1px solid ${({ theme }) => darken(0.05, theme.deprecated_bg3)};
+    border: 1px solid ${({ theme }) => darken(0.05,
+    //@ts-ignore
+    theme.deprecated_bg3)};
 
     :focus {
       border: 1px solid
         ${({ pending, theme }) =>
-          pending ? darken(0.1, theme.accentAction) : darken(0.1, theme.backgroundInteractive)};
+          pending ? darken(0.1,
+    //@ts-ignore
+    theme.accentAction) : darken(0.1, theme.backgroundInteractive)};
     }
   }
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${
+    //@ts-ignore
+    theme.breakpoint.lg}px`}) {
     width: ${({ pending }) => !pending && '36px'};
 
     ${IconWrapper} {
@@ -109,7 +139,9 @@ const Web3StatusConnected = styled(Web3StatusGeneric)<{
 const AddressAndChevronContainer = styled.div`
   display: flex;
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.navSearchInputVisible}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${
+    //@ts-ignore
+    theme.breakpoint.navSearchInputVisible}px`}) {
     display: none;
   }
 `

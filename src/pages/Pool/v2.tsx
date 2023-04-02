@@ -30,7 +30,8 @@ const PageWrapper = styled(AutoColumn)`
   max-width: 640px;
   width: 100%;
 
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) => //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToSmall`
     padding: 0px 8px;
   `};
 `
@@ -41,7 +42,8 @@ const VoteCard = styled(DataCard)`
 `
 
 const TitleRow = styled(RowBetween)`
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) =>//@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToSmall`
     flex-wrap: wrap;
     gap: 12px;
     width: 100%;
@@ -51,7 +53,8 @@ const TitleRow = styled(RowBetween)`
 
 const ButtonRow = styled(RowFixed)`
   gap: 8px;
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) =>//@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToSmall`
     width: 100%;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -62,7 +65,8 @@ const ResponsiveButtonPrimary = styled(ButtonPrimary)`
   height: 40px;
   width: fit-content;
   border-radius: 12px;
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) => //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToSmall`
     width: 48%;
   `};
 `
@@ -70,13 +74,15 @@ const ResponsiveButtonPrimary = styled(ButtonPrimary)`
 const ResponsiveButtonSecondary = styled(ButtonSecondary)`
   height: 40px;
   width: fit-content;
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) =>//@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToSmall`
     width: 48%;
   `};
 `
 
 const EmptyProposals = styled.div`
-  border: 1px solid ${({ theme }) => theme.deprecated_text4};
+  border: 1px solid ${({ theme }) => //@ts-ignore
+  theme.deprecated_text4};
   padding: 16px 12px;
   border-radius: 12px;
   display: flex;
@@ -164,7 +170,8 @@ export default function Pool() {
                   </ThemedText.DeprecatedWhite>
                 </RowBetween>
                 <ExternalLink
-                  style={{ color: theme.white, textDecoration: 'underline' }}
+                  style={{ color: //@ts-ignore
+                  theme.white, textDecoration: 'underline' }}
                   target="_blank"
                   href="https://docs.uniswap.org/protocol/V2/concepts/core-concepts/pools"
                 >
@@ -182,7 +189,8 @@ export default function Pool() {
             <AutoColumn gap="lg" justify="center">
               <AutoColumn gap="md" style={{ width: '100%' }}>
                 <Layer2Prompt>
-                  <ThemedText.DeprecatedBody color={theme.textTertiary} textAlign="center">
+                  <ThemedText.DeprecatedBody color={//@ts-ignore
+      theme.textTertiary} textAlign="center">
                     <Trans>Uniswap V2 is not available on this network.</Trans>
                   </ThemedText.DeprecatedBody>
                 </Layer2Prompt>
@@ -216,13 +224,15 @@ export default function Pool() {
 
                 {!account ? (
                   <Card padding="40px">
-                    <ThemedText.DeprecatedBody color={theme.textTertiary} textAlign="center">
+                    <ThemedText.DeprecatedBody color={//@ts-ignore
+      theme.textTertiary} textAlign="center">
                       <Trans>Connect to a wallet to view your liquidity.</Trans>
                     </ThemedText.DeprecatedBody>
                   </Card>
                 ) : v2IsLoading ? (
                   <EmptyProposals>
-                    <ThemedText.DeprecatedBody color={theme.textTertiary} textAlign="center">
+                    <ThemedText.DeprecatedBody color={//@ts-ignore
+      theme.textTertiary} textAlign="center">
                       <Dots>
                         <Trans>Loading</Trans>
                       </Dots>
@@ -273,7 +283,8 @@ export default function Pool() {
                   </>
                 ) : (
                   <EmptyProposals>
-                    <ThemedText.DeprecatedBody color={theme.textTertiary} textAlign="center">
+                    <ThemedText.DeprecatedBody color={//@ts-ignore
+      theme.textTertiary} textAlign="center">
                       <Trans>No liquidity found.</Trans>
                     </ThemedText.DeprecatedBody>
                   </EmptyProposals>

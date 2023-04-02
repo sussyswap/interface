@@ -35,10 +35,14 @@ export function getPriceBounds(pricePoints: PricePoint[]): [number, number] {
 }
 
 const StyledUpArrow = styled(ArrowUpRight)`
-  color: ${({ theme }) => theme.accentSuccess};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.accentSuccess};
 `
 const StyledDownArrow = styled(ArrowDownRight)`
-  color: ${({ theme }) => theme.accentFailure};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.accentFailure};
 `
 
 function calculateDelta(start: number, current: number) {
@@ -66,13 +70,17 @@ export function formatDelta(delta: number | null | undefined) {
 
 export const DeltaText = styled.span<{ delta: number | undefined }>`
   color: ${({ theme, delta }) =>
-    delta !== undefined ? (Math.sign(delta) < 0 ? theme.accentFailure : theme.accentSuccess) : theme.textPrimary};
+    delta !== undefined ? (Math.sign(delta) < 0 ? 
+  //@ts-ignore
+  theme.accentFailure : theme.accentSuccess) : theme.textPrimary};
 `
 
 const ChartHeader = styled.div`
   position: absolute;
   ${textFadeIn};
-  animation-duration: ${({ theme }) => theme.transition.duration.medium};
+  animation-duration: ${({ theme }) =>
+  //@ts-ignore
+  theme.transition.duration.medium};
 `
 export const TokenPrice = styled.span`
   font-size: 36px;
@@ -81,7 +89,9 @@ export const TokenPrice = styled.span`
 const MissingPrice = styled(TokenPrice)`
   font-size: 24px;
   line-height: 44px;
-  color: ${({ theme }) => theme.textTertiary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textTertiary};
 `
 
 const DeltaContainer = styled.div`
@@ -287,7 +297,9 @@ export function PriceChart({ width, height, prices: originalPrices, timePeriod }
         ) : (
           <>
             <MissingPrice>Price Unavailable</MissingPrice>
-            <ThemedText.Caption style={{ color: theme.textTertiary }}>{missingPricesMessage}</ThemedText.Caption>
+            <ThemedText.Caption style={{ color: 
+    //@ts-ignore
+    theme.textTertiary }}>{missingPricesMessage}</ThemedText.Caption>
           </>
         )}
       </ChartHeader>
@@ -312,7 +324,9 @@ export function PriceChart({ width, height, prices: originalPrices, timePeriod }
               marginTop={margin.top}
               curve={curve}
               strokeWidth={2}
-              color={theme.textTertiary}
+              color={
+    //@ts-ignore
+    theme.textTertiary}
               dashed
             />
           ))}
@@ -320,16 +334,22 @@ export function PriceChart({ width, height, prices: originalPrices, timePeriod }
             <g>
               <AxisBottom
                 scale={timeScale}
-                stroke={theme.backgroundOutline}
+                stroke={
+  //@ts-ignore
+  theme.backgroundOutline}
                 tickFormat={tickFormatter}
-                tickStroke={theme.backgroundOutline}
+                tickStroke={
+  //@ts-ignore
+  theme.backgroundOutline}
                 tickLength={4}
                 hideTicks={true}
                 tickTransform="translate(0 -5)"
                 tickValues={ticks}
                 top={graphHeight - 1}
                 tickLabelProps={() => ({
-                  fill: theme.textSecondary,
+                  fill: 
+  //@ts-ignore
+  theme.textSecondary,
                   fontSize: 12,
                   textAnchor: 'middle',
                   transform: 'translate(0 -24)',
@@ -340,14 +360,18 @@ export function PriceChart({ width, height, prices: originalPrices, timePeriod }
                 y={margin.crosshair + 10}
                 textAnchor={crosshairAtEdge ? 'end' : 'start'}
                 fontSize={12}
-                fill={theme.textSecondary}
+                fill={
+  //@ts-ignore
+  theme.textSecondary}
               >
                 {crosshairDateFormatter(displayPrice.timestamp)}
               </text>
               <Line
                 from={{ x: crosshair, y: margin.crosshair }}
                 to={{ x: crosshair, y: graphHeight }}
-                stroke={theme.backgroundOutline}
+                stroke={
+  //@ts-ignore
+  theme.backgroundOutline}
                 strokeWidth={1}
                 pointerEvents="none"
                 strokeDasharray="4,4"
@@ -356,8 +380,12 @@ export function PriceChart({ width, height, prices: originalPrices, timePeriod }
                 left={crosshair}
                 top={rdScale(displayPrice.value) + margin.top}
                 size={50}
-                fill={theme.accentAction}
-                stroke={theme.backgroundOutline}
+                fill={
+  //@ts-ignore
+  theme.accentAction}
+                stroke={
+  //@ts-ignore
+  theme.backgroundOutline}
                 strokeWidth={0.5}
               />
             </g>
@@ -365,7 +393,9 @@ export function PriceChart({ width, height, prices: originalPrices, timePeriod }
             <AxisBottom
               hideAxisLine={true}
               scale={timeScale}
-              stroke={theme.backgroundOutline}
+              stroke={
+  //@ts-ignore
+  theme.backgroundOutline}
               top={graphHeight - 1}
               hideTicks
             />
@@ -379,7 +409,9 @@ export function PriceChart({ width, height, prices: originalPrices, timePeriod }
               y2={graphHeight - 1}
               fill="transparent"
               shapeRendering="crispEdges"
-              stroke={theme.backgroundOutline}
+              stroke={
+  //@ts-ignore
+  theme.backgroundOutline}
               strokeWidth={1}
             />
           )}
@@ -415,12 +447,18 @@ function MissingPriceChart({ width, height, message }: { width: number; height: 
       <path
         d={`M 0 ${midPoint} Q 104 ${midPoint - 70}, 208 ${midPoint} T 416 ${midPoint}
           M 416 ${midPoint} Q 520 ${midPoint - 70}, 624 ${midPoint} T 832 ${midPoint}`}
-        stroke={theme.backgroundOutline}
+        stroke={
+  //@ts-ignore
+  theme.backgroundOutline}
         fill="transparent"
         strokeWidth="2"
       />
-      {message && <TrendingUp stroke={theme.textTertiary} x={0} size={12} y={height - chartBottomPadding - 10} />}
-      <text y={height - chartBottomPadding} x="20" fill={theme.textTertiary}>
+      {message && <TrendingUp stroke={
+  //@ts-ignore
+  theme.textTertiary} x={0} size={12} y={height - chartBottomPadding - 10} />}
+      <text y={height - chartBottomPadding} x="20" fill={
+  //@ts-ignore
+  theme.textTertiary}>
         {message}
       </text>
     </StyledMissingChart>

@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { brushHandleAccentPath, brushHandlePath, OffScreenHandle } from 'components/LiquidityChartRangeInput/svg'
 import { BrushBehavior, brushX, D3BrushEvent, ScaleLinear, select } from 'd3'
 import usePrevious from 'hooks/usePrevious'

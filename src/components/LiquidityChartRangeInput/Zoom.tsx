@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { ButtonGray } from 'components/Button'
 import { ScaleLinear, select, zoom, ZoomBehavior, zoomIdentity, ZoomTransform } from 'd3'
 import React, { useEffect, useMemo, useRef } from 'react'

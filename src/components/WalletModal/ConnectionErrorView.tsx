@@ -17,7 +17,9 @@ const AlertTriangleIcon = styled(AlertTriangle)`
   height: 90px;
   stroke-width: 1;
   margin: 36px;
-  color: ${({ theme }) => theme.accentCritical};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.accentCritical};
 `
 
 export default function ConnectionErrorView({

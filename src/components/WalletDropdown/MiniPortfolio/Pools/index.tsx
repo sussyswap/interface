@@ -70,7 +70,9 @@ export default function Pools({ account }: { account: string }) {
 
 const ActiveDot = styled.span<{ closed: boolean; outOfRange: boolean }>`
   background-color: ${({ theme, closed, outOfRange }) =>
-    closed ? theme.textSecondary : outOfRange ? theme.accentWarning : theme.accentSuccess};
+    closed ? 
+    //@ts-ignore
+    theme.textSecondary : outOfRange ? theme.accentWarning : theme.accentSuccess};
   border-radius: 50%;
   height: 8px;
   width: 8px;

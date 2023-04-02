@@ -15,7 +15,9 @@ const MobilePopupWrapper = styled.div`
   margin: 0 auto;
   display: none;
 
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) => 
+    //@ts-ignore
+    theme.deprecated_mediaWidth.deprecated_upToSmall`
     display: block;
     padding-top: 20px;
   `};
@@ -45,7 +47,9 @@ const FixedPopupColumn = styled(AutoColumn)<{ extraPadding: boolean; xlPadding: 
   width: 100%;
   z-index: 3;
 
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) => 
+    //@ts-ignore
+    theme.deprecated_mediaWidth.deprecated_upToSmall`
     display: none;
   `};
 
@@ -62,7 +66,7 @@ export default function Popups() {
 
   // need extra padding if network is not L1 Ethereum
   const { chainId } = useWeb3React()
-  const isNotOnMainnet = Boolean(chainId && chainId !== SupportedChainId.MAINNET)
+  const isNotOnMainnet = Boolean(chainId && chainId !== SupportedChainId.AVALANCHE)
 
   return (
     <>

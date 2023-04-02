@@ -7,17 +7,23 @@ import styled from 'styled-components/macro'
 import { ExternalLink, MEDIA_WIDTHS } from 'theme'
 
 const BodyRow = styled.div`
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textPrimary};
   font-size: 12px;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
 `
 const CautionTriangle = styled(AlertTriangle)`
-  color: ${({ theme }) => theme.accentWarning};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.accentWarning};
 `
 const Link = styled(ExternalLink)`
-  color: ${({ theme }) => theme.black};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.black};
   text-decoration: underline;
 `
 const TitleRow = styled.div`
@@ -27,16 +33,22 @@ const TitleRow = styled.div`
   margin-bottom: 8px;
 `
 const TitleText = styled.div`
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textPrimary};
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   margin: 0px 12px;
 `
 const Wrapper = styled.div`
-  background-color: ${({ theme }) => theme.backgroundSurface};
+  background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundSurface};
   border-radius: 12px;
-  border: 1px solid ${({ theme }) => theme.backgroundOutline};
+  border: 1px solid ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundOutline};
   bottom: 60px;
   display: none;
   max-width: 348px;
@@ -62,7 +74,7 @@ export function ChainConnectivityWarning() {
         </TitleText>
       </TitleRow>
       <BodyRow>
-        {chainId === SupportedChainId.MAINNET ? (
+        {chainId === SupportedChainId.AVALANCHE ? (
           <Trans>You may have lost your network connection.</Trans>
         ) : (
           <Trans>{label} might be down right now, or you may have lost your network connection.</Trans>

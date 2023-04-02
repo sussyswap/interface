@@ -10,7 +10,9 @@ import { textFadeIn } from 'theme/styles'
 import Resource from './Resource'
 
 const NoInfoAvailable = styled.span`
-  color: ${({ theme }) => theme.textTertiary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textTertiary};
   font-weight: 400;
   font-size: 16px;
 `
@@ -25,14 +27,18 @@ const TokenDescriptionContainer = styled.div`
 `
 
 const TruncateDescriptionButton = styled.div`
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => 
+  //@ts-ignore
+  theme.textSecondary};
   font-weight: 400;
   font-size: 0.85em;
   padding-top: 0.5em;
 
   &:hover,
   &:focus {
-    color: ${({ theme }) => darken(0.1, theme.textSecondary)};
+    color: ${({ theme }) => darken(0.1, 
+  //@ts-ignore
+  theme.textSecondary)};
     cursor: pointer;
   }
 `
@@ -105,7 +111,7 @@ export function AboutSection({ address, chainId, description, homepageUrl, twitt
       </ThemedText.SubHeaderSmall>
       <ResourcesContainer data-cy="resources-container">
         <Resource
-          name={chainId === SupportedChainId.MAINNET ? 'Etherscan' : 'Block Explorer'}
+          name={chainId === SupportedChainId.AVALANCHE ? 'Snowtrace' : 'Block Explorer'}
           link={`${explorer}${address === 'NATIVE' ? '' : 'address/' + address}`}
         />
         <Resource name="More analytics" link={`${infoLink}tokens/${address}`} />

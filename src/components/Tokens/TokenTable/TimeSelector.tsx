@@ -30,7 +30,9 @@ export const ORDERED_TIMES: TimePeriod[] = [
 const InternalMenuItem = styled.div`
   flex: 1;
   padding: 8px;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => 
+    //@ts-ignore
+    theme.textPrimary};
   border-radius: 8px;
 
   :hover {
@@ -48,7 +50,9 @@ const InternalLinkMenuItem = styled(InternalMenuItem)`
   cursor: pointer;
 
   :hover {
-    background-color: ${({ theme }) => theme.hoverState};
+    background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.hoverState};
     text-decoration: none;
   }
 `
@@ -56,9 +60,15 @@ const MenuTimeFlyout = styled.span`
   min-width: 240px;
   max-height: 300px;
   overflow: auto;
-  background-color: ${({ theme }) => theme.backgroundSurface};
-  box-shadow: ${({ theme }) => theme.deepShadow};
-  border: 0.5px solid ${({ theme }) => theme.backgroundOutline};
+  background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundSurface};
+  box-shadow: ${({ theme }) =>
+    //@ts-ignore
+    theme.deepShadow};
+  border: 0.5px solid ${({ theme }) =>
+    //@ts-ignore
+    theme.backgroundOutline};
   border-radius: 12px;
   padding: 8px;
   display: flex;
@@ -97,7 +107,9 @@ const StyledMenuContent = styled.div`
 `
 const Chevron = styled.span<{ open: boolean }>`
   padding-top: 1px;
-  color: ${({ open, theme }) => (open ? theme.accentActive : theme.textSecondary)};
+  color: ${({ open, theme }) => (open ?
+    //@ts-ignore
+    theme.accentActive : theme.textSecondary)};
 `
 
 // TODO: change this to reflect data pipeline
@@ -135,7 +147,9 @@ export default function TimeSelector() {
               }}
             >
               <div>{DISPLAYS[time]}</div>
-              {time === activeTime && <Check color={theme.accentAction} size={16} />}
+              {time === activeTime && <Check color={
+    //@ts-ignore
+    theme.accentAction} size={16} />}
             </InternalLinkMenuItem>
           ))}
         </MenuTimeFlyout>

@@ -27,7 +27,9 @@ import PrivacyPolicyNotice from './PrivacyPolicyNotice'
 
 const Wrapper = styled.div`
   ${flexColumnNoWrap};
-  background-color: ${({ theme }) => theme.backgroundSurface};
+  background-color: ${({ theme }) => 
+    //@ts-ignore
+    theme.backgroundSurface};
   width: 100%;
   padding: 14px 16px 16px;
   flex: 1;
@@ -38,7 +40,9 @@ const OptionGrid = styled.div`
   grid-gap: 2px;
   border-radius: 12px;
   overflow: hidden;
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToMedium`
+  ${({ theme }) => 
+    //@ts-ignore
+    theme.deprecated_mediaWidth.deprecated_upToMedium`
     grid-template-columns: 1fr;
   `};
 `

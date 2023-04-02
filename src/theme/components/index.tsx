@@ -23,7 +23,8 @@ import { anonymizeLink } from '../../utils/anonymizeLink'
 // TODO: Break this file into a components folder
 
 export const CloseIcon = styled(X)<{ onClick: () => void }>`
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textPrimary};
   cursor: pointer;
 `
 
@@ -37,7 +38,8 @@ export const IconWrapper = styled.div<{ stroke?: string; size?: string; marginRi
   margin-right: ${({ marginRight }) => marginRight ?? 0};
   margin-left: ${({ marginLeft }) => marginLeft ?? 0};
   & > * {
-    stroke: ${({ theme, stroke }) => stroke ?? theme.accentActive};
+    stroke: ${({ theme, stroke }) => stroke ?? //@ts-ignore
+    theme.accentActive};
   }
 `
 
@@ -48,7 +50,8 @@ export const LinkStyledButton = styled.button<{ disabled?: boolean }>`
   background: none;
 
   cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
-  color: ${({ theme, disabled }) => (disabled ? theme.textSecondary : theme.accentAction)};
+  color: ${({ theme, disabled }) => (disabled ? //@ts-ignore
+  theme.textSecondary : theme.accentAction)};
   font-weight: 500;
 
   :hover {
@@ -73,12 +76,14 @@ export const ButtonText = styled.button`
   margin: 0;
   background: none;
   cursor: pointer;
-  transition-duration: ${({ theme }) => theme.transition.duration.fast};
+  transition-duration: ${({ theme }) => //@ts-ignore
+  theme.transition.duration.fast};
   transition-timing-function: ease-in-out;
   transition-property: opacity, color, background-color;
 
   :hover {
-    opacity: ${({ theme }) => theme.opacity.hover};
+    opacity: ${({ theme }) => //@ts-ignore
+    theme.opacity.hover};
   }
 
   :focus {
@@ -95,19 +100,24 @@ export const EllipsisStyle = css`
 export const ClickableStyle = css`
   text-decoration: none;
   cursor: pointer;
-  transition-duration: ${({ theme }) => theme.transition.duration.fast};
+  transition-duration: ${({ theme }) => //@ts-ignore
+  theme.transition.duration.fast};
 
   :hover {
-    opacity: ${({ theme }) => theme.opacity.hover};
+    opacity: ${({ theme }) => //@ts-ignore
+    theme.opacity.hover};
   }
   :active {
-    opacity: ${({ theme }) => theme.opacity.click};
+    opacity: ${({ theme }) =>//@ts-ignore
+    theme.opacity.click};
   }
 `
 
 export const LinkStyle = css`
-  color: ${({ theme }) => theme.accentAction};
-  stroke: ${({ theme }) => theme.accentAction};
+  color: ${({ theme }) => //@ts-ignore
+  theme.accentAction};
+  stroke: ${({ theme }) => //@ts-ignore
+  theme.accentAction};
   font-weight: 500;
 `
 
@@ -139,7 +149,8 @@ const CopyIcon = styled(Copy)`
   ${IconStyle}
   ${ClickableStyle}
   ${LinkStyle}
-  stroke: ${({ theme }) => theme.accentAction};
+  stroke: ${({ theme }) => //@ts-ignore
+  theme.accentAction};
 `
 
 const rotateImg = keyframes`
@@ -227,12 +238,14 @@ const ToolTipWrapper = styled.div<{ isCopyContractTooltip?: boolean; tooltipX?: 
 
 const StyledTooltipTriangle = styled(TooltipTriangle)`
   path {
-    fill: ${({ theme }) => theme.black};
+    fill: ${({ theme }) => //@ts-ignore
+    theme.black};
   }
 `
 
 const CopiedTooltip = styled.div<{ isCopyContractTooltip?: boolean }>`
-  background-color: ${({ theme }) => theme.black};
+  background-color: ${({ theme }) => //@ts-ignore
+  theme.black};
   text-align: center;
   justify-content: center;
   width: ${({ isCopyContractTooltip }) => !isCopyContractTooltip && `${TOOLTIP_WIDTH}px`};
@@ -242,7 +255,8 @@ const CopiedTooltip = styled.div<{ isCopyContractTooltip?: boolean }>`
   padding: ${({ isCopyContractTooltip }) => isCopyContractTooltip && '8px'};
   border-radius: 8px;
 
-  color: ${({ theme }) => theme.white};
+  color: ${({ theme }) => //@ts-ignore
+  theme.white};
   font-size: 12px;
 `
 
@@ -305,7 +319,8 @@ const CopyAddressRow = styled.div<{ isClicked: boolean }>`
   justify-content: center;
   display: flex;
   gap: 6px;
-  ${({ theme, isClicked }) => isClicked && `opacity: ${theme.opacity.click} !important`}
+  ${({ theme, isClicked }) => isClicked && `opacity: ${//@ts-ignore
+    theme.opacity.click} !important`}
 `
 
 const CopyContractAddressWrapper = styled.div`
@@ -354,7 +369,8 @@ const CopyHelperText = styled.div<{ fontSize?: number; offset: number }>`
 `
 
 const StyledCheckCircle = styled(CheckCircle)`
-  color: ${({ theme }) => theme.accentSuccess};
+  color: ${({ theme }) => //@ts-ignore
+  theme.accentSuccess};
   stroke-width: 1.5px;
 `
 
@@ -460,7 +476,8 @@ export const SpinnerSVG = styled.svg`
 `
 
 const BackArrowLink = styled(StyledInternalLink)`
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textPrimary};
 `
 export function BackArrow({ to }: { to: string }) {
   return (
@@ -476,27 +493,31 @@ export const CustomLightSpinner = styled(Spinner)<{ size: string }>`
 `
 
 export const HideSmall = styled.span`
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) => //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToSmall`
     display: none;
   `};
 `
 
 export const HideExtraSmall = styled.span`
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToExtraSmall`
+  ${({ theme }) => //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToExtraSmall`
     display: none;
   `};
 `
 
 export const SmallOnly = styled.span`
   display: none;
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+  ${({ theme }) => //@ts-ignore
+  theme.deprecated_mediaWidth.deprecated_upToSmall`
     display: block;
   `};
 `
 
 export const MediumOnly = styled.span`
   display: none;
-  @media (max-width: ${({ theme }) => theme.breakpoint.md}px) {
+  @media (max-width: ${({ theme }) => //@ts-ignore
+  theme.breakpoint.md}px) {
     display: block;
   }
 `
@@ -504,10 +525,12 @@ export const MediumOnly = styled.span`
 export const Separator = styled.div`
   width: 100%;
   height: 1px;
-  background-color: ${({ theme }) => theme.backgroundOutline};
+  background-color: ${({ theme }) =>//@ts-ignore
+  theme.backgroundOutline};
 `
 
 export const GlowEffect = styled.div`
   border-radius: 32px;
-  box-shadow: ${({ theme }) => theme.networkDefaultShadow};
+  box-shadow: ${({ theme }) => //@ts-ignore
+  theme.networkDefaultShadow};
 `

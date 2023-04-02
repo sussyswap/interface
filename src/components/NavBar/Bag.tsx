@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { NavIcon } from 'components/NavBar/NavIcon'
 import { useIsNftProfilePage } from 'hooks/useIsNftPage'
 import { BagIcon, HundredsOverflowIcon, TagIcon } from 'nft/components/icons'

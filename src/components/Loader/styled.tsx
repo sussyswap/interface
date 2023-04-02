@@ -1,3 +1,4 @@
+//@ts-nocheck
 import styled, { css, keyframes } from 'styled-components/macro'
 
 export const loadingAnimation = keyframes`

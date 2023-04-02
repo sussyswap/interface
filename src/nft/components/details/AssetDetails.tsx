@@ -53,7 +53,8 @@ const Column = styled.div`
 
 const AddressTextLink = styled.a`
   display: inline-block;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
   text-decoration: none;
   max-width: 100%;
   word-wrap: break-word;
@@ -74,7 +75,8 @@ const DescriptionText = styled.div`
 
 const RarityWrap = styled.span`
   display: flex;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${({ theme }) =>//@ts-ignore
+  theme.textSecondary};
   padding: 2px 4px;
   border-radius: 4px;
   align-items: center;
@@ -86,14 +88,16 @@ const EmptyActivitiesContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textPrimary};
   font-size: 28px;
   line-height: 36px;
   padding: 56px 0px;
 `
 
 const Link = styled(RouterLink)`
-  color: ${({ theme }) => theme.accentAction};
+  color: ${({ theme }) => //@ts-ignore
+  theme.accentAction};
   text-decoration: none;
   font-size: 14px;
   line-height: 16px;
@@ -116,8 +120,10 @@ const ActivitySelectContainer = styled.div`
 
 const ContentNotAvailable = styled.div`
   display: flex;
-  background-color: ${({ theme }) => theme.backgroundSurface};
-  color: ${({ theme }) => theme.textSecondary};
+  background-color: ${({ theme }) => //@ts-ignore
+  theme.backgroundSurface};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textSecondary};
   font-size: 14px;
   line-height: 20px;
   align-items: center;
@@ -133,7 +139,8 @@ const FilterBox = styled.div<{ backgroundColor: string }>`
   font-size: 14px;
   font-weight: 600;
   line-height: 14px;
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) =>//@ts-ignore
+  theme.textPrimary};
   padding: 8px 16px;
   border-radius: 12px;
   cursor: pointer;

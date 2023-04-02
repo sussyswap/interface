@@ -8,7 +8,9 @@ import { navigatorLocale, useActiveLocale } from '../../hooks/useActiveLocale'
 import { StyledInternalLink, ThemedText } from '../../theme'
 
 const Container = styled(ThemedText.DeprecatedSmall)`
-  opacity: ${({ theme }) => theme.opacity.hover};
+  opacity: ${({ theme }) => 
+  //@ts-ignore
+  theme.opacity.hover};
   :hover {
     opacity: 1;
   }

@@ -29,12 +29,14 @@ const ExploreContainer = styled.div`
 `
 
 const StyledHeader = styled.div`
-  color: ${({ theme }) => theme.textPrimary};
+  color: ${({ theme }) => //@ts-ignore
+  theme.textPrimary};
   font-size: 36px;
   line-height: 44px;
   font-weight: 500;
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.sm}px`}) {
     font-size: 20px;
     line-height: 28px;
   }
@@ -46,7 +48,8 @@ const FiltersRow = styled.div`
   margin-top: 36px;
   margin-bottom: 20px;
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+  @media only screen and (max-width: ${({ theme }) => `${//@ts-ignore
+    theme.breakpoint.sm}px`}) {
     margin-bottom: 16px;
     margin-top: 16px;
   }
@@ -54,7 +57,8 @@ const FiltersRow = styled.div`
 
 const Filter = styled.div`
   display: flex;
-  border: 1px solid ${({ theme }) => theme.backgroundOutline};
+  border: 1px solid ${({ theme }) => //@ts-ignore
+  theme.backgroundOutline};
   border-radius: 16px;
   padding: 4px;
 `
@@ -62,14 +66,16 @@ const Filter = styled.div`
 const Selector = styled.div<{ active: boolean }>`
   padding: 8px 12px;
   border-radius: 12px;
-  background: ${({ active, theme }) => (active ? theme.backgroundInteractive : 'none')};
+  background: ${({ active, theme }) => (active ?//@ts-ignore
+  theme.backgroundInteractive : 'none')};
   cursor: pointer;
 
   ${OpacityHoverState}
 `
 
 const StyledSelectorText = styled(ThemedText.SubHeader)<{ active: boolean }>`
-  color: ${({ theme, active }) => (active ? theme.textPrimary : theme.textSecondary)};
+  color: ${({ theme, active }) => (active ? //@ts-ignore
+  theme.textPrimary : theme.textSecondary)};
 `
 
 function convertTimePeriodToHistoryDuration(timePeriod: TimePeriod): HistoryDuration {

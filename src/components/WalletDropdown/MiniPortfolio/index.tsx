@@ -57,12 +57,12 @@ interface Page {
 }
 
 const Pages: Array<Page> = [
-  {
-    title: <Trans>Tokens</Trans>,
-    component: Tokens,
-    loggingElementName: InterfaceElementName.MINI_PORTFOLIO_TOKENS_TAB,
-  },
-  { title: <Trans>NFTs</Trans>, component: NFTs, loggingElementName: InterfaceElementName.MINI_PORTFOLIO_NFT_TAB },
+  // {
+  //   title: <Trans>Tokens</Trans>,
+  //   component: Tokens,
+  //   loggingElementName: InterfaceElementName.MINI_PORTFOLIO_TOKENS_TAB,
+  // },
+  // { title: <Trans>NFTs</Trans>, component: NFTs, loggingElementName: InterfaceElementName.MINI_PORTFOLIO_NFT_TAB },
   { title: <Trans>Pools</Trans>, component: Pools, loggingElementName: InterfaceElementName.MINI_PORTFOLIO_POOLS_TAB },
   {
     title: <Trans>Activity</Trans>,

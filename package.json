@@ -25,8 +25,7 @@
     "test": "craco test --coverage",
     "test:size": "node scripts/test-size.js",
     "cypress:open": "cypress open --browser chrome --e2e",
-    "cypress:run": "cypress run --browser chrome --e2e",
-    "postinstall": "patch-package"
+    "cypress:run": "cypress run --browser chrome --e2e"
   },
   "jest": {
     "collectCoverageFrom": [

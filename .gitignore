@@ -19,8 +19,8 @@
 /coverage
 
 # builds
-# /build
-# /dts
+/build
+/dts
 
 # misc
 .DS_Store

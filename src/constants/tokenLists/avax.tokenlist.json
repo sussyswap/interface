@@ -61,6 +61,14 @@
     },
     {
       "chainId": 43114,
+      "address": "0xefb0475757652c9dd7B8bE2C6e0d99fB05950aB1",
+      "decimals": 18,
+      "name": "Bruh V2",
+      "symbol": "BRUH2",
+      "logoURI": "https://datepsychology.com/wp-content/uploads/2022/09/gigachad.jpg"
+    },
+    {
+      "chainId": 43114,
       "address": "0xd1c3f94DE7e5B45fa4eDBBA472491a9f4B166FC4",
       "decimals": 18,
       "name": "Avalaunch",

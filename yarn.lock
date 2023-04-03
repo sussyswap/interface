@@ -4819,9 +4819,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sussyswap/widgets@npm:^2.49.3":
-  version: 2.49.3
-  resolution: "@sussyswap/widgets@npm:2.49.3"
+"@sussyswap/widgets@npm:^2.49.5":
+  version: 2.49.5
+  resolution: "@sussyswap/widgets@npm:2.49.5"
   dependencies:
     "@babel/runtime": ">=7.17.0"
     "@fontsource/ibm-plex-mono": ^4.5.1
@@ -4895,7 +4895,7 @@ __metadata:
       optional: true
     utf-8-validate:
       optional: true
-  checksum: 4de7607d7fb018bb4bab9a5b583cb825434c207bb736add8f9d43a6f62b6866c881f36fb7b6c81b77089c6af411ae66da1db5f98276aaae306ee8e5d996b2b7a
+  checksum: 6738c40f41e81a6bb1bcc56e56ca0ea99a3b1ed9f5f4874831c74afd9897a3d9037ba01f44c38e5739fec3a6337a5c2a062d700900b95a51619712594779b8bf
   languageName: node
   linkType: hard
 
@@ -6531,7 +6531,7 @@ __metadata:
     "@sentry/tracing": ^7.40.0
     "@sussyswap/smart-order-router": ^3.10.4
     "@sussyswap/universal-router-sdk": ^1.5.0-beta.1
-    "@sussyswap/widgets": ^2.49.3
+    "@sussyswap/widgets": ^2.49.5
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.1
     "@typechain/ethers-v5": ^7.0.0

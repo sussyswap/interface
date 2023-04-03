@@ -131,7 +131,7 @@ export default function NetworkFilter() {
 
   const { chainName } = useParams<{ chainName?: string }>()
   const currentChainName = validateUrlChainParam(chainName)
-
+  //@ts-ignore
   const chainInfo = getChainInfo(CHAIN_NAME_TO_CHAIN_ID[currentChainName])
 
 

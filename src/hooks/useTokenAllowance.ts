@@ -24,14 +24,14 @@ export function useTokenAllowance(
     result: Awaited<ReturnType<NonNullable<typeof contract>['allowance']>> | undefined
     syncing: boolean
   }
-
   const rawAmount = result?.toString() // convert to a string before using in a hook, to avoid spurious rerenders
+
   const allowance = useMemo(
     () => (token && rawAmount ? CurrencyAmount.fromRawAmount(token, rawAmount) : undefined),
     [token, rawAmount]
   )
   useEffect(() => setBlocksPerFetch(allowance?.equalTo(0) ? 1 : undefined), [allowance])
-
+  
   return useMemo(() => ({ tokenAllowance: allowance, isSyncing }), [allowance, isSyncing])
 }
 

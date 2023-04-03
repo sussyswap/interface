@@ -11,7 +11,7 @@ const SOCKS = new Token(SupportedChainId.AVALANCHE, SOCKS_CONTROLLER_ADDRESSES[S
 export function useHasSocks(): boolean | undefined {
   const { account, chainId } = useWeb3React()
 
-  const balance = useTokenBalance(account ?? undefined, chainId === SupportedChainId.AVALANCHE ? SOCKS : undefined)
+  const balance = useTokenBalance(account ?? undefined, chainId === SupportedChainId.AVALANCHE ? undefined : undefined)
 
   return useMemo(() => Boolean(balance?.greaterThan(0)), [balance])
 }

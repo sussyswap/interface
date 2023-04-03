@@ -34,9 +34,9 @@ function getTokenLogoURI(address: string, chainId: SupportedChainId = SupportedC
   const networksWithUrls = [
     356,
   ]
-  if (networksWithUrls.includes(chainId)) {
-    return `https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/${networkName}/assets/${address}/logo.png`
-  }
+  // if (networksWithUrls.includes(chainId)) {
+  //   return `https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/${networkName}/assets/${address}/logo.png`
+  // }
 
 }
 

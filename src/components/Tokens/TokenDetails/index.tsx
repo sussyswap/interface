@@ -247,7 +247,7 @@ export default function TokenDetails({
               onReviewSwapClick={onReviewSwapClick}
             />
           </div>
-          {tokenWarning && <TokenSafetyMessage tokenAddress={address} warning={tokenWarning} />}
+          
           {detailedToken && <BalanceSummary token={detailedToken} />}
         </RightPanel>
         {detailedToken && <MobileBalanceSummaryFooter token={detailedToken} />}

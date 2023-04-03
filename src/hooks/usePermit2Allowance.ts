@@ -1,4 +1,4 @@
-import { PERMIT2_ADDRESS } from '@uniswap/permit2-sdk'
+import { /*PERMIT2_ADDRESS*/ } from '@uniswap/permit2-sdk'
 import { CurrencyAmount, Token } from '@uniswap/sdk-core'
 import { useWeb3React } from '@web3-react/core'
 import { AVERAGE_L1_BLOCK_TIME } from 'constants/chainInfo'
@@ -34,6 +34,8 @@ export type Allowance =
       permitSignature?: PermitSignature
     }
   | AllowanceRequired
+
+const PERMIT2_ADDRESS = '0xB43F5C30655598DA2956CAf8082434ECC545c052'
 
 export default function usePermit2Allowance(amount?: CurrencyAmount<Token>, spender?: string): Allowance {
   const { account } = useWeb3React()

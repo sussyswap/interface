@@ -4,6 +4,8 @@ import { SupportedChainId } from 'constants/chains'
 
 import {
   nativeOnChain,
+  USDC,
+  USDT,
   WRAPPED_NATIVE_CURRENCY,
 } from './tokens'
 import { USDC_FUJI } from '@sussyswap/smart-order-router'
@@ -25,7 +27,8 @@ const WRAPPED_NATIVE_CURRENCIES_ONLY: ChainTokenList = Object.fromEntries(
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   ...WRAPPED_NATIVE_CURRENCIES_ONLY,
-  [SupportedChainId.AVALANCHE_FUJI]: [USDC_FUJI]
+  [SupportedChainId.AVALANCHE_FUJI]: [USDC_FUJI],
+  [SupportedChainId.AVALANCHE]: [USDC, USDT]
 }
 export const ADDITIONAL_BASES: { [chainId: number]: { [tokenAddress: string]: Token[] } } = {
   
@@ -46,15 +49,24 @@ export const COMMON_BASES: ChainCurrencyList = {
     nativeOnChain(SupportedChainId.AVALANCHE_FUJI),
     USDC_FUJI
   ],
+  [SupportedChainId.AVALANCHE]: [
+    nativeOnChain(SupportedChainId.AVALANCHE),
+    USDC,
+    USDT
+  ],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   ...WRAPPED_NATIVE_CURRENCIES_ONLY,
-  [SupportedChainId.AVALANCHE_FUJI]: [USDC_FUJI]
+  [SupportedChainId.AVALANCHE_FUJI]: [USDC_FUJI],
+  [SupportedChainId.AVALANCHE]: [USDC, USDT]
 }
 export const PINNED_PAIRS: { readonly [chainId: number]: [Token, Token][] } = {
   [SupportedChainId.AVALANCHE_FUJI]: [
     [USDC_FUJI, USDC_FUJI]
   ],
+  [SupportedChainId.AVALANCHE]: [
+    [USDC, USDT]
+  ]
 }

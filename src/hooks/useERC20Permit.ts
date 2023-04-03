@@ -7,7 +7,7 @@ import JSBI from 'jsbi'
 import { useSingleCallResult } from 'lib/hooks/multicall'
 import { useMemo, useState } from 'react'
 
-import { UNI, USDC_FUJI } from '../constants/tokens'
+import { UNI, USDC, USDC_FUJI } from '../constants/tokens'
 import { useEIP2612Contract } from './useContract'
 import useIsArgentWallet from './useIsArgentWallet'
 

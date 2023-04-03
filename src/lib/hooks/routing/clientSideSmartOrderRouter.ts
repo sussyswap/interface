@@ -1,7 +1,7 @@
 import { BigintIsh, CurrencyAmount, Token, TradeType } from '@uniswap/sdk-core'
 // This file is lazy-loaded, so the import of smart-order-router is intentional.
 // eslint-disable-next-line no-restricted-imports
-import { AlphaRouter, AlphaRouterConfig, ChainId } from '@sussyswap/smart-order-router'
+import { AlphaRouter, AlphaRouterConfig, ChainId, SwapOptions, SwapType } from '@sussyswap/smart-order-router'
 import { SupportedChainId } from 'constants/chains'
 import JSBI from 'jsbi'
 import { GetQuoteResult } from 'state/routing/types'
@@ -39,11 +39,14 @@ async function getQuote(
   const quoteCurrency = type === 'exactIn' ? currencyOut : currencyIn
   const amount = CurrencyAmount.fromRawAmount(baseCurrency, JSBI.BigInt(amountRaw))
 
+
+
   const swapRoute = await router.route(
     amount,
     quoteCurrency,
     type === 'exactIn' ? TradeType.EXACT_INPUT : TradeType.EXACT_OUTPUT,
-    /*swapConfig=*/ undefined,
+    //@ts-ignore
+    undefined,
     config
   )
 

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/fi-FI.js"],"names":["fiFI","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/67.8965b2c1.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar fiFI={messages:JSON.parse(\"{}\")};\n\nexport { fiFI as default };\n"],"sourceRoot":""}

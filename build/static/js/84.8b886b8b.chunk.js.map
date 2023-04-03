@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/sw-TZ.js"],"names":["swTZ","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/84.8b886b8b.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar swTZ={messages:JSON.parse(\"{}\")};\n\nexport { swTZ as default };\n"],"sourceRoot":""}

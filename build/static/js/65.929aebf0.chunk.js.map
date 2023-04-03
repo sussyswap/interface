@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/en-US.js"],"names":["enUS","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/65.929aebf0.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar enUS={messages:JSON.parse(\"{}\")};\n\nexport { enUS as default };\n"],"sourceRoot":""}

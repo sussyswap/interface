@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/ca-ES.js"],"names":["caES","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/60.e2b61c16.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar caES={messages:JSON.parse(\"{}\")};\n\nexport { caES as default };\n"],"sourceRoot":""}

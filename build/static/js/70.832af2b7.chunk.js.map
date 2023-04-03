@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/hu-HU.js"],"names":["huHU","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/70.832af2b7.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar huHU={messages:JSON.parse(\"{}\")};\n\nexport { huHU as default };\n"],"sourceRoot":""}

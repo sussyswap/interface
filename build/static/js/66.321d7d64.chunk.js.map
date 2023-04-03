@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/es-ES.js"],"names":["esES","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/66.321d7d64.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar esES={messages:JSON.parse(\"{}\")};\n\nexport { esES as default };\n"],"sourceRoot":""}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/it-IT.js"],"names":["itIT","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/72.11684110.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar itIT={messages:JSON.parse(\"{}\")};\n\nexport { itIT as default };\n"],"sourceRoot":""}

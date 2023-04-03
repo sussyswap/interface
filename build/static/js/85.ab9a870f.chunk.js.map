@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/tr-TR.js"],"names":["trTR","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/85.ab9a870f.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar trTR={messages:JSON.parse(\"{}\")};\n\nexport { trTR as default };\n"],"sourceRoot":""}

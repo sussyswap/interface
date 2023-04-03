@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/af-ZA.js"],"names":["afZA","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/58.a2ff20f9.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar afZA={messages:JSON.parse(\"{}\")};\n\nexport { afZA as default };\n"],"sourceRoot":""}

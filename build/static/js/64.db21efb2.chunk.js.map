@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/el-GR.js"],"names":["elGR","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/64.db21efb2.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar elGR={messages:JSON.parse(\"{}\")};\n\nexport { elGR as default };\n"],"sourceRoot":""}

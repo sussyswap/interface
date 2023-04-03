@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/ja-JP.js"],"names":["jaJP","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/73.e9ab6c82.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar jaJP={messages:JSON.parse(\"{}\")};\n\nexport { jaJP as default };\n"],"sourceRoot":""}

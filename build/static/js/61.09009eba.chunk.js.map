@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/cs-CZ.js"],"names":["csCZ","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/61.09009eba.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar csCZ={messages:JSON.parse(\"{}\")};\n\nexport { csCZ as default };\n"],"sourceRoot":""}

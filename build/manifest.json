@@ -1,0 +1,30 @@
+{
+  "background_color": "#fff",
+  "display": "standalone",
+  "homepage_url": "https://app.Sussyswap.org",
+  "providedBy": {
+    "name": "Sussyswap",
+    "url": "https://Sussyswap.org"
+  },
+  "icons": [
+    {
+      "src": "./images/192x192_App_Icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./images/512x512_App_Icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "orientation": "portrait",
+  "name": "Sussyswap",
+  "description": "Swap or provide liquidity on the Sussyswap Protocol",
+  "iconPath": "./images/256x256_App_Icon_Pink.svg",
+  "short_name": "Sussyswap",
+  "start_url": ".",
+  "theme_color": "#FC72FF"
+}

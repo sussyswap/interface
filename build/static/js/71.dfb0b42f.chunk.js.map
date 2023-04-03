@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/id-ID.js"],"names":["idID","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/71.dfb0b42f.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar idID={messages:JSON.parse(\"{}\")};\n\nexport { idID as default };\n"],"sourceRoot":""}

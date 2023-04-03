@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/ko-KR.js"],"names":["koKR","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/74.175aeb30.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar koKR={messages:JSON.parse(\"{}\")};\n\nexport { koKR as default };\n"],"sourceRoot":""}

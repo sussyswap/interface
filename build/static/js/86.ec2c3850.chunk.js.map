@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/uk-UA.js"],"names":["ukUA","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/86.ec2c3850.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar ukUA={messages:JSON.parse(\"{}\")};\n\nexport { ukUA as default };\n"],"sourceRoot":""}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/fr-FR.js"],"names":["frFR","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/68.168b25a6.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar frFR={messages:JSON.parse(\"{}\")};\n\nexport { frFR as default };\n"],"sourceRoot":""}

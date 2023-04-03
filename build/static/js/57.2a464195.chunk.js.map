@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/Wallet/index.tsx"],"names":["Wallet"],"mappings":"4LAAe,SAASA,IACtB,OAAO","file":"static/js/57.2a464195.chunk.js","sourcesContent":["export default function Wallet() {\r\n  return <div>uniswap wallet pretty cool</div>\r\n}\r\n"],"sourceRoot":""}

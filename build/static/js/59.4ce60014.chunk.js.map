@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/ar-SA.js"],"names":["arSA","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/59.4ce60014.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar arSA={messages:JSON.parse(\"{}\")};\n\nexport { arSA as default };\n"],"sourceRoot":""}

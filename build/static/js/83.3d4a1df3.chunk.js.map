@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/sv-SE.js"],"names":["svSE","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/83.3d4a1df3.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar svSE={messages:JSON.parse(\"{}\")};\n\nexport { svSE as default };\n"],"sourceRoot":""}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/vi-VN.js"],"names":["viVN","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/87.fd2abf2e.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar viVN={messages:JSON.parse(\"{}\")};\n\nexport { viVN as default };\n"],"sourceRoot":""}

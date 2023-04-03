@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/nl-NL.js"],"names":["nlNL","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/75.a29cb7b5.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar nlNL={messages:JSON.parse(\"{}\")};\n\nexport { nlNL as default };\n"],"sourceRoot":""}

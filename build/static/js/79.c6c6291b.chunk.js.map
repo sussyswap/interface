@@ -1,0 +1,1 @@
+{"version":3,"sources":["../node_modules/@sussyswap/widgets/dist/locales/pt-PT.js"],"names":["ptPT","messages","JSON","parse"],"mappings":"kIAAA,+CAEA,IAAIA,EAAK,CAACC,SAASC,KAAKC,MAAM","file":"static/js/79.c6c6291b.chunk.js","sourcesContent":["/*eslint-disable*/\n\nvar ptPT={messages:JSON.parse(\"{}\")};\n\nexport { ptPT as default };\n"],"sourceRoot":""}
